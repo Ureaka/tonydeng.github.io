@@ -1,0 +1,720 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  <meta name="keywords" content="http httpie shell" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TonyDeng's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="之前在命令行下进行HTTP服务的调试和信息查看都是使用经典的cURL，不过前段时间发现一个交互更加友好的工具，就是HTTPie。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTPie:超爽的HTTP命令行客户端">
+<meta property="og:url" content="http://tonydeng.github.io/2015/07/10/httpie-howto/index.html">
+<meta property="og:site_name" content="TonyDeng's Blog">
+<meta property="og:description" content="之前在命令行下进行HTTP服务的调试和信息查看都是使用经典的cURL，不过前段时间发现一个交互更加友好的工具，就是HTTPie。">
+<meta property="og:image" content="http://tonydeng.github.io/images/blog/httpie/httpie-logo.png">
+<meta property="og:image" content="http://tonydeng.github.io/images/blog/httpie/httpie-vs-curl.png">
+<meta property="og:updated_time" content="2016-05-11T16:04:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTPie:超爽的HTTP命令行客户端">
+<meta name="twitter:description" content="之前在命令行下进行HTTP服务的调试和信息查看都是使用经典的cURL，不过前段时间发现一个交互更加友好的工具，就是HTTPie。">
+<meta name="twitter:image" content="http://tonydeng.github.io/images/blog/httpie/httpie-logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> HTTPie:超爽的HTTP命令行客户端 | TonyDeng's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">TonyDeng's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">“In me the tiger sniffes the rose.” -- Siegfried Sasson</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook-zh" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            GitBook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTTPie:超爽的HTTP命令行客户端
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-07-10T17:58:49+08:00" content="2015-07-10">
+              2015-07-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><img src="/images/blog/httpie/httpie-logo.png" alt="HTTPie Logo"></p>
+<p>之前在命令行下进行HTTP服务的调试和信息查看都是使用经典的<a href="http://curl.haxx.se" target="_blank" rel="external">cURL</a>，不过前段时间发现一个交互更加友好的工具，就是<a href="https://github.com/jakubroztocil/httpie" target="_blank" rel="external">HTTPie</a>。</p>
+<a id="more"></a>
+<p>先放一个HTTPie官方的一个HTTPie VS cURL的图给大家看看。</p>
+<p><img src="/images/blog/httpie/httpie-vs-curl.png" alt="HTTPie VS cURL"></p>
+<p>如果你经常需要用终端以非交互模式访问网络服务器（比如，下载文件、测试REST服务），可能你会选择的工具是wget或curl，通过大量的选项，这两种工具也都可以处理很多非交互网络访问的情况（比如，<a href="http://xmodulo.com/how-to-download-multiple-files-with-wget.html" target="_blank" rel="external">如何通过wget下载多个文件</a>，<a href="http://xmodulo.com/how-to-use-custom-http-headers-with-wget.html" target="_blank" rel="external">如何在wget中设置自定义的http头</a>，<a href="https://linux.cn/article-4957-1.html" target="_blank" rel="external">如何在curl中设置自定义的HTTP头</a>）。然而，除非你很精通这些繁复的语法细节，这些工具对于你来说，不过是简单的下载工具而已。</p>
+<p>“Its goal is to make CLI interaction with web services as <strong>human-friendly</strong> as possible. It provides a simple http command that allows for sending arbitrary HTTP requests using <strong>a simple and natural syntax</strong>, and <strong>displays colorized output</strong>. “</p>
+<p>HTTPie则在使用时的表现力、人性化做得比wget、curl好得多，就像在官网上宣传的那样，它追求的是人性化、简单自然的语法，以及彩色的输出。而且HTTPie还有一些不错的优点，比如对JSON的良好支撑、持久性会话等特性。</p>
+<p>上面说了那么多，咱们废话少说，先来了解并展示一下<a href="https://github.com/jakubroztocil/httpie" target="_blank" rel="external">HTTPie</a>。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h5 id="Linux上安装"><a href="#Linux上安装" class="headerlink" title="Linux上安装"></a>Linux上安装</h5><p>Debian, Ubuntu或Linux Mint</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install httpie</span><br></pre></td></tr></table></figure>
+<p>Fedora，CentOS/RHEL</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install httpie</span><br></pre></td></tr></table></figure>
+<p>或者使用python的方式来安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo  pip install --upgrade httpie</span><br></pre></td></tr></table></figure>
+<h5 id="Mac-OSX"><a href="#Mac-OSX" class="headerlink" title="Mac OSX"></a>Mac OSX</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install httpie</span><br></pre></td></tr></table></figure>
+<h3 id="安装开发版本"><a href="#安装开发版本" class="headerlink" title="安装开发版本"></a>安装开发版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Mac OSX</span></span><br><span class="line">brew install httpie --HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># Python安装方式</span></span><br><span class="line">pip install --upgrade https://github.com/jkbrzt/httpie/tarball/master</span><br></pre></td></tr></table></figure>
+<h3 id="使用例子"><a href="#使用例子" class="headerlink" title="使用例子"></a>使用例子</h3><h4 id="定制头部"><a href="#定制头部" class="headerlink" title="定制头部"></a>定制头部</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http tonydeng.github.io/blog/2015/07/10/httpie-howto/ User-Agent:Xmodlo/1.0 Referer:http://tonydeng.github.io</span><br></pre></td></tr></table></figure>
+<p>这个HTTP请求看起是这样。</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/blog/2015/07/10/httpie-howto/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Host</span>: tonydeng.github.io</span><br><span class="line"><span class="attribute">Referer</span>: http://tonydeng.github.io</span><br><span class="line"><span class="attribute">User-Agent</span>: Xmodlo/1.0</span><br></pre></td></tr></table></figure>
+<h4 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h4><p>你也可以把HTTPie作为文件下载器来使用。</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">http tonydeng.github.io<span class="regexp">/blog/</span><span class="number">2015</span><span class="regexp">/07/</span><span class="number">10</span><span class="regexp">/httpie-howto/</span> &gt; httpie-howto.html</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">http --download tonydeng.github.io<span class="regexp">/blog/</span><span class="number">2015</span><span class="regexp">/07/</span><span class="number">10</span><span class="regexp">/httpie-howto/</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用其他HTTP方法"><a href="#使用其他HTTP方法" class="headerlink" title="使用其他HTTP方法"></a>使用其他HTTP方法</h4><p>除了默认的GET方法，你还可以使用其他方法（比如PUT、POST、DELETE、HEAD）</p>
+<h5 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h5><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">http PUT tonydeng<span class="selector-class">.github</span><span class="selector-class">.io</span> name=<span class="string">'Tony Deng'</span> email=<span class="string">'tonydeng@email.com'</span></span><br></pre></td></tr></table></figure>
+<h5 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h5><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">http -f POST tonydeng<span class="selector-class">.github</span><span class="selector-class">.io</span> name=<span class="string">'Tony Deng'</span> email=<span class="string">'tonydeng@email.com'</span></span><br></pre></td></tr></table></figure>
+<p><code>-f</code> 选项使http命令序列化数据字段，并将<code>Content-Type</code>设置为<code>application/x-www-form-urlencoded;charset=utf-8</code></p>
+<p>这个HTTP POST请求看起这样：</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Content-Length</span>: 41</span><br><span class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded; charset=utf-8</span><br><span class="line"><span class="attribute">Host</span>: tonydeng.github.io</span><br><span class="line"><span class="attribute">User-Agent</span>: HTTPie/0.9.2</span><br><span class="line"></span><br><span class="line"><span class="ini"><span class="attr">name</span>=Tony+Deng&amp;email=tonydeng%<span class="number">40</span>email.com</span></span><br></pre></td></tr></table></figure>
+<h5 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h5><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">http HEAD tonydeng<span class="selector-class">.github</span><span class="selector-class">.io</span></span><br></pre></td></tr></table></figure>
+<p><code>HEAD</code>这个方法只会让服务器返回<code>http response headers</code>。</p>
+<p>这个命令结果如下：</p>
+<h6 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h6><figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">HEAD</span> <span class="string">/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Accept</span>: */*</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Host</span>: tonydeng.github.io</span><br><span class="line"><span class="attribute">User-Agent</span>: HTTPie/0.9.2</span><br></pre></td></tr></table></figure>
+<h6 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h6><figure class="highlight http"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Accept-Ranges</span>: bytes</span><br><span class="line"><span class="attribute">Access-Control-Allow-Origin</span>: *</span><br><span class="line"><span class="attribute">Age</span>: 0</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=600</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Content-Encoding</span>: gzip</span><br><span class="line"><span class="attribute">Content-Length</span>: 36794</span><br><span class="line"><span class="attribute">Content-Type</span>: text/html; charset=utf-8</span><br><span class="line"><span class="attribute">Date</span>: Wed, 15 Jul 2015 09:26:22 GMT</span><br><span class="line"><span class="attribute">Expires</span>: Wed, 15 Jul 2015 09:36:22 GMT</span><br><span class="line"><span class="attribute">Last-Modified</span>: Sun, 12 Jul 2015 11:32:15 GMT</span><br><span class="line"><span class="attribute">Server</span>: GitHub.com</span><br><span class="line"><span class="attribute">Vary</span>: Accept-Encoding</span><br><span class="line"><span class="attribute">Via</span>: 1.1 varnish</span><br><span class="line"><span class="attribute">X-Cache</span>: MISS</span><br><span class="line"><span class="attribute">X-Cache-Hits</span>: 0</span><br><span class="line"><span class="attribute">X-Served-By</span>: cache-fra1227-FRA</span><br><span class="line"><span class="attribute">X-Timer</span>: S1436952382.011631,VS0,VE99</span><br></pre></td></tr></table></figure>
+<h4 id="JSON支持"><a href="#JSON支持" class="headerlink" title="JSON支持"></a>JSON支持</h4><p>HTTPie内置JSON的支持。事实上HTTPie默认使用的<code>Content-Type</code>就是<code>application/json</code>。因此，当你不指定<code>Content-Type</code>发送请求参数时，它们就会自动序列化为JSON对象。</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">http POST tonydeng<span class="selector-class">.github</span><span class="selector-class">.io</span> name=<span class="string">'Tony Deng'</span> email=<span class="string">'tonydeng@email.com'</span></span><br></pre></td></tr></table></figure>
+<p>这个请求看起来就是这样：</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Accept</span>: application/json</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Content-Length</span>: 52</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Host</span>: tonydeng.github.io</span><br><span class="line"><span class="attribute">User-Agent</span>: HTTPie/0.9.2</span><br><span class="line"></span><br><span class="line"><span class="json">&#123;</span><br><span class="line">    <span class="attr">"email"</span>: <span class="string">"tonydeng@email.com"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"Tony Deng"</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h4><p>HTTPie的另外一个友好特性就是输入重定向，你可以使用缓冲数据提供HTTP请求内容。例如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">http</span> <span class="selector-tag">POST</span> <span class="selector-tag">tonydeng</span><span class="selector-class">.github</span><span class="selector-class">.io</span> &lt; <span class="selector-tag">my_info</span><span class="selector-class">.json</span></span><br></pre></td></tr></table></figure>
+<p>或:</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">echo '&#123;<span class="string">"name"</span>: <span class="string">"Tony Deng"</span>,<span class="string">"email"</span>: <span class="string">"tonydeng@email.com"</span>&#125;' <span class="string">| http POST tonydeng.github.io</span></span><br></pre></td></tr></table></figure>
+<p>好了，暂时演示这么多吧，估计大家对HTTPie也有了一个基本的了解。如果大家想看看更多的HTTPie的特性和功能，可以看看<a href="https://github.com/jkbrzt/httpie/blob/master/README.rst" target="_blank" rel="external">HTTPie的README</a>，并且自己安装一个尝试使用一下。估计到时候你也和我一样对其爱不释手，立马抛弃了wget和curl。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
+          
+            <a href="/tags/http/" rel="tag">#http</a>
+          
+            <a href="/tags/httpie/" rel="tag">#httpie</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/08/how-to-undo-almost-anything-with-git/" rel="next" title="Git的各种Undo技巧">
+                <i class="fa fa-chevron-left"></i> Git的各种Undo技巧
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/11/brew-reinstall/" rel="prev" title="重新安装Homebrew">
+                重新安装Homebrew <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/629519?v=3&s=460" alt="Tony Deng" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Tony Deng</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">79</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux上安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">Linux上安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mac-OSX"><span class="nav-number">1.0.2.</span> <span class="nav-text">Mac OSX</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装开发版本"><span class="nav-number">2.</span> <span class="nav-text">安装开发版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用例子"><span class="nav-number">3.</span> <span class="nav-text">使用例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定制头部"><span class="nav-number">3.1.</span> <span class="nav-text">定制头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载文件"><span class="nav-number">3.2.</span> <span class="nav-text">下载文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用其他HTTP方法"><span class="nav-number">3.3.</span> <span class="nav-text">使用其他HTTP方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PUT"><span class="nav-number">3.3.1.</span> <span class="nav-text">PUT</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#POST"><span class="nav-number">3.3.2.</span> <span class="nav-text">POST</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HEAD"><span class="nav-number">3.3.3.</span> <span class="nav-text">HEAD</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Request"><span class="nav-number">3.3.3.1.</span> <span class="nav-text">Request</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Response"><span class="nav-number">3.3.3.2.</span> <span class="nav-text">Response</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON支持"><span class="nav-number">3.4.</span> <span class="nav-text">JSON支持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入重定向"><span class="nav-number">3.5.</span> <span class="nav-text">输入重定向</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2005 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony Deng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

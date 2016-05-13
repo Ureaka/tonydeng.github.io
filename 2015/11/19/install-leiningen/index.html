@@ -1,0 +1,703 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  <meta name="keywords" content="leiningen,clojure," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TonyDeng's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="Leiningen简单介绍Leiningen是Clojure（貌似需要自备梯子）的项目生命周期管理工具，就像Maven在Java中的地位一样。
+关于Leiningen具体的情况和使用方法，它的官网和GitHub看看，上面会有更清楚的描述。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Leiningen">
+<meta property="og:url" content="http://tonydeng.github.io/2015/11/19/install-leiningen/index.html">
+<meta property="og:site_name" content="TonyDeng's Blog">
+<meta property="og:description" content="Leiningen简单介绍Leiningen是Clojure（貌似需要自备梯子）的项目生命周期管理工具，就像Maven在Java中的地位一样。
+关于Leiningen具体的情况和使用方法，它的官网和GitHub看看，上面会有更清楚的描述。">
+<meta property="og:image" content="http://tonydeng.github.io/images/blog/leiningen.png">
+<meta property="og:updated_time" content="2016-05-11T16:04:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装Leiningen">
+<meta name="twitter:description" content="Leiningen简单介绍Leiningen是Clojure（貌似需要自备梯子）的项目生命周期管理工具，就像Maven在Java中的地位一样。
+关于Leiningen具体的情况和使用方法，它的官网和GitHub看看，上面会有更清楚的描述。">
+<meta name="twitter:image" content="http://tonydeng.github.io/images/blog/leiningen.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 安装Leiningen | TonyDeng's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">TonyDeng's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">“In me the tiger sniffes the rose.” -- Siegfried Sasson</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook-zh" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            GitBook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                安装Leiningen
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-11-19T17:56:48+08:00" content="2015-11-19">
+              2015-11-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Leiningen-Clojure之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">Leiningen + Clojure之旅</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><img src="/images/blog/leiningen.png" alt="leiningen logo"></p>
+<h2 id="Leiningen简单介绍"><a href="#Leiningen简单介绍" class="headerlink" title="Leiningen简单介绍"></a>Leiningen简单介绍</h2><p><a href="http://leiningen.org" target="_blank" rel="external">Leiningen</a>是<a href="https://clojure.org" target="_blank" rel="external">Clojure</a>（貌似需要自备梯子）的项目生命周期管理工具，就像<a href="http://maven.apache.org" target="_blank" rel="external">Maven</a>在<a href="https://java.com" target="_blank" rel="external">Java</a>中的地位一样。</p>
+<p>关于Leiningen具体的情况和使用方法，它的<a href="http://leiningen.org" target="_blank" rel="external">官网</a>和<a href="https://github.com/technomancy/leiningen" target="_blank" rel="external">GitHub</a>看看，上面会有更清楚的描述。<br><a id="more"></a></p>
+<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><p>我只是给大家说说，在安装Leiningen时可能会碰到的坑。</p>
+<p>先说说，基本安装流程，咱们就遇坑填坑。</p>
+<h3 id="下载lein命令"><a href="#下载lein命令" class="headerlink" title="下载lein命令"></a>下载lein命令</h3><p>下载Leiningen很简单，你使用我的命令来直接下载（仅限Mac OSX和Linux）。当然，你也可以尝试用自己系统的包管理系统来安装。比如Mac OSX可以使用<code>brew install leiningen</code>。</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>cd /usr/local/bin</span><br><span class="line"><span class="variable">$ </span>wget <span class="symbol">https:</span>/<span class="regexp">/raw.githubusercontent.com/technomancy</span><span class="regexp">/leiningen/stable</span><span class="regexp">/bin/lein</span></span><br><span class="line"><span class="variable">$ </span>chmod <span class="number">755</span> lein</span><br></pre></td></tr></table></figure>
+<p>那我们是否就已经算是安装成功，可以使用Leiningen了呢？别着急，你要是有兴趣，你看看lein这个命令，它其实就只是一段<code>Shell</code>脚本，光有它还是不够的。</p>
+<h3 id="下载Leiningen"><a href="#下载Leiningen" class="headerlink" title="下载Leiningen"></a>下载Leiningen</h3><p>你可以执行一下lein，它就会自动帮你下载正在工作的那个具有超牛力的Leiningen。</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>lein </span><br><span class="line">Downloading Leiningen to /Users/tonydeng/.lein/<span class="keyword">self</span>-installs/leiningen-<span class="number">2.5</span>.<span class="number">3</span>-standalone.jar now...</span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line"><span class="number">100</span>   <span class="number">605</span>    <span class="number">0</span>   <span class="number">605</span>    <span class="number">0</span>     <span class="number">0</span>    <span class="number">262</span>      <span class="number">0</span> --<span class="symbol">:--</span><span class="symbol">:--</span>  <span class="number">0</span><span class="symbol">:</span><span class="number">00</span><span class="symbol">:</span><span class="number">02</span> --<span class="symbol">:--</span><span class="symbol">:--</span>   <span class="number">262</span></span><br><span class="line">  <span class="number">0</span> <span class="number">15.0</span>M    <span class="number">0</span>     <span class="number">0</span>    <span class="number">0</span>     <span class="number">0</span>      <span class="number">0</span>      <span class="number">0</span> --<span class="symbol">:--</span><span class="symbol">:--</span>  <span class="number">0</span><span class="symbol">:</span><span class="number">00</span><span class="symbol">:</span><span class="number">37</span> --<span class="symbol">:--</span><span class="symbol">:--</span>     <span class="number">0</span></span><br><span class="line">  <span class="number">0</span> <span class="number">15.0</span>M    <span class="number">0</span>     <span class="number">0</span>    <span class="number">0</span>     <span class="number">0</span>      <span class="number">0</span>      <span class="number">0</span> --<span class="symbol">:--</span><span class="symbol">:--</span>  <span class="number">0</span><span class="symbol">:</span><span class="number">00</span><span class="symbol">:</span><span class="number">38</span> --<span class="symbol">:--</span><span class="symbol">:--</span>     <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>然后我就满心期待的等啊等啊，可惜等到的只是一个让人沮丧的错误提示。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">Failed <span class="built_in">to</span> download <span class="keyword">https</span>://github.com/technomancy/leiningen/releases/download/<span class="number">2.5</span><span class="number">.3</span>/leiningen<span class="number">-2.5</span><span class="number">.3</span>-standalone.zip (exit code <span class="number">56</span>)</span><br><span class="line">It<span class="string">'s possible your HTTP client'</span>s certificate store does <span class="keyword">not</span> have <span class="keyword">the</span></span><br><span class="line">correct certificate authority needed. This is often caused <span class="keyword">by</span> <span class="keyword">an</span></span><br><span class="line">out-<span class="keyword">of</span>-<span class="built_in">date</span> <span class="built_in">version</span> <span class="keyword">of</span> libssl. It<span class="string">'s also possible that you'</span>re behind <span class="keyword">a</span></span><br><span class="line">firewall <span class="keyword">and</span> haven<span class="string">'t set HTTP_PROXY and HTTPS_PROXY.</span></span><br></pre></td></tr></table></figure>
+<p>看到这个提示之后，我的第一反应就是 <del>Fuck GFW</del>！赶紧搭上梯子，再试，依然是不好使。然后怀疑是<code>curl</code>的问题，升级<code>curl</code>到最新版本，依然是不行。没有办法，只好祭出Google（min）大（gan）法（ci）。</p>
+<p>就看到了下面这个leiningen项目中的issue #1634 – <a href="https://github.com/technomancy/leiningen/issues/1634" target="_blank" rel="external">Leiningen installation issue on Debian Wheezy #1634</a>，试了试上面给的方案，设置一下<code>HTTP_CLIENT</code>，毕竟上面的错误提示也说到了证书的问题。</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> HTTP_CLIENT=<span class="string">"wget --no-check-certificate -O"</span></span><br></pre></td></tr></table></figure>
+<p>这些就OK了。</p>
+<p>不过，让我比较郁闷的，为什么Leiningen版本升级之后，反而错误提示比以前的版本要检阅了呢？还是说，我使用的系统和这个 <code>issue #1634</code>遇到问题的操作系统不一样呢？不管怎么样，也算是安装成功了。</p>
+<p>当你看到下面的命令输出，就说明安装成功了。</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">$ lein <span class="comment">--version</span></span><br><span class="line">Leiningen <span class="number">2.5</span><span class="number">.3</span> <span class="keyword">on</span> Java <span class="number">1.8</span><span class="number">.0</span>_40 Java HotSpot(TM) <span class="number">64</span>-Bit Server VM</span><br></pre></td></tr></table></figure>
+<p>你可以使用Leiningen的帮助来简单看看它提供的功能。</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">$ lein -<span class="built_in">h</span></span><br><span class="line">Leiningen is a tool <span class="keyword">for</span> working with Clojure projects.</span><br><span class="line"></span><br><span class="line">Several tasks are available:</span><br><span class="line">change              Rewrite project.clj <span class="keyword">by</span> applying a function.</span><br><span class="line">check               Check <span class="keyword">syntax</span> and warn <span class="keyword">on</span> reflection.</span><br><span class="line">classpath           <span class="keyword">Print</span> the classpath of the current project.</span><br><span class="line">clean               Remove all files from project's target-path.</span><br><span class="line">compile             Compile Clojure source into .<span class="keyword">class</span> files.</span><br><span class="line">deploy              Build and deploy jar to remote repository.</span><br><span class="line">deps                Download all dependencies.</span><br><span class="line"><span class="keyword">do</span>                  Higher-<span class="keyword">order</span> task to perform other tasks <span class="keyword">in</span> succession.</span><br><span class="line"><span class="keyword">help</span>                <span class="keyword">Display</span> a <span class="keyword">list</span> of tasks or <span class="keyword">help</span> <span class="keyword">for</span> a given task.</span><br><span class="line">install             Install the current project to the <span class="keyword">local</span> repository.</span><br><span class="line">jar                 Package up all the project's files into a jar <span class="keyword">file</span>.</span><br><span class="line">javac               Compile Java source files.</span><br><span class="line">new                 <span class="keyword">Generate</span> project scaffolding based <span class="keyword">on</span> a template.</span><br><span class="line"><span class="keyword">plugin</span>              DEPRECATED. Please <span class="keyword">use</span> the :user profile instead.</span><br><span class="line">pom                 Write a pom.xml <span class="keyword">file</span> to disk <span class="keyword">for</span> Maven interoperability.</span><br><span class="line">release             Perform :release-tasks.</span><br><span class="line">repl                Start a repl session either with the current project or standalone.</span><br><span class="line">retest              <span class="keyword">Run</span> only the <span class="keyword">test</span> namespaces <span class="keyword">which</span> failed last time around.</span><br><span class="line"><span class="keyword">run</span>                 <span class="keyword">Run</span> a -main function with optional command-<span class="keyword">line</span> arguments.</span><br><span class="line"><span class="keyword">search</span>              <span class="keyword">Search</span> remote maven repositories <span class="keyword">for</span> matching jars.</span><br><span class="line">show-profiles       <span class="keyword">List</span> all available profiles or <span class="keyword">display</span> <span class="keyword">one</span> <span class="keyword">if</span> given <span class="keyword">an</span> argument.</span><br><span class="line"><span class="keyword">test</span>                <span class="keyword">Run</span> the project's tests.</span><br><span class="line">trampoline          <span class="keyword">Run</span> a task without nesting the project's JVM inside Leiningen's.</span><br><span class="line">uberjar             Package up the project files and dependencies into a jar <span class="keyword">file</span>.</span><br><span class="line"><span class="keyword">update</span>-<span class="keyword">in</span>           Perform arbitrary transformations <span class="keyword">on</span> your project map.</span><br><span class="line">upgrade             Upgrade Leiningen to specified <span class="keyword">version</span> or latest stable.</span><br><span class="line">vcs                 Interact with the <span class="keyword">version</span> control system.</span><br><span class="line"><span class="keyword">version</span>             <span class="keyword">Print</span> <span class="keyword">version</span> <span class="keyword">for</span> Leiningen and the current JVM.</span><br><span class="line">with-profile        Apply the given task with the profile(s) specified.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Run</span> `lein <span class="keyword">help</span> <span class="variable">$TASK</span>` <span class="keyword">for</span> details.</span><br><span class="line"></span><br><span class="line"><span class="keyword">Global</span> Options:</span><br><span class="line">  -o             <span class="keyword">Run</span> a task offline.</span><br><span class="line">  -<span class="keyword">U</span>             <span class="keyword">Run</span> a task after forcing <span class="keyword">update</span> of snapshots.</span><br><span class="line">  -<span class="keyword">h</span>, --<span class="keyword">help</span>     <span class="keyword">Print</span> this <span class="keyword">help</span> or <span class="keyword">help</span> <span class="keyword">for</span> a specific task.</span><br><span class="line">  -v, --<span class="keyword">version</span>  <span class="keyword">Print</span> Leiningen's <span class="keyword">version</span>.</span><br><span class="line"></span><br><span class="line">These aliases are available:</span><br><span class="line">downgrade, expands to upgrade</span><br><span class="line"></span><br><span class="line">See also: readme, faq, <span class="keyword">tutorial</span>, <span class="keyword">news</span>, <span class="keyword">sample</span>, profiles, deploying, gpg,</span><br><span class="line">mixed-source, templates, and copying.</span><br></pre></td></tr></table></figure>
+<p>接下来，我就要使用Leiningen来创建和管理Clojure项目了。可以参考一下<a href="https://github.com/technomancy/leiningen/blob/stable/sample.project.clj" target="_blank" rel="external">官方提供的简单project.clj例子</a>。</p>
+<h2 id="新建Clojure项目"><a href="#新建Clojure项目" class="headerlink" title="新建Clojure项目"></a>新建Clojure项目</h2><p>用下面的命令就可以轻松创建一下用Leiningen管理的Clojure项目。</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">➜  lein <span class="built_in">new</span> clojure-<span class="built_in">demo</span></span><br></pre></td></tr></table></figure>
+<p>我们来看看项目的目录结构，非常全面。</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">➜  clojure-demo git:(master)  tree</span><br><span class="line">.</span><br><span class="line">├── CHANGELOG<span class="selector-class">.md</span></span><br><span class="line">├── LICENSE</span><br><span class="line">├── README<span class="selector-class">.md</span></span><br><span class="line">├── clojure-demo<span class="selector-class">.iml</span></span><br><span class="line">├── dev-resources</span><br><span class="line">├── doc</span><br><span class="line">│   └── intro<span class="selector-class">.md</span></span><br><span class="line">├── project<span class="selector-class">.clj</span></span><br><span class="line">├── resources</span><br><span class="line">├── src</span><br><span class="line">│   └── clojure_demo</span><br><span class="line">│       └── core<span class="selector-class">.clj</span></span><br><span class="line">├── target</span><br><span class="line">│   ├── classes</span><br><span class="line">│   │   └── META-INF</span><br><span class="line">│   │       └── maven</span><br><span class="line">│   │           └── clojure-demo</span><br><span class="line">│   │               └── clojure-demo</span><br><span class="line">│   │                   └── pom<span class="selector-class">.properties</span></span><br><span class="line">│   └── stale</span><br><span class="line">│       └── extract-native<span class="selector-class">.dependencies</span></span><br><span class="line">└── test</span><br><span class="line">    └── clojure_demo</span><br><span class="line">        └── core_test.clj</span><br></pre></td></tr></table></figure>
+<p>好了，今天就先弄到这儿。改天在继续更新这个Leiningen + Clojure之旅，比如Leiningen和Maven的整合、Clojure和Java的互相调用等等。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leiningen/" rel="tag">#leiningen</a>
+          
+            <a href="/tags/clojure/" rel="tag">#clojure</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/19/engineering-fonts/" rel="next" title="工程师字体">
+                <i class="fa fa-chevron-left"></i> 工程师字体
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/24/etcd-the-first-using/" rel="prev" title="初试ETCD">
+                初试ETCD <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/629519?v=3&s=460" alt="Tony Deng" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Tony Deng</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">79</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Leiningen简单介绍"><span class="nav-number">1.</span> <span class="nav-text">Leiningen简单介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装过程"><span class="nav-number">2.</span> <span class="nav-text">安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载lein命令"><span class="nav-number">2.1.</span> <span class="nav-text">下载lein命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载Leiningen"><span class="nav-number">2.2.</span> <span class="nav-text">下载Leiningen</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建Clojure项目"><span class="nav-number">3.</span> <span class="nav-text">新建Clojure项目</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2005 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony Deng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

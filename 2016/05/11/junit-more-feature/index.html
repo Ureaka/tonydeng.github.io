@@ -1,0 +1,723 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  <meta name="keywords" content="Junit Rule" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TonyDeng's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="Junit 是Java开发领域中非常普遍的单元测试框架，不过，大部分的使用者仅仅只是使用它一部分的功能。
+先整理一部分相对不常用，但是个人觉得非常有用的功能（其他的慢慢补充），希望对大家有所帮助。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Junit的一些的高级用法">
+<meta property="og:url" content="http://tonydeng.github.io/2016/05/11/junit-more-feature/index.html">
+<meta property="og:site_name" content="TonyDeng's Blog">
+<meta property="og:description" content="Junit 是Java开发领域中非常普遍的单元测试框架，不过，大部分的使用者仅仅只是使用它一部分的功能。
+先整理一部分相对不常用，但是个人觉得非常有用的功能（其他的慢慢补充），希望对大家有所帮助。">
+<meta property="og:image" content="http://tonydeng.github.io/images/blog/junit.png">
+<meta property="og:updated_time" content="2016-05-13T01:32:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Junit的一些的高级用法">
+<meta name="twitter:description" content="Junit 是Java开发领域中非常普遍的单元测试框架，不过，大部分的使用者仅仅只是使用它一部分的功能。
+先整理一部分相对不常用，但是个人觉得非常有用的功能（其他的慢慢补充），希望对大家有所帮助。">
+<meta name="twitter:image" content="http://tonydeng.github.io/images/blog/junit.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 使用Junit的一些的高级用法 | TonyDeng's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">TonyDeng's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">“In me the tiger sniffes the rose.” -- Siegfried Sasson</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook-zh" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            GitBook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                使用Junit的一些的高级用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-05-11T18:39:23+08:00" content="2016-05-11">
+              2016-05-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><img src="/images/blog/junit.png" alt="Junit"></p>
+<p><code>Junit</code> 是Java开发领域中非常普遍的单元测试框架，不过，大部分的使用者仅仅只是使用它一部分的功能。</p>
+<p>先整理一部分相对不常用，但是个人觉得非常有用的功能（其他的慢慢补充），希望对大家有所帮助。</p>
+<a id="more"></a>
+<h2 id="Rule注解"><a href="#Rule注解" class="headerlink" title="Rule注解"></a>Rule注解</h2><p>比如，我们可以使用 @Role 注解来提高我们写单元测试的效率。</p>
+<p><code>@Rule</code> 这个注解是 <code>Junit4</code> 的新特性，我们可以去看看Junit的关于<a href="https://github.com/junit-team/junit4/wiki/Rules" target="_blank" rel="external">Rule的使用例子</a>。</p>
+<p>利用 <code>@Rule</code> 我们可以扩展 <code>Junit</code> 的功能，在执行case的时候加入测试者特有的操作，而不影响原有case的代码，减少了特有操作和test case原逻辑的耦合。</p>
+<p><code>@Rule</code> 只能注解在字段中，该字段必须是 <code>public</code> 的并且类型必须实现了 <code>TestRule</code> 接口或者 <code>MethodRule</code> 接口。</p>
+<p>Junit 4.9之后还加入了一个 <code>@ClassRule</code> 注解。相对 <code>@Rule</code> 来说， <code>@ClassRule</code> 是一个类级别的注解。就像 <code>@Before</code> 与 <code>@BeforeClass</code> 的区别。</p>
+<h3 id="通过-Rule注解生成临时文件或临时文件夹"><a href="#通过-Rule注解生成临时文件或临时文件夹" class="headerlink" title="通过@Rule注解生成临时文件或临时文件夹"></a>通过@Rule注解生成临时文件或临时文件夹</h3><p>有时候程序运行时必须生成文件或文件夹，往往需要写不少代码来实现这个功能。我们可以使用 TemporaryFolder 来在测试的时候创建文件和目录，最爽的是它在测试运行结束之后会将测试时创建的文件和目录的自动删除。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.io.FileUtils;</span><br><span class="line"><span class="keyword">import</span> org.junit.Assert;</span><br><span class="line"><span class="keyword">import</span> org.junit.Rule;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.rules.TemporaryFolder;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by tonydeng on 16/5/10.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JunitRuleTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(JunitRuleTest.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Rule</span></span><br><span class="line">    <span class="keyword">public</span> TemporaryFolder tempFolder = <span class="keyword">new</span> TemporaryFolder();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFileCreateAndWrite</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        File file = tempFolder.newFile(<span class="string">"simple.txt"</span>);</span><br><span class="line">        log.info(<span class="string">"temp file:'&#123;&#125;'"</span>, file.getPath());</span><br><span class="line">        FileUtils.writeStringToFile(file, <span class="string">"Junit Rules!"</span>);</span><br><span class="line">        String line = FileUtils.readFileToString(file);</span><br><span class="line">        Assert.assertThat(line, is(<span class="string">"Junit Rules!"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试完成之后，生成的这个simple.txt文件就会自动删除了。</p>
+<h3 id="取得当前的测试方法名称"><a href="#取得当前的测试方法名称" class="headerlink" title="取得当前的测试方法名称"></a>取得当前的测试方法名称</h3><p>想要取得执行中的测试方法名的时候，通过@Rule注解TestName类的实例化对象可以取得。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Rule</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> TestName name = <span class="keyword">new</span> TestName();</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span> </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethodName</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   log.info(<span class="string">"Test method name: &#123;&#125;"</span>,name.getMethodName());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试结果：</p>
+<figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">Test <span class="function"><span class="keyword">method</span> <span class="title">name</span>:</span><span class="string">'testMethodName'</span></span><br></pre></td></tr></table></figure>
+<h3 id="在一个运行测试方法过程中收集多个错误信息"><a href="#在一个运行测试方法过程中收集多个错误信息" class="headerlink" title="在一个运行测试方法过程中收集多个错误信息"></a>在一个运行测试方法过程中收集多个错误信息</h3><p>使用 <code>ErrorCollector</code> 类，可以在一个测试方法中收集多个测试错误。也就是说，一个测试方法执行中，不会在第一个确认出错后就停止执行。使用 <code>ErrorCollector</code> 可以在所有点确认完后统一报出。</p>
+<p>比如，有三个点需要check，但是又不想出错了就马上退出测试，可以尝试下面的方式。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Rule</span></span><br><span class="line"><span class="keyword">public</span> ErrorCollector collector = <span class="keyword">new</span> ErrorCollector();</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMoreCollector</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	String s = <span class="keyword">null</span>;</span><br><span class="line">	collector.checkThat(<span class="string">"Value should not be null"</span>, <span class="keyword">null</span>, is(s));</span><br><span class="line"></span><br><span class="line">	s = <span class="string">""</span>;</span><br><span class="line">	collector.checkThat(<span class="string">"Value should have the length of 1"</span>,s.length(),is(<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">	s = <span class="string">"Junit!"</span>;</span><br><span class="line">	collector.checkThat(<span class="string">"Value should have the length of 10"</span>,s.length(),is(<span class="number">10</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的测试会报这样的错误信息：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Failed tests:   testMoreCollector(com.github.tonydeng.demo.java8.JunitRuleTest): Value should have the length of <span class="number">1</span>(..)</span><br><span class="line">  testMoreCollector(com.github.tonydeng.demo.java8.JunitRuleTest): Value should have the length of <span class="number">10</span>(..)</span><br></pre></td></tr></table></figure>
+<p>或者自己手工捕获异常，添加到 <code>ErrorCollector</code> 中，通过 <code>addError</code> 添加的错误信息：。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testErrorCollector</span><span class="params">()</span></span>&#123;</span><br><span class="line">	collector.addError(<span class="keyword">new</span> Throwable(<span class="string">"first thing went wrong"</span>));</span><br><span class="line">	collector.addError(<span class="keyword">new</span> Throwable(<span class="string">"second thing went wrong"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>错误信息：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Tests in error:</span><br><span class="line">  testErrorCollector(com.github.tonydeng.demo.java8.JunitRuleTest): <span class="function">first thing went wrong</span><br><span class="line">  <span class="title">testErrorCollector</span><span class="params">(com.github.tonydeng.demo.java8.JunitRuleTest)</span>: second thing went wrong</span></span><br></pre></td></tr></table></figure>
+<h3 id="设置执行最长时间"><a href="#设置执行最长时间" class="headerlink" title="设置执行最长时间"></a>设置执行最长时间</h3><p>我们有时候要对某些方法调用的时长有要求，如果超出某些时长就算是不符合要求。那我们平时怎么来测试呢？</p>
+<blockquote>
+<p>计算一下调用方法之前和之后的时间差，如果超出某个值，就算不符合要求。</p>
+</blockquote>
+<p>的确，使用上述的方式也可以达到目的，但是还是有太多多余的代码要写了。完全可以尝试一下 <code>Junit</code> 的 <code>Timeout</code>，非常简单就达到你的目的了。</p>
+<p>比如，我们先设置一个5秒的超时，然后用一个无限循环的方法来测试。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Rule</span></span><br><span class="line">  <span class="keyword">public</span> Timeout timeout = Timeout.seconds(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testTimeout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">while</span> (<span class="keyword">true</span>) ;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">org.junit.runners.model.TestTimedOutException: test timed out after <span class="number">5</span> seconds</span><br></pre></td></tr></table></figure>
+<h3 id="使用RuleChain"><a href="#使用RuleChain" class="headerlink" title="使用RuleChain"></a>使用RuleChain</h3><p>RuleChain提供一种将多个TestRule串在一起执行的机制。这在JUnit 4.10以后的版本中可以使用。需要根据特定顺序执行多个处理的时候，用RuleChain可以提高效率。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">UseRuleChain</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Rule</span></span><br><span class="line">    <span class="keyword">public</span> TestRule chain = RuleChain</span><br><span class="line">                           .outerRule(<span class="keyword">new</span> LoggingRule(<span class="string">"outer rule"</span>))</span><br><span class="line">                           .around(<span class="keyword">new</span> LoggingRule(<span class="string">"middle rule"</span>))</span><br><span class="line">                           .around(<span class="keyword">new</span> LoggingRule(<span class="string">"inner rule"</span>));</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">example</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertTrue(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">starting outer rule</span><br><span class="line">starting middle rule</span><br><span class="line">starting inner rule</span><br><span class="line">finished inner rule</span><br><span class="line">finished middle rule</span><br><span class="line">finished outer rule</span><br></pre></td></tr></table></figure>
+<h2 id="Parameterized注解"><a href="#Parameterized注解" class="headerlink" title="Parameterized注解"></a>Parameterized注解</h2><p>如果我们需要对我们的测试方法进行参数化，也就是只写一个测试方法，把若干种情况作为参数传递进去，一次性完成测试。那我们该怎么办？</p>
+<p>可以使用 <code>Parameterized</code> 相关的注解来解决这个问题。</p>
+<p>来一个简单的计算斐波纳契数的例子：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by tonydeng on 16/5/12.</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@RunWith</span>(Parameterized.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FibonacciNumbersTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(FibonacciNumbersTest.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Collection&lt;Integer[]&gt; data() &#123;</span><br><span class="line">        <span class="keyword">return</span> Arrays.asList(<span class="keyword">new</span> Integer[][]&#123;</span><br><span class="line">                &#123;<span class="number">0</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">1</span>&#125;, &#123;<span class="number">2</span>, <span class="number">1</span>&#125;,</span><br><span class="line">                &#123;<span class="number">3</span>, <span class="number">2</span>&#125;, &#123;<span class="number">4</span>, <span class="number">3</span>&#125;, &#123;<span class="number">5</span>, <span class="number">5</span>&#125;,</span><br><span class="line">                &#123;<span class="number">6</span>, <span class="number">8</span>&#125;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> expected;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FibonacciNumbersTest</span><span class="params">(<span class="keyword">int</span> input, <span class="keyword">int</span> expected)</span> </span>&#123;</span><br><span class="line">        value = input;</span><br><span class="line">        <span class="keyword">this</span>.expected = expected;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fibonacciNumberCall</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">"expected &#123;&#125; fib(value) &#123;&#125;"</span>, expected, fib(value));</span><br><span class="line">        Assert.assertEquals(expected, fib(value));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者，这么来写：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by tonydeng on 16/5/12.</span><br><span class="line"> */</span></span><br><span class="line"><span class="meta">@RunWith</span>(Parameterized.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FibonacciNumbersTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(FibonacciNumbersTest.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Parameterized</span>.Parameters(name = <span class="string">"&#123;index&#125;: fib(&#123;0&#125;=&#123;1&#125;)"</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Collection&lt;Integer[]&gt; data() &#123;</span><br><span class="line">        <span class="keyword">return</span> Arrays.asList(<span class="keyword">new</span> Integer[][]&#123;</span><br><span class="line">                &#123;<span class="number">0</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">1</span>&#125;, &#123;<span class="number">2</span>, <span class="number">1</span>&#125;,</span><br><span class="line">                &#123;<span class="number">3</span>, <span class="number">2</span>&#125;, &#123;<span class="number">4</span>, <span class="number">3</span>&#125;, &#123;<span class="number">5</span>, <span class="number">5</span>&#125;,</span><br><span class="line">                &#123;<span class="number">6</span>, <span class="number">8</span>&#125;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Parameterized</span>.Parameter</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> fInput;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Parameterized</span>.Parameter(value = <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> fExpected;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testParemeter</span><span class="params">()</span></span>&#123;</span><br><span class="line">        log.info(<span class="string">"fExpected &#123;&#125; fib(fInput) &#123;&#125;"</span>, fExpected, fib(fInput));</span><br><span class="line">        Assert.assertEquals(fExpected, fib(fInput));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的两个例子中，都是利用了 <code>data()</code> 方法构建了各个测试方法的参数，其中返回值的第一个是input参数，第二个是expected参数。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/junit-team/junit4/wiki" target="_blank" rel="external">junit4 wiki via github</a></p>
+<p><a href="http://www.codeaffine.com/2014/09/24/junit-nutshell-junit-tutorial/" target="_blank" rel="external">JUnit Tutorial</a></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/juit/" rel="tag">#juit</a>
+          
+            <a href="/tags/rule/" rel="tag">#rule</a>
+          
+            <a href="/tags/testcase/" rel="tag">#testcase</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/25/java-stream/" rel="next" title="Java Stream详解">
+                <i class="fa fa-chevron-left"></i> Java Stream详解
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/629519?v=3&s=460" alt="Tony Deng" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Tony Deng</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">79</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rule注解"><span class="nav-number">1.</span> <span class="nav-text">Rule注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-Rule注解生成临时文件或临时文件夹"><span class="nav-number">1.1.</span> <span class="nav-text">通过@Rule注解生成临时文件或临时文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取得当前的测试方法名称"><span class="nav-number">1.2.</span> <span class="nav-text">取得当前的测试方法名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在一个运行测试方法过程中收集多个错误信息"><span class="nav-number">1.3.</span> <span class="nav-text">在一个运行测试方法过程中收集多个错误信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置执行最长时间"><span class="nav-number">1.4.</span> <span class="nav-text">设置执行最长时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用RuleChain"><span class="nav-number">1.5.</span> <span class="nav-text">使用RuleChain</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameterized注解"><span class="nav-number">2.</span> <span class="nav-text">Parameterized注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2005 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony Deng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
