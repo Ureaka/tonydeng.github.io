@@ -1,0 +1,731 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  <meta name="keywords" content="Java，安全漏洞，任意文件下载" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="TonyDeng's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="我们在开发Web应用时，经常会提供文件下载的功能。工程师们一般会考虑遵循“单一原则”，会开发一个将请求中的file或filePath作为参数，来下载指定的文件。这样开发一个下载的功能，就能支持所有的下载需求了。
+比如，输入这样的URL
+
+http://tonydeng.github.io/download?file=123.txt
+
+就能够下载123.txt这个文件了。
+这样的确很方便，但是，大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="任意文件下载漏洞的简单防护措施">
+<meta property="og:url" content="http://tonydeng.github.io/2016/06/13/simple-protection-measures-to-download-any-file/index.html">
+<meta property="og:site_name" content="TonyDeng's Blog">
+<meta property="og:description" content="我们在开发Web应用时，经常会提供文件下载的功能。工程师们一般会考虑遵循“单一原则”，会开发一个将请求中的file或filePath作为参数，来下载指定的文件。这样开发一个下载的功能，就能支持所有的下载需求了。
+比如，输入这样的URL
+
+http://tonydeng.github.io/download?file=123.txt
+
+就能够下载123.txt这个文件了。
+这样的确很方便，但是，大">
+<meta property="og:image" content="http://tonydeng.github.io/images/blog/download-vulnerability/security.jpg">
+<meta property="og:updated_time" content="2016-06-13T07:02:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="任意文件下载漏洞的简单防护措施">
+<meta name="twitter:description" content="我们在开发Web应用时，经常会提供文件下载的功能。工程师们一般会考虑遵循“单一原则”，会开发一个将请求中的file或filePath作为参数，来下载指定的文件。这样开发一个下载的功能，就能支持所有的下载需求了。
+比如，输入这样的URL
+
+http://tonydeng.github.io/download?file=123.txt
+
+就能够下载123.txt这个文件了。
+这样的确很方便，但是，大">
+<meta name="twitter:image" content="http://tonydeng.github.io/images/blog/download-vulnerability/security.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 任意文件下载漏洞的简单防护措施 | TonyDeng's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">TonyDeng's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">“In me the tiger sniffes the rose.” -- Siegfried Sasson</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook-zh" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+            
+            GitBook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                任意文件下载漏洞的简单防护措施
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-06-13T13:17:07+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/安全/" itemprop="url" rel="index">
+                    <span itemprop="name">安全</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p><img src="/images/blog/download-vulnerability/security.jpg" alt="security"></p>
+<p>我们在开发Web应用时，经常会提供文件下载的功能。工程师们一般会考虑遵循“单一原则”，会开发一个将请求中的<code>file</code>或<code>filePath</code>作为参数，来下载指定的文件。这样开发一个下载的功能，就能支持所有的下载需求了。</p>
+<p>比如，输入这样的URL</p>
+<blockquote>
+<p><a href="http://tonydeng.github.io/download?file=123.txt">http://tonydeng.github.io/download?file=123.txt</a></p>
+</blockquote>
+<p>就能够下载<code>123.txt</code>这个文件了。</p>
+<p>这样的确很方便，但是，大家有没有想过，这样的功能可能会出现什么样的安全隐患或者漏洞呢？</p>
+<a id="more"></a>
+<p>来，我们先看看例子：</p>
+<p>下面是一段提供文件下载的<code>spring mvc</code>的java代码，使用<code>filePath</code>来指定要下载的文件。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/file/*"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileDownloadController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Logger log = LoggerFactory.getLogger(FileDownloadController.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"download.do"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fileDownload</span><span class="params">(HttpServletResponse response,</span><br><span class="line">                             HttpServletRequest request,</span><br><span class="line">                             @RequestParam(<span class="string">"filePath"</span>)</span> String filePath) <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">        File file = <span class="keyword">new</span> File(Constants.TMP_PATH + filePath);</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == file || !file.exists()) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        OutputStream toClient = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 清空response</span></span><br><span class="line">            response.reset();</span><br><span class="line">            <span class="comment">// 设置response的Header</span></span><br><span class="line">            response.addHeader(<span class="string">"Content-Disposition"</span>, <span class="string">"attachment;filename="</span> + <span class="keyword">new</span> String(filePath.getBytes(<span class="string">"utf-8"</span>)));</span><br><span class="line">            response.addHeader(<span class="string">"Content-Length"</span>, <span class="string">""</span> + file.length());</span><br><span class="line">            response.setContentType(<span class="string">"application/octet-stream; charset=utf-8"</span>);</span><br><span class="line">            toClient = <span class="keyword">new</span> BufferedOutputStream(response.getOutputStream());</span><br><span class="line">            toClient.write(FileUtil.getByteForFile(file));</span><br><span class="line">            toClient.flush();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException ex) &#123;</span><br><span class="line">            log.error(<span class="string">"file download error"</span>, ex);</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">null</span> != toClient) &#123;</span><br><span class="line">                toClient.close();</span><br><span class="line">            &#125;</span><br><span class="line">            file.delete();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们做个测试，在下载的目录下添加一个<code>123.txt</code>的文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"123abc一二三"</span> &gt; 123.txt</span><br></pre></td></tr></table></figure>
+<p>测试<code>123.txt</code>是否可以下载。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">http <span class="string">http:</span><span class="comment">//localhost:8080/file/download.do\?filePath\=123.txt</span></span><br><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line">Content-<span class="string">Disposition:</span> attachment;filename=<span class="number">123.</span>txt</span><br><span class="line">Content-<span class="string">Length:</span> <span class="number">16</span></span><br><span class="line">Content-<span class="string">Type:</span> application/octet-stream; charset=utf<span class="number">-8</span></span><br><span class="line"><span class="string">Server:</span> Jetty(<span class="number">9.3</span><span class="number">.8</span>.v20160314)</span><br><span class="line"></span><br><span class="line"><span class="number">123</span>abc一二三</span><br></pre></td></tr></table></figure>
+<p>看起来上面的代码和测试结果，貌似没有什么问题，也能够方便的提供文件下载服务（只需要将要下载的文件保存在<code>Constants.TMP_PATH</code>这个常量中指定的目录下就可以了）。</p>
+<p>好，貌似下载的工作就完成了，我们可以考虑做别的功能了。</p>
+<p>稍等，既然我们这边blog要聊<em>任意文件下载漏洞</em>，那这个漏洞到底是什么呢？我们不是已经指定了文件下载的目录了吗？</p>
+<p>那我们在继续做做做测试，在指定的下载目录的上一级来创建一个<code>456.txt</code>文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"456def四五六"</span> &gt; ../456.txt</span><br></pre></td></tr></table></figure>
+<p>测试<code>456.txt</code>是否可以下载。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">http:</span><span class="comment">//localhost:8080/file/download.do\?filePath\=../456.txt</span></span><br><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line">Content-<span class="string">Disposition:</span> attachment;filename=../<span class="number">456.</span>txt</span><br><span class="line">Content-<span class="string">Length:</span> <span class="number">16</span></span><br><span class="line">Content-<span class="string">Type:</span> application/octet-stream; charset=utf<span class="number">-8</span></span><br><span class="line"><span class="string">Server:</span> Jetty(<span class="number">9.3</span><span class="number">.8</span>.v20160314)</span><br><span class="line"></span><br><span class="line"><span class="number">456</span><span class="keyword">def</span>四五六</span><br></pre></td></tr></table></figure>
+<p>啊！！！居然能够下载！！！</p>
+<p>其实，还有更恐怖的事情。</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取系统用户信息</span></span><br><span class="line">http:<span class="regexp">//</span>localhost:<span class="number">8080</span>/file<span class="regexp">/download.do\?filePath\=../</span>..<span class="regexp">/../</span>..<span class="regexp">/../</span>..<span class="regexp">/../</span>../etc/passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 脱裤</span></span><br><span class="line">http:<span class="regexp">//</span>localhost:<span class="number">8080</span>/file<span class="regexp">/download.do\?filePath\=../</span>..<span class="regexp">/../</span>..<span class="regexp">/../</span>..<span class="regexp">/../</span>../data/mysql/data/mysql.dat</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>情绪稳定之后，我们肯定要问一问，这个漏洞出现在哪儿呢？</p>
+<p>我们来看看这两行代码。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过输入的filePath参数+加上预设的下载目录，获取最终下载地址</span></span><br><span class="line">File file = <span class="keyword">new</span> File(Constants.TMP_PATH + filePath);</span><br><span class="line"> </span><br><span class="line"><span class="comment">//读取文件并写入到Response</span></span><br><span class="line">toClient.write(FileUtil.getByteForFile(file));</span><br></pre></td></tr></table></figure>
+<p>专门把这两行提出来，大家应该能够理解这个漏洞出现在哪儿了吧。</p>
+<p>那我们可以通过什么样的方式来解决这个漏洞呢？</p>
+<ol>
+<li>是否可以通过<code>HTTP Request</code>中的<code>Referrer</code>来做判断？ <strong>貌似会误杀。</strong></li>
+<li>是否可以指定的文件名来做判断？ <strong>这样太麻烦了，就不灵活了。</strong></li>
+<li>是否可以通过操作系统和Web容器的文件读写权限来限制？ <strong>研究文件权限，发现根本不可行。</strong></li>
+<li>……</li>
+</ol>
+<p>其实，我们可以通过一个简单粗暴的方式就能解决这个安全漏洞。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">null</span> == file || !file.exists() </span><br><span class="line">                || !file.getCanonicalFile().getParent().equals(<span class="keyword">new</span> File(Constants.TMP_PATH).getCanonicalPath())) &#123;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理就不解释了，看看<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html#getCanonicalPath--" target="_blank" rel="external">Java的File API文档</a>吧。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/security/" rel="tag">#security</a>
+          
+            <a href="/tags/download/" rel="tag">#download</a>
+          
+            <a href="/tags/vulnerability/" rel="tag">#vulnerability</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/11/junit-more-feature/" rel="next" title="使用Junit的一些的高级用法">
+                <i class="fa fa-chevron-left"></i> 使用Junit的一些的高级用法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/629519?v=3&s=460" alt="Tony Deng" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Tony Deng</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">82</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2005 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tony Deng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

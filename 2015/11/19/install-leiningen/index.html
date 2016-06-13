@@ -293,7 +293,7 @@
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">Failed <span class="built_in">to</span> download <span class="keyword">https</span>://github.com/technomancy/leiningen/releases/download/<span class="number">2.5</span><span class="number">.3</span>/leiningen<span class="number">-2.5</span><span class="number">.3</span>-standalone.zip (exit code <span class="number">56</span>)</span><br><span class="line">It<span class="string">'s possible your HTTP client'</span>s certificate store does <span class="keyword">not</span> have <span class="keyword">the</span></span><br><span class="line">correct certificate authority needed. This is often caused <span class="keyword">by</span> <span class="keyword">an</span></span><br><span class="line">out-<span class="keyword">of</span>-<span class="built_in">date</span> <span class="built_in">version</span> <span class="keyword">of</span> libssl. It<span class="string">'s also possible that you'</span>re behind <span class="keyword">a</span></span><br><span class="line">firewall <span class="keyword">and</span> haven<span class="string">'t set HTTP_PROXY and HTTPS_PROXY.</span></span><br></pre></td></tr></table></figure>
 <p>看到这个提示之后，我的第一反应就是 <del>Fuck GFW</del>！赶紧搭上梯子，再试，依然是不好使。然后怀疑是<code>curl</code>的问题，升级<code>curl</code>到最新版本，依然是不行。没有办法，只好祭出Google（min）大（gan）法（ci）。</p>
 <p>就看到了下面这个leiningen项目中的issue #1634 – <a href="https://github.com/technomancy/leiningen/issues/1634" target="_blank" rel="external">Leiningen installation issue on Debian Wheezy #1634</a>，试了试上面给的方案，设置一下<code>HTTP_CLIENT</code>，毕竟上面的错误提示也说到了证书的问题。</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> HTTP_CLIENT=<span class="string">"wget --no-check-certificate -O"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> HTTP_CLIENT=<span class="string">"wget --no-check-certificate -O"</span></span><br></pre></td></tr></table></figure>
 <p>这些就OK了。</p>
 <p>不过，让我比较郁闷的，为什么Leiningen版本升级之后，反而错误提示比以前的版本要检阅了呢？还是说，我使用的系统和这个 <code>issue #1634</code>遇到问题的操作系统不一样呢？不管怎么样，也算是安装成功了。</p>
 <p>当你看到下面的命令输出，就说明安装成功了。</p>
@@ -403,21 +403,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">79</span>
+              <span class="site-state-item-count">82</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
