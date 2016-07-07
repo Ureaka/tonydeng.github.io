@@ -227,6 +227,98 @@
             
             
               
+                <a class="post-title-link" href="/2016/07/07/use-lsof-to-replace-netstat/" itemprop="url">
+                  使用 lsof 代替 Mac OS X 中的 netstat 查看占用端口的程序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-07-07T13:06:48+08:00" content="2016-07-07">
+              2016-07-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Mac-OSX/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac OSX</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>众所周知水果系统内核是有 BSD 血统的 <code>Darwin</code>，OS X 自带的很多 CLI 工具也是 BSD style 的，有一部分使用起来和 Linux 无异，有一部分可以通过 <code>brew</code> 安装 GNU 版本（如 <code>tar</code>），但是 OS X 的 <code>netstat</code> 不能查看使用端口的程序名让我一直很不爽，而且也没找到 GNU 版本，于是去搜了一下解决办法，stackoverflow 上的结论基本都是建议使用 <code>lsof</code> 代替 <code>netstat</code> 进行查看：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">sudo lsof -nP -<span class="string">iTCP:</span>端口号 -<span class="string">sTCP:</span>LISTEN</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/07/use-lsof-to-replace-netstat/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2016/06/13/simple-protection-measures-to-download-any-file/" itemprop="url">
                   任意文件下载漏洞的简单防护措施
                 </a>
@@ -1062,98 +1154,6 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/30/java-mail-no-object-dch-for-mime-type-multipart-mixed/" itemprop="url">
-                  Java发送邮件出现"no object dch for mime type multipart/mixed"异常的解决办法及过程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-30T18:00:50+08:00" content="2015-10-30">
-              2015-10-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/效率/" itemprop="url" rel="index">
-                    <span itemprop="name">效率</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p><img src="/images/blog/email-error/error.jpg" alt="email error"></p>
-<p>前两天写了一个发送邮件的功能，结果出现了一个比较灵异的状况，现在整理一下解决办法和中间的过程。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/30/java-mail-no-object-dch-for-mime-type-multipart-mixed/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1199,7 +1199,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1213,7 +1213,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">82</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

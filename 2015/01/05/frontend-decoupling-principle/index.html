@@ -311,7 +311,7 @@ javascript 和 css 之间只通过 className 进行通信。
 <p>我们要避免使用 onclick 等 on 属性来绑定一个事件处理程序。<br>应该使用 id 保持 javascript 和 html 的沟通。</p>
 <h3 id="好的写法-如使用-jQuery"><a href="#好的写法-如使用-jQuery" class="headerlink" title="好的写法, 如使用 jQuery"></a>好的写法, 如使用 jQuery</h3><figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"<span class="subst">#action</span>"</span>).<span class="literal">on</span>(<span class="string">"click"</span>,doSomething);</span><br></pre></td></tr></table></figure>
 <h2 id="将-html-从-javascript-中抽离"><a href="#将-html-从-javascript-中抽离" class="headerlink" title="将 html 从 javascript 中抽离"></a>将 <strong>html</strong> 从 <strong>javascript</strong> 中抽离</h2><p>注释中包含模板文本</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="params">&lt;ul id="mylist"&gt;</span><span class="params">&lt;!--&lt;li id="item%s"&gt;</span><span class="params">&lt;a href="%s"&gt;</span>%s<span class="params">&lt;/a&gt;</span><span class="params">&lt;/li&gt;</span></span><br><span class="line">    <span class="params">&lt;li&gt;</span><span class="params">&lt;a href="<span class="number">1</span>"&gt;</span>First item<span class="params">&lt;/a&gt;</span><span class="params">&lt;/li&gt;</span></span><br><span class="line">    <span class="params">&lt;li&gt;</span><span class="params">&lt;a href="<span class="number">2</span>"&gt;</span>Second item<span class="params">&lt;/a&gt;</span><span class="params">&lt;/li&gt;</span></span><br><span class="line">    <span class="params">&lt;li&gt;</span><span class="params">&lt;a href="<span class="number">3</span>"&gt;</span>Third item<span class="params">&lt;/a&gt;</span><span class="params">&lt;/li&gt;</span></span><br><span class="line"><span class="params">&lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">&lt;ul id="mylist"&gt;</span><span class="attribute">&lt;!--&lt;li id="item%s"&gt;</span><span class="attribute">&lt;a href="%s"&gt;</span>%s<span class="attribute">&lt;/a&gt;</span><span class="attribute">&lt;/li&gt;</span></span><br><span class="line">    <span class="attribute">&lt;li&gt;</span><span class="attribute">&lt;a href="1"&gt;</span>First item<span class="attribute">&lt;/a&gt;</span><span class="attribute">&lt;/li&gt;</span></span><br><span class="line">    <span class="attribute">&lt;li&gt;</span><span class="attribute">&lt;a href="2"&gt;</span>Second item<span class="attribute">&lt;/a&gt;</span><span class="attribute">&lt;/li&gt;</span></span><br><span class="line">    <span class="attribute">&lt;li&gt;</span><span class="attribute">&lt;a href="3"&gt;</span>Third item<span class="attribute">&lt;/a&gt;</span><span class="attribute">&lt;/li&gt;</span></span><br><span class="line"><span class="attribute">&lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="注释也是-DOM-的一部分"><a href="#注释也是-DOM-的一部分" class="headerlink" title="注释也是 DOM 的一部分"></a>注释也是 <strong>DOM</strong> 的一部分</h3><p>function addItem(url, text) {<br>    var mylist = document.getElementById(“mylist”),<br>        templateText = mylist.firstChild.nodeValue;<br>        result = sprintf(template, url, text);<br>    div.innerHTML = result;<br>    mylist.insertAdjacentHTML(“beforeend”, result);<br>}<br>addItem(“4”, “Four item”);</p>
 <h3 id="使用一个带有自定义-type-属性的-script-元素。"><a href="#使用一个带有自定义-type-属性的-script-元素。" class="headerlink" title="使用一个带有自定义 type 属性的 script 元素。"></a>使用一个带有自定义 <strong>type</strong> 属性的 <strong>script</strong> 元素。</h3><p>浏览器会默认地将 <strong>script</strong> 元素中的内容识别为 <strong>JavaScript</strong> 代码， 但你可以通过给 <strong>type</strong> 赋值为浏览器不识别的类型，来告诉浏览器这不是一段 javascript 脚本。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-my-template"</span> <span class="attr">id</span>=<span class="string">"list-item"</span>&gt;</span><span class="javascript"></span><br><span class="line">    &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"%s"</span>&gt;</span>%s<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -414,7 +414,7 @@ javascript 和 css 之间只通过 className 进行通信。
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -428,7 +428,7 @@ javascript 和 css 之间只通过 className 进行通信。
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">82</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

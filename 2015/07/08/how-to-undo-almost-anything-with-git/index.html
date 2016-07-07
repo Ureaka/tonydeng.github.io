@@ -305,7 +305,7 @@
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> commit --amend -m <span class="string">'Fixes bug #43'</span></span><br></pre></td></tr></table></figure>
 <h4 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h4><p><strong>git commit –amend</strong> 会用一个新的commit更新并替换最近的<strong>commit</strong>，这个新的<strong>commit</strong>会把任何修改内容和上一个<strong>commit</strong>的内容结合起来。如果当前没有提出任何修改，这个操作就只会把上次的<strong>commit</strong>重写一遍。</p>
 <h2 id="撤销“本地的”修改"><a href="#撤销“本地的”修改" class="headerlink" title="撤销“本地的”修改"></a>撤销“本地的”修改</h2><h4 id="场景：-2"><a href="#场景：-2" class="headerlink" title="场景："></a>场景：</h4><p>一只喵从键盘上走过（在我们家就是儿子小手在键盘上划拉），无意中保存了修改，然后破坏了编辑器。不过，你还没有<strong>commit</strong>这些修改。你想要恢复被修改文件里的所有内容–就像上次<strong>commit</strong>的时候一模一样。</p>
-<h4 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">git checkout <span class="comment">-- &lt;bad filename&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">git checkout <span class="comment">-- &lt;bad filename&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p><code>git checkout</code>会把工作目录中的文件修改到Git之前记录的某个状态。你可以提供你想返回的分支或者特定的SHA，或者在缺省情况下，GIt会认为你希望checkout的是<strong>HEAD</strong>，当前checkout分支的<strong>最后一次commit</strong>。</p>
 <p>记住： <strong>你用这种方法“撤销”的任何修改真的会完全消失</strong>。因为它们从来没有被提交过，所以之后Git也无法帮助我们恢复它们。你一定要确保自己了解在这个操作中丢掉的东西是什么？（也行可以利用<code>git diff</code>先确认一下）</p>
 <h2 id="重置“本地的”修改"><a href="#重置“本地的”修改" class="headerlink" title="重置“本地的”修改"></a>重置“本地的”修改</h2><h4 id="场景：-3"><a href="#场景：-3" class="headerlink" title="场景："></a>场景：</h4><p>你在本地提交了一下东西（还没有push），但是所有这些东西都很糟糕，你希望撤销前面的三次提交（就像它们从来没有发生过一样）。</p>
@@ -484,7 +484,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -498,7 +498,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">82</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

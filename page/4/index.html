@@ -227,6 +227,99 @@
             
             
               
+                <a class="post-title-link" href="/2015/01/12/gradle-dependency-scope/" itemprop="url">
+                  Gradle依赖范围介绍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-01-12T13:47:19+08:00" content="2015-01-12">
+              2015-01-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p><img src="/images/blog/gradle.png" alt="Gradle Logo"></p>
+<p>自从Google推出Android的集成开发环境（IDE）– <a href="http://developer.android.com/tools/studio/index.html">Android Studio</a>，默认集成了<a href="http://www.gradle.org">Gradle</a>来进行对Android项目生命周期的管理。那我们也需要从原来的Ant转成Gradle。</p>
+<p>对于开发工程师来说，像Gradle这样的工具，第一体验是对依赖的管理。团队里面有不少原来是使用<a href="http://maven.apache.org">Maven</a>的同学，会有这样的问题：“maven的依赖管理除了最基本的坐标体系（groupId、artifactId、version、packaging）以外，还有一个scope的概念。那作为继承了maven的依赖体系的gradle，它的依赖范围又有哪些？”</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/12/gradle-dependency-scope/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2015/01/05/frontend-decoupling-principle/" itemprop="url">
                   前端解耦原则
                 </a>
@@ -1055,104 +1148,6 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2014/12/07/octopress-can-not-create-new-post-on-zsh/" itemprop="url">
-                  Octopress Can Not Create new Post on Zsh
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2014-12-07T14:44:12+08:00" content="2014-12-07">
-              2014-12-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/效率/" itemprop="url" rel="index">
-                    <span itemprop="name">效率</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>在<strong>zsh</strong>中执行rake new_post[“Title”]时会报错，提示”no matches found”。</p>
-<p>原因是<strong>zsh</strong>中若出现下列符合，则将识别为查找文件名的通配符。</p>
-<blockquote>
-<p>‘*’, ‘(’, ‘|’, ‘&lt;’, ‘[’, or ‘?’</p>
-</blockquote>
-<p>很不幸的时，我们在octopress中创建新blog的命令就出现了“[”这个符号。</p>
-<p>报错信息如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">➜  <span class="selector-tag">tonydeng</span><span class="selector-class">.github</span><span class="selector-class">.io</span> <span class="selector-tag">git</span><span class="selector-pseudo">:(source)</span> <span class="selector-tag">rake</span> <span class="selector-tag">new_post</span><span class="selector-attr">["title"]</span></span><br><span class="line"><span class="selector-tag">zsh</span>: <span class="selector-tag">no</span> <span class="selector-tag">matches</span> <span class="selector-tag">found</span>: <span class="selector-tag">new_post</span><span class="selector-attr">[title]</span></span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2014/12/07/octopress-can-not-create-new-post-on-zsh/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1198,7 +1193,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1212,7 +1207,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">82</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

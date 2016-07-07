@@ -292,7 +292,7 @@ error: Your local changes to the following files would be overwritten by merge:
 <p>方法2.重新获取最新的文件，并且<code>hardreset</code></p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard FETCH_HEAD</span></span><br></pre></td></tr></table></figure>
 <p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span> &amp;&amp; sudo git reset --hard FETCH_HEAD</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">cd /usr/<span class="keyword">local</span> &amp;&amp; sudo git reset <span class="comment">--hard FETCH_HEAD</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">cd `brew --<span class="built_in">prefix</span>`</span><br><span class="line">git remote add <span class="built_in">origin</span> https://github.com/mxcl/homebrew.git</span><br><span class="line">git fetch <span class="built_in">origin</span></span><br><span class="line">git <span class="built_in">reset</span> --hard <span class="built_in">origin</span>/master</span><br></pre></td></tr></table></figure>
 <p><code>方法3.保留更改，</code>brew update`，再应用更改</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">You have made some changes in the brew repository.</span><br><span class="line"></span><br><span class="line">You can either <span class="keyword">do</span> a git stash, brew <span class="keyword">update</span>, git stash pop <span class="keyword">to</span> <span class="keyword">keep</span> your changes, <span class="keyword">or</span> git <span class="keyword">reset</span> –hard <span class="keyword">HEAD</span>, brew <span class="keyword">update</span> <span class="keyword">to</span> <span class="keyword">reset</span> the changes.</span><br></pre></td></tr></table></figure>
@@ -300,7 +300,7 @@ error: Your local changes to the following files would be overwritten by merge:
 <figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">Warning: The /usr/local directory <span class="keyword">is</span> <span class="keyword">not</span> writable.</span><br><span class="line">Even <span class="keyword">if</span> <span class="keyword">this</span> directory was writable <span class="keyword">when</span> you installed Homebrew, other</span><br><span class="line">software may change permissions <span class="literal">on</span> <span class="keyword">this</span> directory. Some versions <span class="keyword">of</span> the</span><br><span class="line">“InstantOn” component <span class="keyword">of</span> Airfoil are known <span class="keyword">to</span> <span class="keyword">do</span> <span class="keyword">this</span>.</span><br></pre></td></tr></table></figure>
 <p>是group的问题，默认group是wheel，brew要求是admin</p>
 <p>view source</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chgrp -R admin /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">sudo chgrp -R admin /usr/<span class="keyword">local</span></span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -398,7 +398,7 @@ error: Your local changes to the following files would be overwritten by merge:
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -412,7 +412,7 @@ error: Your local changes to the following files would be overwritten by merge:
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">82</span>
+              <span class="site-state-item-count">85</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
