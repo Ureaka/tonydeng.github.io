@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonydeng.github.io/"/>
-  <updated>2016-07-07T06:48:15.000Z</updated>
+  <updated>2016-07-12T16:14:18.000Z</updated>
   <id>http://tonydeng.github.io/</id>
   
   <author>
@@ -14,6 +14,132 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>黑客的统计学</title>
+    <link href="http://tonydeng.github.io/2016/07/12/statistics-for-hackers/"/>
+    <id>http://tonydeng.github.io/2016/07/12/statistics-for-hackers/</id>
+    <published>2016-07-12T08:45:38.000Z</published>
+    <updated>2016-07-12T16:14:18.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/statistics-for-hackers.png&quot; alt=&quot;statistics for hackers&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近看到一个题为&lt;a href=&quot;https://speakerdeck.com/jakevdp/statistics-for-hackers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Statistics for Hackers》&lt;/a&gt;(黑客的统计学)的PPT，非常有意思，和大家分享一下。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/hackers.png&quot; alt=&quot;黑客不是窃贼&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这儿的Hacker（黑客）并不是是指那些尝试窃取你银行密码的人，而是那些善用编程来解决问题的人。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;作者&lt;a href=&quot;https://twitter.com/jakevdp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jake VanderPlas&lt;/a&gt;是华盛顿大学的资深数学科学研究员，他在PPT中表示统计学很难，但是使用编程技能后，它也可以很简单，他深圳宣称： 只要你会写 &lt;code&gt;for&lt;/code&gt; 循环，你就能做统计。&lt;/p&gt;
+&lt;p&gt;最重要的是： &lt;strong&gt;问正确的问题&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-热身：-抛硬币问题（直接模拟）&quot;&gt;&lt;a href=&quot;#1-热身：-抛硬币问题（直接模拟）&quot; class=&quot;headerlink&quot; title=&quot;1. 热身： 抛硬币问题（直接模拟）&quot;&gt;&lt;/a&gt;1. 热身： 抛硬币问题（直接模拟）&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/coin-problem.png&quot; alt=&quot;硬币问题&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;问题： 你抛一个硬币30次，其中22次正面朝上。问这个硬币是均匀的吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/coin-dispute.png&quot; alt=&quot;硬币问题争执&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这是一个经典的问题。有人认为均匀的硬币抛 30 次应该有 15 次朝上，所以这个硬币不均匀，也有人认为即使是均匀的硬币也有可能因为偶然而抛出 22 次朝上。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/coin-solution.png&quot; alt=&quot;硬币问题解法&quot;&gt;&lt;/p&gt;
+&lt;p&gt;经典的解法如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假设硬币是均匀的，然后验证这个原假设，计算一个均匀的硬币抛出 22 次正面的概率是多少?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;开始计算，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/coin-expressions.png&quot; alt=&quot;硬币问题解法公式&quot;&gt;&lt;/p&gt;
+&lt;p&gt;列出公式后，计算得知如果硬币是均匀的，那么抛 30 次并且有 22 次正面朝上的概率是 0.008，或者说如果抛 30 次并且观察到 22 次正面朝上，则这枚硬币是均匀的概率为 0.008。这个 0.008 一般称为 p 值，习惯上，当 p 值小于 0.05（有些时候取 0.01）时，我们认为这件事是不太可能发生的，因此拒绝原假设，即得到结论：硬币不是均匀的。&lt;/p&gt;
+&lt;p&gt;那么，是否有什么简单的方法呢？&lt;/p&gt;
+&lt;p&gt;这时，编程方法就可以派上用场了，我们只需要模拟一下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; random &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; randint&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;N = &lt;span class=&quot;number&quot;&gt;1000000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;M = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(N):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	trials = (randint(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;)) &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; sum(trials) &amp;gt;= &lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		M += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;p = M / N &lt;span class=&quot;comment&quot;&gt;#0.00819&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;结论： 由于 p = 0.008，拒绝原假设，硬币不是均匀的。&lt;/p&gt;
+&lt;p&gt;简单来说，计算样板分别比较困难，但模拟样本分布很简单。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/coin-ultimateness.png&quot; alt=&quot;硬币问题解法公式&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-随机打乱&quot;&gt;&lt;a href=&quot;#2-随机打乱&quot; class=&quot;headerlink&quot; title=&quot;2. 随机打乱&quot;&gt;&lt;/a&gt;2. 随机打乱&lt;/h2&gt;&lt;p&gt;观察两组数据：&lt;/p&gt;
+&lt;table border=&quot;1&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th colspan=&quot;2&quot;&gt;★&lt;/th&gt;&lt;th colspan=&quot;2&quot;&gt;✖︎&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;84&lt;/td&gt;&lt;td&gt;72&lt;/td&gt;&lt;td&gt;81&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;57&lt;/td&gt;&lt;td&gt;46&lt;/td&gt;&lt;td&gt;74&lt;/td&gt;&lt;td&gt;61&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;63&lt;/td&gt;&lt;td&gt;76&lt;/td&gt;&lt;td&gt;56&lt;/td&gt;&lt;td&gt;87&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;99&lt;/td&gt;&lt;td&gt;91&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;td&gt;65&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;  &lt;/td&gt;&lt;td&gt;  &lt;/td&gt;&lt;td&gt;66&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;  &lt;/td&gt;&lt;td&gt;  &lt;/td&gt;&lt;td&gt;62&lt;/td&gt;&lt;td&gt;69&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;★ 均值：73.5&lt;br&gt;✖︎ 均值：66.9&lt;br&gt;差异：6.6&lt;/p&gt;
+&lt;p&gt;问题来了：两组数据的差异 6.6 是统计显著的吗？&lt;/p&gt;
+&lt;p&gt;经典解法如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness-1.png&quot; alt=&quot;welch-ultimateness-1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness-2.png&quot; alt=&quot;welch-ultimateness-2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness-3.png&quot; alt=&quot;welch-ultimateness-3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness-4.png&quot; alt=&quot;welch-ultimateness-4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness-5.png&quot; alt=&quot;welch-ultimateness-5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;然后查表，可得：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness-result.png&quot; alt=&quot;welch-ultimateness-result&quot;&gt;&lt;/p&gt;
+&lt;p&gt;由于 t = 0.932 &amp;gt; tcrit = 1.796，所以我们得到结论：在 p = 0.05 的水平上差异 6.6 不是显著的。&lt;/p&gt;
+&lt;p&gt;所以……，我们刚刚究竟都做了些什么？最大的问题，是我们在解题过程中已经忘了我们最初要回答的问题。&lt;/p&gt;
+&lt;p&gt;为什么不直接使用流行的编程方法来处理呢？比如：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; statsmodels.stats.weightstats &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; ttest_indt, p, dof = ttest_ind(group1, group2,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				alternative=&lt;span class=&quot;string&quot;&gt;&#39;larger&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				usevar=&lt;span class=&quot;string&quot;&gt;&#39;unequal&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(p)  &lt;span class=&quot;comment&quot;&gt;# 0.186&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这当然可以，但是……，我们正尝试回答的是什么问题呢？&lt;/p&gt;
+&lt;p&gt;让我们回到问题本身，上面的样本分布和抛硬币的原理其实是一样的，让我们用一个抽样方法来处理。和抛硬币不同，这儿我们没有生成器（模拟抛硬币的结果），但这不是问题，我们可以引入一个新的解决方案：随机打乱（Shuffling）。&lt;/p&gt;
+&lt;p&gt;过程如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness-result.gif&quot; alt=&quot;welch-ultimateness-result&quot;&gt;&lt;/p&gt;
+&lt;p&gt;执行数千次，最后得到结论：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/welch-ultimateness.png&quot; alt=&quot;welch-ultimateness&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在 p = 0.05 的水平上，差异 6.6 不是显著的。&lt;/p&gt;
+&lt;h3 id=&quot;关于随机打乱需要注意的事：&quot;&gt;&lt;a href=&quot;#关于随机打乱需要注意的事：&quot; class=&quot;headerlink&quot; title=&quot;关于随机打乱需要注意的事：&quot;&gt;&lt;/a&gt;关于随机打乱需要注意的事：&lt;/h3&gt;&lt;p&gt;– 只能在原假设认为两组相同时使用&lt;br&gt;– 和所有其他方法一样，只能在样本有代表性时使用，千万要注意选择偏差&lt;br&gt;– 要注意相关实验。这点在《Simon’s Resampling: The New Statistics》一书中有很好的讨论 &lt;/p&gt;
+&lt;h2 id=&quot;3-亚特尔的乌龟塔&quot;&gt;&lt;a href=&quot;#3-亚特尔的乌龟塔&quot; class=&quot;headerlink&quot; title=&quot;3. 亚特尔的乌龟塔&quot;&gt;&lt;/a&gt;3. 亚特尔的乌龟塔&lt;/h2&gt;&lt;p&gt;亚特尔的乌龟塔是一则童话寓言，讲述的是一只叫亚特尔的乌龟命令其他乌龟叠在一起成为高塔的故事，知名中文博主&lt;a href=&quot;http://www.ruanyifeng.com/blog/2005/08/post_142.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阮一峰曾经翻译过一个版本&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/the-tortoise-tower-of-atlantis.jpg&quot; alt=&quot;The tortoise tower of Atlantis&quot;&gt;&lt;/p&gt;
+&lt;p&gt;假设我们观察到了 20 个亚特尔乌龟塔，高度分别为：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;48&lt;/th&gt;
+&lt;th&gt;24&lt;/th&gt;
+&lt;th&gt;32&lt;/th&gt;
+&lt;th&gt;61&lt;/th&gt;
+&lt;th&gt;51&lt;/th&gt;
+&lt;th&gt;12&lt;/th&gt;
+&lt;th&gt;32&lt;/th&gt;
+&lt;th&gt;18&lt;/th&gt;
+&lt;th&gt;19&lt;/th&gt;
+&lt;th&gt;24&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;42&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;问题是：&lt;br&gt;– 亚特尔乌龟塔的平均高度是多少？&lt;br&gt;– 这个估值有多少偏差？&lt;/p&gt;
+&lt;p&gt;需要注意的是，这儿问的是全体亚特尔乌龟塔的平均高度，即可能存在成千上万个乌龟塔，我们只观察了其中 20 个样本，并对整体均值进行估计，而不是简单地问这 20 个样本的均值，所以才有第二个问题：这个估值有多少偏差。&lt;/p&gt;
+&lt;p&gt;经典解法如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/tortoise-tower-ultimateness.jpg&quot; alt=&quot;tortoise-tower-ultimateness&quot;&gt;&lt;/p&gt;
+&lt;p&gt;那么，我们是否可以使用抽样方法来处理这个问题呢？和之前一样，我们的问题是没有生成器，这次的解决方案是自助重抽样法（Bootstrap Resampling）。如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/bootstrap-resampling.gif&quot; alt=&quot;Bootstrap Resampling&quot;&gt;&lt;/p&gt;
+&lt;p&gt;简单来说，就是从现有的 20 个样本中，随机抽取 20 个值（抽完后放回去，因此可能会抽到重复的值），然后计算新样本的均值。&lt;/p&gt;
+&lt;p&gt;重复这个步骤成千上万次，最后，我们得到下面的结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/tortoise-tower-result.jpg&quot; alt=&quot;tortoise-tower-result&quot;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到，与上面使用公式计算出的结果几乎一样。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 自助重抽样法（Bootstrap Sampling）&lt;/strong&gt; 甚至还可以用在更复杂的统计上，同样的，也有一些注意点：&lt;/p&gt;
+&lt;p&gt;– 自助重抽样法（Bootstrap Sampling）被认真地研究过，有坚实的理论基础&lt;br&gt;– 自助重抽样法通常不太适用于基于排序的统计（如求最大值）&lt;br&gt;– 如果样本太小，效果会比较差（N &amp;gt; 20 比较好）&lt;br&gt;– 注意选择偏差以及非独立数据 &lt;/p&gt;
+&lt;h2 id=&quot;4-交叉验证&quot;&gt;&lt;a href=&quot;#4-交叉验证&quot; class=&quot;headerlink&quot; title=&quot;4. 交叉验证&quot;&gt;&lt;/a&gt;4. 交叉验证&lt;/h2&gt;&lt;p&gt;最后，PPT 中还举了一个交叉验证的例子。大致思想是将样本随机分为两部分，各自算出需要的值，然后用另一份样本来校验当前样本的值。重复成千上万次，最后得到可信的结果。限于篇幅，这儿就不详细介绍了，有兴趣的同学可以直接看原 &lt;a href=&quot;https://speakerdeck.com/jakevdp/statistics-for-hackers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PPT&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;小结&quot;&gt;&lt;a href=&quot;#小结&quot; class=&quot;headerlink&quot; title=&quot;小结&quot;&gt;&lt;/a&gt;小结&lt;/h2&gt;&lt;p&gt;相对抽象的统计学公式而言，抽样方法是一种更符合直觉的计算近似法。只要会写 &lt;code&gt;for&lt;/code&gt; 循环，就可以做统计分析。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/blog/sfh/statistics-for-hackers.png&quot; alt=&quot;statistics for hackers&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近看到一个题为&lt;a href=&quot;https://speakerdeck.com/jakevdp/statistics-for-hackers&quot;&gt;《Statistics for Hackers》&lt;/a&gt;(黑客的统计学)的PPT，非常有意思，和大家分享一下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="效率" scheme="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+    
+    
+      <category term="statistics" scheme="http://tonydeng.github.io/tags/statistics/"/>
+    
+      <category term="hacker" scheme="http://tonydeng.github.io/tags/hacker/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 lsof 代替 Mac OS X 中的 netstat 查看占用端口的程序</title>
@@ -2149,57 +2275,6 @@ twtter的图数据库其实也是依托mysql做的......你给我钱给我人，
       <category term="nosql" scheme="http://tonydeng.github.io/tags/nosql/"/>
     
       <category term="sql" scheme="http://tonydeng.github.io/tags/sql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于LinkedHashMap的LRUCache实现</title>
-    <link href="http://tonydeng.github.io/2015/07/16/linkedhashmap-based-lrucache-implementation/"/>
-    <id>http://tonydeng.github.io/2015/07/16/linkedhashmap-based-lrucache-implementation/</id>
-    <published>2015-07-16T15:44:41.000Z</published>
-    <updated>2016-05-11T16:04:46.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/blog/lru/lru-cache.png&quot; alt=&quot;LRU Cache&quot;&gt;&lt;/p&gt;
-&lt;p&gt;让面试者描述一下缓存算法，以及经典的缓存算法LRU的实现，是我在面试过程中经常会问到的题目。&lt;/p&gt;
-&lt;p&gt;能够当场说出LRU算法实现思路的人基本没有，甚至不少人都无法说清楚LRU是一个实现什么功能的算法。（现在肯专心研究数据结构和算法的人不多了）&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;那我们今天就说一下LRU算法，分两点来说一下。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;LRU算法是要做什么？&lt;/li&gt;
-&lt;li&gt;我们有没有什么简单的方法来实现LRU算法？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;先说说第一点，LRU算法是要做什么？&quot;&gt;&lt;a href=&quot;#先说说第一点，LRU算法是要做什么？&quot; class=&quot;headerlink&quot; title=&quot;先说说第一点，LRU算法是要做什么？&quot;&gt;&lt;/a&gt;先说说第一点，LRU算法是要做什么？&lt;/h4&gt;&lt;p&gt;其实解释起来很简单，LRU就是&lt;strong&gt;Least Recently Used&lt;/strong&gt;的缩写，翻译过来就是&lt;strong&gt;“最近最少使用”&lt;/strong&gt;。也就是说LRU算法会将最近最少用的缓存移除，让给最新使用的缓存。而往往最常读取的，也就是读取次数最多的，所以利用好LRU算法，我们能够提供对热点数据的缓存效率，能够提高缓存服务的内存使用率。&lt;/p&gt;
-&lt;h4 id=&quot;那如何来实现呢？&quot;&gt;&lt;a href=&quot;#那如何来实现呢？&quot; class=&quot;headerlink&quot; title=&quot;那如何来实现呢？&quot;&gt;&lt;/a&gt;那如何来实现呢？&lt;/h4&gt;&lt;p&gt;我们先来梳理一下，需要实现几个什么功能？&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;限制缓存大小&lt;/li&gt;
-&lt;li&gt;查询出最近最晚用的缓存&lt;/li&gt;
-&lt;li&gt;给最近最少用的缓存做一个标识&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;其实，实现的思路非常简单，就像下面这张图种描述的一样。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/lru/lru.png&quot; alt=&quot;LRU&quot;&gt;&lt;/p&gt;
-&lt;p&gt;今天我就利用&lt;code&gt;Java&lt;/code&gt;的&lt;code&gt;LinkedHashMap&lt;/code&gt;用非常简单的代码来实现基于LRU算法的Cache功能。&lt;/p&gt;
-&lt;p&gt;实现代码如下，加上&lt;code&gt;import&lt;/code&gt;语句、注释和空行，也才不到20行的代码，就能够实现一个LRU算法的Cache：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.LinkedHashMap;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.Map;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; * 简单用LinkedHashMap来实现的LRU算法的缓存&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LRUCache&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;K&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;V&lt;/span&gt;&amp;gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LinkedHashMap&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;K&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;V&lt;/span&gt;&amp;gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; cacheSize;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LRUCache&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; cacheSize)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;, (&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) &lt;span class=&quot;number&quot;&gt;0.75&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.cacheSize = cacheSize;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;removeEldestEntry&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Map.Entry&amp;lt;K, V&amp;gt; eldest)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; size() &amp;gt; cacheSize;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;测试代码：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.Ignore;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.Test;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.slf4j.Logger;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.slf4j.LoggerFactory;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LRUCacheTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; Logger log = LoggerFactory.getLogger(LRUCacheTest.class);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; LRUCache&amp;lt;String, Integer&amp;gt; cache = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; LRUCache&amp;lt;&amp;gt;(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            cache.put(&lt;span class=&quot;string&quot;&gt;&quot;k&quot;&lt;/span&gt; + i, i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            String key = &lt;span class=&quot;string&quot;&gt;&quot;k&quot;&lt;/span&gt; + RandomUtil.getNum(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        log.info(&lt;span class=&quot;string&quot;&gt;&quot;all cache :&#39;&amp;#123;&amp;#125;&#39;&quot;&lt;/span&gt;,cache);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cache.put(&lt;span class=&quot;string&quot;&gt;&quot;k&quot;&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        log.info(&lt;span class=&quot;string&quot;&gt;&quot;After running the LRU algorithm cache :&#39;&amp;#123;&amp;#125;&#39;&quot;&lt;/span&gt;, cache);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/blog/lru/lru-cache.png&quot; alt=&quot;LRU Cache&quot;&gt;&lt;/p&gt;
-&lt;p&gt;让面试者描述一下缓存算法，以及经典的缓存算法LRU的实现，是我在面试过程中经常会问到的题目。&lt;/p&gt;
-&lt;p&gt;能够当场说出LRU算法实现思路的人基本没有，甚至不少人都无法说清楚LRU是一个实现什么功能的算法。（现在肯专心研究数据结构和算法的人不多了）&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="程序设计" scheme="http://tonydeng.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="java" scheme="http://tonydeng.github.io/tags/java/"/>
-    
-      <category term="cache" scheme="http://tonydeng.github.io/tags/cache/"/>
-    
-      <category term="lru" scheme="http://tonydeng.github.io/tags/lru/"/>
     
   </entry>
   
