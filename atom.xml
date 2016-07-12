@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonydeng.github.io/"/>
-  <updated>2016-07-12T16:26:58.000Z</updated>
+  <updated>2016-07-12T16:36:39.000Z</updated>
   <id>http://tonydeng.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://tonydeng.github.io/2016/07/12/statistics-for-hackers/"/>
     <id>http://tonydeng.github.io/2016/07/12/statistics-for-hackers/</id>
     <published>2016-07-12T08:45:38.000Z</published>
-    <updated>2016-07-12T16:26:58.000Z</updated>
+    <updated>2016-07-12T16:36:39.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/images/blog/sfh/statistics-for-hackers.png&quot; alt=&quot;statistics for hackers&quot;&gt;&lt;/p&gt;
 &lt;p&gt;最近看到一个题为&lt;a href=&quot;https://speakerdeck.com/jakevdp/statistics-for-hackers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Statistics for Hackers》&lt;/a&gt;(黑客的统计学)的PPT，非常有意思，和大家分享一下。&lt;/p&gt;
@@ -123,6 +123,7 @@
 &lt;p&gt;– 自助重抽样法（Bootstrap Sampling）被认真地研究过，有坚实的理论基础&lt;br&gt;– 自助重抽样法通常不太适用于基于排序的统计（如求最大值）&lt;br&gt;– 如果样本太小，效果会比较差（N &amp;gt; 20 比较好）&lt;br&gt;– 注意选择偏差以及非独立数据 &lt;/p&gt;
 &lt;h2 id=&quot;4-交叉验证&quot;&gt;&lt;a href=&quot;#4-交叉验证&quot; class=&quot;headerlink&quot; title=&quot;4. 交叉验证&quot;&gt;&lt;/a&gt;4. 交叉验证&lt;/h2&gt;&lt;p&gt;最后，PPT 中还举了一个交叉验证的例子。大致思想是将样本随机分为两部分，各自算出需要的值，然后用另一份样本来校验当前样本的值。重复成千上万次，最后得到可信的结果。限于篇幅，这儿就不详细介绍了，有兴趣的同学可以直接看原 &lt;a href=&quot;https://speakerdeck.com/jakevdp/statistics-for-hackers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PPT&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&quot;小结&quot;&gt;&lt;a href=&quot;#小结&quot; class=&quot;headerlink&quot; title=&quot;小结&quot;&gt;&lt;/a&gt;小结&lt;/h2&gt;&lt;p&gt;相对抽象的统计学公式而言，抽样方法是一种更符合直觉的计算近似法。只要会写 &lt;code&gt;for&lt;/code&gt; 循环，就可以做统计分析。&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://speakerdeck.com/jakevdp/statistics-for-hackers&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Statistics for Hackers》&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
