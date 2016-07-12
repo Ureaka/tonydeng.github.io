@@ -46,6 +46,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="TonyDeng's Blog" type="application/atom+xml" />
 
@@ -232,6 +234,10 @@
         
   <div class="comments" id="comments">
     
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+    
   </div>
 
 
@@ -356,6 +362,27 @@
     
     
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'tonydengblog';
+      var disqus_identifier = 'about/index.html';
+      var disqus_title = 'about me';
+      var disqus_url = 'http://tonydeng.github.io/about/index.html';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
 
