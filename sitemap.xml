@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tonydeng.github.io/2016/07/14/product-seven-words/</loc>
+    
+    <lastmod>2016-07-16T10:46:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2016/07/12/statistics-for-hackers/</loc>
     
     <lastmod>2016-07-12T16:36:39.000Z</lastmod>
@@ -9,7 +16,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/demo.css</loc>
+    <loc>http://tonydeng.github.io/ppts/revison_contorl_branch_pattern/index.html</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -37,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/ppts/revison_contorl_branch_pattern/index.html</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/nodeppt.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/nodeppt.css</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/demo.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -58,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/pdf.css</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/monokai_sublime.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/monokai_sublime.css</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/pdf.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -86,7 +93,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
+    <loc>http://tonydeng.github.io/2015/01/13/are-you-a-salted-fish/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -100,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/01/13/are-you-a-salted-fish/</loc>
+    <loc>http://tonydeng.github.io/2015/01/19/about-the-stability/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -114,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/01/19/about-the-stability/</loc>
+    <loc>http://tonydeng.github.io/2015/03/09/tengine-ssl-osx-make-error/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -122,13 +129,6 @@
   
   <url>
     <loc>http://tonydeng.github.io/2015/02/10/golang-project-directory-structure/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2015/03/09/tengine-ssl-osx-make-error/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -149,13 +149,6 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/07/08/how-to-undo-almost-anything-with-git/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2015/07/10/httpie-howto/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -170,14 +163,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/07/16/linkedhashmap-based-lrucache-implementation/</loc>
+    <loc>http://tonydeng.github.io/2015/07/08/how-to-undo-almost-anything-with-git/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
+    <loc>http://tonydeng.github.io/2015/07/16/linkedhashmap-based-lrucache-implementation/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -191,7 +184,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/09/20/netty5-user-guide/</loc>
+    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/10/21/capitalization-error-handing-in-git/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
+    <loc>http://tonydeng.github.io/2015/09/20/netty5-user-guide/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/21/discussion-on-user-experience/</loc>
+    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -233,6 +233,13 @@
   </url>
   
   <url>
+    <loc>http://tonydeng.github.io/2015/11/19/engineering-fonts/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2015/10/30/java-mail-no-object-dch-for-mime-type-multipart-mixed/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -247,13 +254,6 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/11/19/engineering-fonts/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2015/11/19/install-leiningen/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -261,14 +261,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/11/24/etcd-the-first-using/</loc>
+    <loc>http://tonydeng.github.io/2015/11/27/batch-conversion-file-encoding/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/11/27/batch-conversion-file-encoding/</loc>
+    <loc>http://tonydeng.github.io/2015/11/24/etcd-the-first-using/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -296,13 +296,6 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2016/06/13/simple-protection-measures-to-download-any-file/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2016/07/07/use-lsof-to-replace-netstat/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -311,6 +304,20 @@
   
   <url>
     <loc>http://tonydeng.github.io/2006/03/28/A-Linux-command-a-human-civilization/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2016/06/13/simple-protection-measures-to-download-any-file/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2009/10/27/the-design-philosophy-to-UNIX/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -331,7 +338,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2009/10/27/the-design-philosophy-to-UNIX/</loc>
+    <loc>http://tonydeng.github.io/gitbook-zh/index.html</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -339,13 +346,6 @@
   
   <url>
     <loc>http://tonydeng.github.io/2014/12/07/octopress-can-not-create-new-post-on-zsh/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/gitbook-zh/index.html</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -366,7 +366,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/09/linux-performance-tools/</loc>
+    <loc>http://tonydeng.github.io/2014/12/09/zsh-scp-wildcard/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/09/zsh-scp-wildcard/</loc>
+    <loc>http://tonydeng.github.io/2014/12/09/linux-performance-tools/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -408,7 +408,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/21/capitalization-error-handing-in-git/</loc>
+    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/10/21/discussion-on-user-experience/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     

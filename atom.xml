@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonydeng.github.io/"/>
-  <updated>2016-07-12T16:36:39.000Z</updated>
+  <updated>2016-07-16T10:46:15.000Z</updated>
   <id>http://tonydeng.github.io/</id>
   
   <author>
@@ -14,6 +14,165 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>靠谱的产品经理之七字真言</title>
+    <link href="http://tonydeng.github.io/2016/07/14/product-seven-words/"/>
+    <id>http://tonydeng.github.io/2016/07/14/product-seven-words/</id>
+    <published>2016-07-14T10:16:46.000Z</published>
+    <updated>2016-07-16T10:46:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://image.woshipm.com/wp-files/2015/07/kaopu.jpg&quot; alt=&quot;怎样才算靠谱的产品经理&quot;&gt;&lt;/p&gt;
+&lt;p&gt;工作那么多年，合作过的产品经理有很多，但是被我和工程师团队认为靠谱的产品经理却不多，工程师也经常吐槽产品经理不靠谱（貌似，我们之前合作过靠谱的产品经理女性居多，也不知道是什么原因……）。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;产品汪和程序猿之间的现状&quot;&gt;&lt;a href=&quot;#产品汪和程序猿之间的现状&quot; class=&quot;headerlink&quot; title=&quot;产品汪和程序猿之间的现状&quot;&gt;&lt;/a&gt;产品汪和程序猿之间的现状&lt;/h2&gt;&lt;p&gt;我们去通过Google或Baidu搜索关键词 “产品经理 程序员”，也经常出现如下的内容。&lt;/p&gt;
+&lt;p&gt;比如，想不通的……&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.wanho.net/data/upload/ueditor/56d65d9d43914.jpg&quot; alt=&quot;产品经理频繁改需求为什么会惹毛程序员？&quot;&gt;&lt;/p&gt;
+&lt;p&gt;比如，比较暴力的……&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.dongao.com/kjzx/UploadFiles_5705/201507/2015071016354845.png&quot; alt=&quot;产品经理改需求惨遭囚禁凌虐&quot;&gt;&lt;/p&gt;
+&lt;p&gt;或者，如此求解的……&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.dongao.com/kjzx/UploadFiles_5705/201507/2015071016360147.png&quot; alt=&quot;产品经理如何和程序员共处&quot;&gt;&lt;/p&gt;
+&lt;p&gt;感觉整个互联网行业，甚至IT圈都在上演产品经理和程序员的“恩怨情仇”，堪比各大影院前段时间上映的迪斯尼大片《Zootopia》（疯狂动物城）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.woshipm.com/wp-content/uploads/2015/07/QQ20150717145729.png&quot; alt=&quot;产品经理和程序员的恩怨情仇&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;矛盾如何产生？&quot;&gt;&lt;a href=&quot;#矛盾如何产生？&quot; class=&quot;headerlink&quot; title=&quot;矛盾如何产生？&quot;&gt;&lt;/a&gt;矛盾如何产生？&lt;/h2&gt;&lt;p&gt;很多产品汪都经常会碰到这样的场景：&lt;/p&gt;
+&lt;p&gt;一个非常复杂的产品设计终于加班加点的完成了，你满心欢喜的召集程序猿们开产品讨论会，但是过程中却备受打击，经常会碰到如下问题，而你还回答不出来：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是否要搜索？模糊搜索还是精确搜索？&lt;/li&gt;
+&lt;li&gt;是否有翻页，每页显示多少条数据？&lt;/li&gt;
+&lt;li&gt;能不能输入小数点、负数、字母？&lt;/li&gt;
+&lt;li&gt;公式怎么算的？&lt;/li&gt;
+&lt;li&gt;各种状态如何定义？如何转换状态？&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;很郁闷的是上述问题，你在产品设计过程中，你根本没有考虑过这些问题，你一直在考虑如何来创建订单，应该让用户更简单的使用。而这些问题，你认为都是小问题，还需要我来考虑吗？&lt;/p&gt;
+&lt;p&gt;这个会议的效果可想而知。&lt;/p&gt;
+&lt;p&gt;程序猿们会认为这么长的时间了，你产品经理在想什么，这些都没有想明白，没干活啊！&lt;/p&gt;
+&lt;p&gt;产品汪们会非常委屈，觉得程序猿是有意刁难自己。要么觉得这些问题难道不是应该程序猿考虑的吗？要么觉得，这些问题复杂想不清楚。&lt;/p&gt;
+&lt;p&gt;最后会议草草收场，团队之间出现嫌隙。&lt;/p&gt;
+&lt;p&gt;当产品汪把上述问题的答案整理完之后，再次召集程序猿们开产品讨论会，发现貌似还是会有类似的问题。&lt;/p&gt;
+&lt;p&gt;哲人发出如此的感叹:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/seven-words/product-workshop.png&quot; alt=&quot;吐槽产品讨论会&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;慢慢的，产品汪和程序猿之间的情绪就越来越对立，对这个产品的热情也慢慢下降，更多的精力和时间都放在两边对耗上了，产品推行的非常之慢。&lt;/p&gt;
+&lt;p&gt;直到Boos来过问产品的状况，只有互相推诿和指责。&lt;/p&gt;
+&lt;h2 id=&quot;回顾矛盾的产生&quot;&gt;&lt;a href=&quot;#回顾矛盾的产生&quot; class=&quot;headerlink&quot; title=&quot;回顾矛盾的产生&quot;&gt;&lt;/a&gt;回顾矛盾的产生&lt;/h2&gt;&lt;p&gt;其实矛盾产生的根源在于我们在产品讨论会上碰到哪些可能答不出来的问题。&lt;/p&gt;
+&lt;p&gt;那么，这些问题需要产品经理考虑吗？答案是显而易见的，产品经理必须要考虑这些问题、&lt;/p&gt;
+&lt;p&gt;因为这些最基本的问题会影响到系统的设计，没有考虑到，意味着产品经理对于规划的产品可以做什么？如何做？能做到什么程度？没有概念，规划产品的可行性就会大打折扣。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/seven-words/upstream-and-downstream.png&quot; alt=&quot;产品流程的上下游&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一般产品研发的上下游基本上下图，程序猿处于产品汪的下游。&lt;/p&gt;
+&lt;p&gt;一个没有概念，规划的产品设计，你让一个思维严谨的程序猿如何能接受？他们只会认为，产品经理不靠谱，这种不靠谱的需求只会导致如下情况：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果让这个产品通过了产品讨论阶段，那么他们只能为这个不靠谱的产品设计和产品经理买单，程序猿们会产生这样的想法： 我TMD就是那个“接盘侠”。&lt;br&gt;&lt;img src=&quot;http://www.cyxqd.com/wp-content/uploads/2014/01/jiepanxia.jpg&quot; alt=&quot;接盘侠&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt; 产品汪们，你们也想想，你们愿意当这个接盘侠吗？ &lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;解决矛盾的办法&quot;&gt;&lt;a href=&quot;#解决矛盾的办法&quot; class=&quot;headerlink&quot; title=&quot;解决矛盾的办法&quot;&gt;&lt;/a&gt;解决矛盾的办法&lt;/h2&gt;&lt;p&gt;那么我们怎么来解决这些矛盾呢？&lt;/p&gt;
+&lt;p&gt;产品如同人一样，有样貌、皮肤等外在结构，也有筋骨、神经网络等内在体系。在产品设计及规划中，产品汪除了要对UI、UE等外在负责以外，还需要对产品的筋骨、神经网络负责。&lt;/p&gt;
+&lt;p&gt;产品的筋骨、神经网络就是产品隐含的逻辑规则，才是产品运转正常的保证。&lt;/p&gt;
+&lt;p&gt;我们推出一个产品，一般要解决两类问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;人的问题，业务的问题&lt;/li&gt;
+&lt;li&gt;计算机的问题，也就是技术的问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那我们设计一个产品，不管我们想的如何天马行空，如何炫酷，也一定要通过一整套的IT系统来支撑。而IT系统本质上就是对数据的各种处理，各种状态流转，使用了各种形态来展示这些数据和状态流转。&lt;/p&gt;
+&lt;p&gt;而产品汪一般的产品设计思路都是按照人的思维模式来进行设计的，但是人本身就是一种适配功能很强的“适配器”，人可以对模糊的信息做出自己的补充，完善自己对这个模糊的信息补充，并作出自己的反应。&lt;/p&gt;
+&lt;p&gt;但是计算机并非如此，比如，我们进出地铁，站在扶梯上，会有语音提示“上下楼梯，请握紧扶手”。我们很容易理解这个句话，并作出自己适当的反应，来握紧扶手。&lt;/p&gt;
+&lt;p&gt;但是计算机如何来理解？用手施加10牛顿的力吗？&lt;/p&gt;
+&lt;p&gt;那产品汪在做产品设计时，&lt;strong&gt;是否要考虑到如何来定义这个“紧”？！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;那很多产品汪就非常郁闷的说，这么多的问题，怎么样才能够都考虑到呢？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://images.rednet.cn/articleimage/2006/07/29/104016572.jpg&quot; alt=&quot;我们不专业&quot;&gt;&lt;/p&gt;
+&lt;p&gt;那怎么办呢？我们是不是需要进修一下呢？比如学星爷研读的秘籍《产品狗的自我修养》。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.woshipm.com/wp-files/2015/07/chanpingou.jpg&quot; alt=&quot;产品狗的自我修养&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其实，我们并不需要研读那么深刻的著作，其实我们只要掌握了产品设计的&lt;strong&gt;七字真言&lt;/strong&gt;，基本上也程序猿的在产品讨论会上碰到的问题就能解决的差不多了。&lt;/p&gt;
+&lt;h2 id=&quot;七字真言&quot;&gt;&lt;a href=&quot;#七字真言&quot; class=&quot;headerlink&quot; title=&quot;七字真言&quot;&gt;&lt;/a&gt;七字真言&lt;/h2&gt;&lt;p&gt;很多人看到“七字真言”的第一反应可能是这样的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/seven-words/seven.png&quot; alt=&quot;七字真言&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其实产品设计的七字真言就是增 、删、改、查、显、算、 传&lt;/p&gt;
+&lt;p&gt;所有的产品设计，本质上都是对于一些数据、内容、结构层、信息做一些交互，这是产品的本质。&lt;/p&gt;
+&lt;h3 id=&quot;增&quot;&gt;&lt;a href=&quot;#增&quot; class=&quot;headerlink&quot; title=&quot;增&quot;&gt;&lt;/a&gt;增&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;增加按钮的样式、位置&lt;/li&gt;
+&lt;li&gt;增加按钮的文案：添加、创建、新建？&lt;/li&gt;
+&lt;li&gt;增加内容的字段&lt;/li&gt;
+&lt;li&gt;字段的必填非必填说明&lt;/li&gt;
+&lt;li&gt;字段的验证、提示说明&lt;/li&gt;
+&lt;li&gt;界面排列的说明&lt;/li&gt;
+&lt;li&gt;弹窗还是当前页跳转？&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;删&quot;&gt;&lt;a href=&quot;#删&quot; class=&quot;headerlink&quot; title=&quot;删&quot;&gt;&lt;/a&gt;删&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;删除按钮的样式、位置&lt;/li&gt;
+&lt;li&gt;删除案例的文案： 删除&lt;/li&gt;
+&lt;li&gt;删除时是否要确认？确认窗口的样式&lt;/li&gt;
+&lt;li&gt;删除完以后界面布局的变化&lt;/li&gt;
+&lt;li&gt;逻辑删除&lt;/li&gt;
+&lt;li&gt;物理删除&lt;/li&gt;
+&lt;li&gt;删除之后是否会影响到其他的功能模块？&lt;/li&gt;
+&lt;li&gt;…….&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;改&quot;&gt;&lt;a href=&quot;#改&quot; class=&quot;headerlink&quot; title=&quot;改&quot;&gt;&lt;/a&gt;改&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;编辑按钮的样式、位置&lt;/li&gt;
+&lt;li&gt;编辑按钮的文案： 修改、编辑？&lt;/li&gt;
+&lt;li&gt;弹窗还是当前页面跳转？&lt;/li&gt;
+&lt;li&gt;可以修改与不可修改的说明&lt;/li&gt;
+&lt;li&gt;更改数据之后，对其他功能模块的影响&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;查&quot;&gt;&lt;a href=&quot;#查&quot; class=&quot;headerlink&quot; title=&quot;查&quot;&gt;&lt;/a&gt;查&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;按照哪些字段进行排序？&lt;/li&gt;
+&lt;li&gt;搜索框：需要对哪些进行搜索？是否可以组合搜索？搜索后的界面如何程序？模糊搜索还是精确搜索？&lt;/li&gt;
+&lt;li&gt;搜索结果的展示如何？是否和搜索条件有关系？&lt;/li&gt;
+&lt;li&gt;搜索条件之间是否有冲突？&lt;/li&gt;
+&lt;li&gt;查不到数据该如何？&lt;/li&gt;
+&lt;li&gt;需要查看哪些数据？&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一般来说，产品经理做到以上四点就能把原型做的非常完善，例如数据做成了列表样式，是否考虑了分页？是否需要排序？排序的话按什么条件进行？排序满足不了需求的话是否需要搜索框？查询框？查看详细列表的打开方式是怎么样的？本页操作还是新窗口操作？跳转之后需不需要跳回来？选择数据支持单选还是多选？单选的话是用下拉还是radio？如此等等&lt;/p&gt;
+&lt;p&gt;细节交代的越清楚，和程序猿的沟通成本就越小&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;显&quot;&gt;&lt;a href=&quot;#显&quot; class=&quot;headerlink&quot; title=&quot;显&quot;&gt;&lt;/a&gt;显&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;页面内容的布局&lt;/li&gt;
+&lt;li&gt;每页多少条数据、数据的排序？&lt;/li&gt;
+&lt;li&gt;是否有翻页、翻页样式如何？&lt;/li&gt;
+&lt;li&gt;是否提供查看详情，如何查看？&lt;/li&gt;
+&lt;li&gt;查看是弹窗还是当前页打开，还是新页面？&lt;/li&gt;
+&lt;li&gt;如何从各个操作页面跳转回原页面的方法？&lt;/li&gt;
+&lt;li&gt;跳转回来的页面如何显示？&lt;/li&gt;
+&lt;li&gt;不同权限用户的数据展示是否有不同？展现规则是怎么样的？&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;算&quot;&gt;&lt;a href=&quot;#算&quot; class=&quot;headerlink&quot; title=&quot;算&quot;&gt;&lt;/a&gt;算&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;计算规则&lt;/li&gt;
+&lt;li&gt;页面公式、特定指标的计算规则&lt;/li&gt;
+&lt;li&gt;数据背后的逻辑&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;传&quot;&gt;&lt;a href=&quot;#传&quot; class=&quot;headerlink&quot; title=&quot;传&quot;&gt;&lt;/a&gt;传&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;不同用户之间、不同操作之间传递哪些数据？哪些字段？&lt;/li&gt;
+&lt;li&gt;需要提供哪些API的接口？整合其他第三方系统时，他们提供的API是否能够满足我们现有需求？&lt;/li&gt;
+&lt;li&gt;数据的流向规则&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每当我们在做产品设计的时候，都在心里默念着七个字，基本上设计出来的产品功能点就都覆盖到了，省去了产品讨论和产品研发过程中很多不必要的沟通、交流和冲突。&lt;/p&gt;
+&lt;p&gt;有一个比喻非常好，“产品是孩子，开发是妈妈，产品经理是爸爸，测试时医生”，&lt;strong&gt;We are 伐木累！&lt;/strong&gt;，产品汪，你们觉得呢？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.android100.org/uploadfile/2015/0829/20150829004427_0.gif&quot; alt=&quot;we are 伐木累&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最后说一句，不管怎么样，各位产品汪们，需要对产品经理本身的职责要搞清楚，如果你短时间内不能达到产品经理本身应该具备的素质，那你就应该努力提高自己对产品设计和产品经理职责的理解，good good study,day day up！并且，要发挥自己的亲和力将整个团队的各个成员的长处组合起来，一起完成一个满意的产品。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://image.woshipm.com/wp-files/2015/07/QQ20150727200359.png&quot; alt=&quot;任何不能杀了我的只会让我更强&quot;&gt;&lt;/p&gt;
+&lt;p&gt;另外，程序猿们也不要太过难为产品汪，大家都是在一个团队工作，为了同一个目标而努力，能够互相支持，互相补位的就多多支持和补位。毕竟大家也都是在&lt;strong&gt;同一个马勺里喝水&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.yixieshi.com/uploads/allimg/140525/1-14052520102TZ.jpg&quot; alt=&quot;同一个马勺里喝水&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://image.woshipm.com/wp-files/2015/07/kaopu.jpg&quot; alt=&quot;怎样才算靠谱的产品经理&quot;&gt;&lt;/p&gt;
+&lt;p&gt;工作那么多年，合作过的产品经理有很多，但是被我和工程师团队认为靠谱的产品经理却不多，工程师也经常吐槽产品经理不靠谱（貌似，我们之前合作过靠谱的产品经理女性居多，也不知道是什么原因……）。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="产品设计" scheme="http://tonydeng.github.io/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="product" scheme="http://tonydeng.github.io/tags/product/"/>
+    
+  </entry>
   
   <entry>
     <title>黑客的统计学</title>
@@ -2037,245 +2196,6 @@
       <category term="java" scheme="http://tonydeng.github.io/tags/java/"/>
     
       <category term="maven" scheme="http://tonydeng.github.io/tags/maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NoSQL vs SQL By Alphabet高可用架构微信群</title>
-    <link href="http://tonydeng.github.io/2015/08/20/nosql-vs-sql/"/>
-    <id>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</id>
-    <published>2015-08-20T14:06:33.000Z</published>
-    <updated>2016-07-12T16:26:58.000Z</updated>
-    
-    <content type="html">&lt;p&gt;本文所有内容来自Alphabet高可用架构微信群内部分享，分享是阿里巴巴的沈询老师。&lt;/p&gt;
-&lt;p&gt;今天想介绍的东西是NoSQL到SQL。我之所以选择这个题目，其实就是因为看到了一张图。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/a_history_of_databases_in_no-tation.jpg&quot; alt=&quot;A history of databases in No-tation&quot;&gt;&lt;/p&gt;
-&lt;p&gt;看完以后我真的噗嗤就笑了，黑的漂亮。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;作为一个对数据库历史有点了解的人来说，这图真的反应了我们在数据库存储领域螺旋上升一样的发展历程的最佳代表，这哥们真的是天赋异禀。&lt;/p&gt;
-&lt;p&gt;那么，为什么我会笑呢？今天习武我做完这次分享，大家也能够跟我一样笑一下~&lt;/p&gt;
-&lt;p&gt;那么我们先来第一章：&lt;/p&gt;
-&lt;h2 id=&quot;1970-We-have-no-SQL&quot;&gt;&lt;a href=&quot;#1970-We-have-no-SQL&quot; class=&quot;headerlink&quot; title=&quot;1970:We have no SQL&quot;&gt;&lt;/a&gt;1970:We have no SQL&lt;/h2&gt;&lt;p&gt;嗯，我们没有SQL&lt;/p&gt;
-&lt;p&gt;要介绍这个问题，我们要先来看看，什么叫数据库，以及数据库这个东西是怎么来的。&lt;/p&gt;
-&lt;p&gt;相信，大家都是程序员，而程序员，一定会碰到这样一个需求：“我要用计算机表示一辆车子”。&lt;/p&gt;
-&lt;p&gt;这辆车呢，有一个外壳，四善玻璃，四个轮子。&lt;/p&gt;
-&lt;p&gt;我应该如何用程序来表述它呢？&lt;/p&gt;
-&lt;p&gt;第一个能够想到的，一定是使用结构体（Java中class）。&lt;/p&gt;
-&lt;p&gt;但，当我们发现这个车子的抽象不够用了，比如，我需要在车子上面装一对反光镜。该怎么办呢？&lt;/p&gt;
-&lt;p&gt;我们只能往里面增加一个新的属性，来表述这个反光镜。&lt;/p&gt;
-&lt;p&gt;如果这种需求越来越多，越来越多，我们就会发现，每次都要改一下这个结构体，编译，发布，是一个非常麻烦的事情啊……于是，就有了这种非常纯粹的需求，我有没有可能把他弄成动态的？&lt;/p&gt;
-&lt;p&gt;这时候，我们最常用的一个数据结构，就是“映射”。&lt;/p&gt;
-&lt;p&gt;如果我是一个Java程序员的话，那么映射就是一个Map&lt;object,object&gt;&lt;/object,object&gt;&lt;/p&gt;
-&lt;p&gt;一般来说Map有两类实现，第一类是Hash，第二类是有序树。&lt;/p&gt;
-&lt;p&gt;有了这个随需应变的集合，我们就可以把事情变成这样：&lt;/p&gt;
-&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;put&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;轮子&quot;&lt;/span&gt;,轮子对象);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;put&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;镜子&quot;&lt;/span&gt;,镜子对象);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;我们有些时候，又会担心数据丢失对不对？&lt;/p&gt;
-&lt;p&gt;所以，还要想办法把这个对象以非常高兴的方式持久化下来，放到磁盘上，这样就不容易丢失了。&lt;/p&gt;
-&lt;p&gt;如果大家了解一点点的磁盘知识的画，就立刻会发现一个问题，&lt;code&gt;map.put/get&lt;/code&gt; 操作，其实都是有一次寻找的过程。而这个寻找的过程，对于磁盘来说，就会转变为一次随机的寻道过程。&lt;/p&gt;
-&lt;p&gt;这里有很多种方式，能够用磁盘结构来存储类似Map这样的概念，我今天只介绍一种，就是B-tree。&lt;/p&gt;
-&lt;p&gt;不知道大家对这个词儿是不是熟悉啊 ，反正我面试基本都会问问……&lt;/p&gt;
-&lt;p&gt;需要先提的一件事是B树==B-树。所谓B-树，并不是B减树的意思，希望大家不要跟我一样土鳖……&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/b-tree.jpg&quot; alt=&quot;B Tree&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这就是一个最简单的B树，我们观察一下就会发现，其实B树的出发点很简单，既然磁盘寻道时间很多，那就减少它~~ 一次寻道就能够从磁盘取更多的数据就行了。&lt;/p&gt;
-&lt;p&gt;所以，它是以“数组”为单位，存储数据的，而数组，其实就是一片连续并且有界的空间。&lt;/p&gt;
-&lt;p&gt;数组本身很难扩展，而维护数组内有序，其实也是有一定代价的。而数组满了以后怎么办？这就是B树会做的事儿-&lt;strong&gt;分裂&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果这里大家能够联想到另外一个东西，那就算学明白了~~ HBase其实就是一颗巨大的、分布式的B树。&lt;/p&gt;
-&lt;p&gt;其他容我最后吐槽~~&lt;/p&gt;
-&lt;p&gt;好了，我们稍微绕出去一点，分享一下B树是什么，主要目的实际上就是让大家回忆一下数据结构，这有有利于我们继续讲其他东西。&lt;/p&gt;
-&lt;p&gt;回到数据库，详细很多人都听过一个名词“层次数据库”，似乎这东西就是在上古时代的神器，现在则不见了踪影。&lt;/p&gt;
-&lt;p&gt;那么，这“层次数据库”到底是什么玩意儿呢？&lt;/p&gt;
-&lt;p&gt;我们来看一张图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/hierarchiacl_database.jpg&quot; alt=&quot;Hierarchiacl Database&quot;&gt;&lt;/p&gt;
-&lt;p&gt;抽象来看，层次模型其实就是这样的东西。&lt;/p&gt;
-&lt;p&gt;我再用小汽车来表述一下：一个小车由四扇玻璃，四个轮子，两个反光镜组成。&lt;/p&gt;
-&lt;p&gt;车有自己的属性，轮子有自己的属性，反光镜有自己的属性。&lt;/p&gt;
-&lt;p&gt;给大家举两个例子，相信大家应该可以立刻就明白，所谓的层次模型如果用Java代码来写的话，应该是什么样的。&lt;/p&gt;
-&lt;p&gt;Map套Map，每一个Map有一些固定的属性，比如这个Map的名字是什么？这个Map的属性是什么？&lt;/p&gt;
-&lt;p&gt;而这就是我们最开始用的数据库了。&lt;/p&gt;
-&lt;p&gt;非常简单，一个Map结构搞定所有需求。看起来世界大同了。&lt;/p&gt;
-&lt;h2 id=&quot;下面，我们就来到1980年：-Know-SQL。知道SQL了。&quot;&gt;&lt;a href=&quot;#下面，我们就来到1980年：-Know-SQL。知道SQL了。&quot; class=&quot;headerlink&quot; title=&quot;下面，我们就来到1980年： Know SQL。知道SQL了。&quot;&gt;&lt;/a&gt;下面，我们就来到1980年： Know SQL。知道SQL了。&lt;/h2&gt;&lt;p&gt;为什么这么写？其实就是关系数据库是上世纪70年代发明的，而到了80年代，第一代全功能的关系数控System R由IBM发布。&lt;/p&gt;
-&lt;p&gt;所以，在80年代，我们才正式进入关系数据库模型。&lt;/p&gt;
-&lt;p&gt;相信，很多人都觉得自己了解关系模型，似乎每个人提到它，都说“对对对”绝对对。&lt;/p&gt;
-&lt;p&gt;因为这是有数学支持的，所以不应该怀疑。&lt;/p&gt;
-&lt;p&gt;可选，实际上如果大家了解科学发现的历史，我们就会发现，自从爱因斯坦把牛顿那又完美数学报纸的自洽理论踢出了神坛，数学自洽就再也不是一个真理的标准了。&lt;/p&gt;
-&lt;p&gt;而真理只有一个，哪个用户多，就是哪个~~~&lt;/p&gt;
-&lt;p&gt;那么，为什么关系模型最终赢得了比赛，而层次模型死掉了呢？&lt;/p&gt;
-&lt;p&gt;很简单，因为人类都是蠢蛋和傻瓜啊……哪个简单，容易用，就是哪个赢。&lt;/p&gt;
-&lt;p&gt;下面，我们就以一个例子俩看看，关系模型易用在哪里。&lt;/p&gt;
-&lt;p&gt;还是以车子为例。如果我要做这样一个查询：把厂里生产的所有汽车里面，左轮子供应商是DRDS的轮胎都找出来。&lt;/p&gt;
-&lt;p&gt;对于层次模型，我们的代码是：&lt;/p&gt;
-&lt;p&gt;遍历每一辆车（从车对象中找到左面的轮子，查看轮子的属性，是DRDS的留下，不是的丢弃）。&lt;/p&gt;
-&lt;p&gt;而如果是关系模型呢？ &lt;code&gt;select * from 轮子表 where 轮子位置 = &amp;#39;左&amp;#39; and 轮子供应商 = &amp;#39;DRDS&amp;#39;&lt;/code&gt; ,就完成了。&lt;/p&gt;
-&lt;p&gt;我看了都觉得是个世界性的创举，不知道您是什么感觉？&lt;/p&gt;
-&lt;p&gt;好，那么下一步，我们来看看，关系模型将会怎么处理这条SQL。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/DRDS.jpg&quot; alt=&quot;关系模型组织形式&quot;&gt;&lt;/p&gt;
-&lt;p&gt;其实，用这一张图就可以表示一个最简单的关系模型了，基本上所有的数据库，都是这个组织形式。&lt;/p&gt;
-&lt;p&gt;最上面的额用户API就是执行的SQL和事务命令；中间的就是关系代数转换层和事务处理层；最后，最底层，是个KV存储。&lt;/p&gt;
-&lt;p&gt;啊？KV这不是NoSQL的概念么，你凭什么盗用它？&lt;/p&gt;
-&lt;p&gt;呵呵，谁盗用谁呢？还不一定呢。&lt;/p&gt;
-&lt;p&gt;先从最底层下看来，KV存储是什么？其实就是我们一开始说的“映射”结构。对应内存，可能有Hash和有序树结构，对应磁盘主要是btree树系和LSM树系。&lt;/p&gt;
-&lt;p&gt;我这里不展开说了，因为每个数据结构都有自己好玩的属性，讲起了太多。我们直接来聊聊关系代数引擎。这是数据库最关键的部分之一。&lt;/p&gt;
-&lt;p&gt;但其实从功能目标来说，并不是很复杂。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/relational_algebra_engines.jpg&quot; alt=&quot;关系代数引擎&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这张图就是整个关系代数引擎所经过的步骤。&lt;/p&gt;
-&lt;p&gt;最原始的是SQL字符串。类似 &lt;code&gt;select * from tab where id = 1&lt;/code&gt; ,它经过的过程叫做SQL解析，会生成一个AST抽象语法树。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/abstract_syntax_tree.jpg&quot; alt=&quot;抽象语法树&quot;&gt;&lt;/p&gt;
-&lt;p&gt;select被拆解为fromList/WhereClause等细碎的字串。&lt;/p&gt;
-&lt;p&gt;这个过程的主要作用是，作为计算机编写代码而言，我们更容易识别这种结构化的数据，而文档属于非结构化数据。有了这棵树，我们还需要再做一件事情，就是执行优化。它的入参是AST树+索引源信息。&lt;/p&gt;
-&lt;p&gt;索引源信息又是什么鬼？&lt;/p&gt;
-&lt;p&gt;要讲明白这个，得先看看关系模型和Map是怎么对应起来的。我用几张PPT来讲解一下。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/sql_step_by_step_1.jpg&quot; alt=&quot;如何按照key找到对应的数据&quot;&gt;&lt;/p&gt;
-&lt;p&gt;第一个SQL是 select * from tab where id = ? ，上面的那个则是一个表格。&lt;/p&gt;
-&lt;p&gt;如果我们用map来表示，可以表示成这样：&lt;/p&gt;
-&lt;figure class=&quot;highlight xl&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;M&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;ap&lt;/span&gt;: key -&amp;gt;&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;primaryKey&lt;/span&gt;, value -&amp;gt;&lt;/span&gt; [pk,user_id,Name]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;也就是，以PK值作为Map的key，以一个包含了pk,user_id,Name的值的结构作为Map的value。（当然也可以只包含user_id,Name）。也OK~&lt;/p&gt;
-&lt;p&gt;有了这个map，我们只需要从AST里面取出id=？，得知id=0（假设），然后 map.get(0)，就可以拿到对应的user_id和Name数据了，加上输入的id=0这个数据，就可以返回了。&lt;/p&gt;
-&lt;p&gt;再来看另一个需求。&lt;/p&gt;
-&lt;p&gt;这里面，我们的查询条件发生了变化，不是id了，而是user_id。&lt;/p&gt;
-&lt;p&gt;而我们刚才只有一个Map : Map: key -&amp;gt; primaryKey, value -&amp;gt; [user_id,Name] ，我应该如何利用这个Map去找到所有符合要求的结果呢？&lt;/p&gt;
-&lt;p&gt;我能想到的第一种方式是，遍历Map里面的每一个Entry，取出每一个Entry以后，看看user_id == 我想要的值？如果不等于，丢弃，如果等于，返回。即可。&lt;/p&gt;
-&lt;p&gt;然而，这中方式带来的问题就是，如果我有1亿条记录，我就要做这件事情1亿次。明显O(N)效率太慢了。&lt;/p&gt;
-&lt;p&gt;怎么加快一下？&lt;/p&gt;
-&lt;p&gt;有需求就有人相应，于是，我们可以用一个空间换时间的法子。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/sql_step_by_step_2.jpg&quot; alt=&quot;如何按照key找到对应的数据-二级索引&quot;&gt;&lt;/p&gt;
-&lt;p&gt;看看上面的图，里面有增加了一个新的Map。 Map: key -&amp;gt; user_id ,value -&amp;gt; [id]&lt;/p&gt;
-&lt;p&gt;这个Map以user_id作为key，于是我们又可以愉快而高兴的用户第二个Map的get接口来获取所有符合要求的id列表。然后再根据这个符合要求的id列表，去查第一个Map，获得对应的数据了。&lt;/p&gt;
-&lt;p&gt;刚才介绍的这块，其实就是关系模型如何映射到Map（也就是KV模型）的关键方法了。&lt;/p&gt;
-&lt;p&gt;当然，还会有很多扩展性的方式和方法，不过这就不是今天的主题了。&lt;/p&gt;
-&lt;p&gt;这个数据比较小，只有三列，一个索引。如果我有十几个，甚至几十个索引的适合，我们会面对另一问题。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/sql_step_by_step_2.jpg&quot; alt=&quot;如何按照key找到对应的数据-二级索引-name&quot;&gt;&lt;/p&gt;
-&lt;p&gt;如果我有一个user_id的二级索引，又有一个Name的二级索引。我该选择哪一个作为查询用的索引呢？是不是我需要一种机制，来选择那个最“便宜”的索引？&lt;/p&gt;
-&lt;p&gt;这就是索引选择的过程，我们进行索引选择，就必然的需要知道每一个索引的区分高还是低（说白了，就是一个key对应的plist.size()少还是多）……&lt;/p&gt;
-&lt;p&gt;而这个索引的区分度高/低，就是所谓索引源信息的最简单模式。在真实的数据库中，还会有很多其他信息，也是索引的源信息，不过为了方便大家理解，简化一下。&lt;/p&gt;
-&lt;p&gt;有了索引源信息和AST树，我们就可以生成执行计划了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/mysql_explain.jpg&quot; alt=&quot;mysql explain&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这时候，再尝试看看这个，相信大家就大概能够猜到这里的东西所表示的含义了。&lt;/p&gt;
-&lt;p&gt;所以，很多事情呢不用去背，了解背后的原理，优化就是随手拈来的事儿了……&lt;/p&gt;
-&lt;p&gt;这里，我省略了事务步骤，这个更复杂。&lt;/p&gt;
-&lt;h2 id=&quot;NO-SQL&quot;&gt;&lt;a href=&quot;#NO-SQL&quot; class=&quot;headerlink&quot; title=&quot;NO SQL!&quot;&gt;&lt;/a&gt;NO SQL!&lt;/h2&gt;&lt;p&gt;卧槽，豪言壮语，SQL数据库has gone，新时代来临了！&lt;/p&gt;
-&lt;p&gt;似乎一夜之间，这个世界就翻了天，facebook开源了cassandra，Hadoop、HBase横空出世，似乎这就是未来啊。&lt;/p&gt;
-&lt;p&gt;我们来看看知乎的问题&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.zhihu.com/question/21288175&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;互联网领域，传统的sql很力不从心，一些更具有针对性的nosql会越来与火，以后会不会出来各种强力nosql？&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;反正最雷我的一个问题大概是： 我们是一个新业务，想用NoSQL来提升开发效率，不知道cassandra和hbase应该选哪个？&lt;/p&gt;
-&lt;p&gt;看完以后，我真的觉得没办法好好做朋友了。&lt;/p&gt;
-&lt;p&gt;Digg采用Cassandra遭遇失败，工程副总裁离职，希望大家不是这个人。&lt;/p&gt;
-&lt;p&gt;No SQL！怎么来的？&lt;/p&gt;
-&lt;p&gt;这还是得从事物开说起来。&lt;/p&gt;
-&lt;p&gt;从第一代产品化的数据库在上世纪80年代开发完成以后，我们的数据库主要演进模型里面只有几个有限的里程碑，我目前能够记住的就这么积极事情。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;mvcc多版本并发控制&lt;/li&gt;
-&lt;li&gt;存储过程&lt;/li&gt;
-&lt;li&gt;各类OLAP的分析类引擎&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;而，实际上大家心里都知道有一件事情它一定会发生，只是不知道什么时候会发生。这就是，分布式系统。&lt;/p&gt;
-&lt;p&gt;分布式系统，能够具有无限的扩张能力，按需伸缩，只要有钱，我们的系统就不会down，不会死。这种能力其实在上世纪80年代就深入人心了。还记得SUN公司提出的口号吗？&lt;/p&gt;
-&lt;p&gt;“网络就是计算机”&lt;/p&gt;
-&lt;p&gt;傻瓜都知道，未来一定是分布式系统的天下，单机系统还有什么玩头？&lt;/p&gt;
-&lt;p&gt;单机系统不应该是那待宰的羔羊吗？等着DRDS异军突起不就好了吗？&lt;/p&gt;
-&lt;p&gt;但是等啊等啊，30年过去了，还没有等等自己寿终正寝的那一天，反而似乎活的越来越好了。这是为什么？&lt;/p&gt;
-&lt;p&gt;理由很简单，技术没突破……&lt;/p&gt;
-&lt;p&gt;如果一个分布式系统做的跟单机系统一样方便，又能扩展，性能又好，那这个世界上早就没有单机系统了。而且，从上世纪80年代到21世界的前几年，我们实际上都不需要分布式系统。大部分的系统都是所谓“图书馆管理系统”，“客户关系管理系统”等等企业内部管理系统。&lt;/p&gt;
-&lt;p&gt;我们不需要很高并发，只需要容易操作就行乐。&lt;/p&gt;
-&lt;p&gt;那么，单机的关系数据库系统自然最容易操作。所以单机系统大行其道。&lt;/p&gt;
-&lt;p&gt;然而，云计算和互联网的时代到来了。我们服务的对象， 从顶天了几千人，一下子就变成了十几亿人，计算机要管理的数据量呈指数级别的飞速上涨，而我们却完全无法对用户数据做出准确预估。&lt;/p&gt;
-&lt;p&gt;这时候，扩展性，性能的要求就变得更为重要了，不开展业务挂了和开发难度少量上升，两个事情做权衡，想想大家都能like知道哪个更重要。&lt;/p&gt;
-&lt;p&gt;所以，我们要扩展！&lt;/p&gt;
-&lt;p&gt;然而，数据库却无法提供这样的扩展性，当年的淘宝也是用Oracle的，配置算不错的，也算是有小黑柜子……&lt;/p&gt;
-&lt;p&gt;然而，今天不火的网站，明天就有可能突然就火了，我们的用户数在一年内就会突破这个柜子的容量，折旧都来不及。&lt;/p&gt;
-&lt;p&gt;很明显，时代变了。&lt;/p&gt;
-&lt;p&gt;传统关系数据库，哪怕是RAC都不能满足我们队数据库扩展性的追求了。&lt;/p&gt;
-&lt;p&gt;这时候，肯定有人在想，这个有问题，我们就解决它啊。&lt;/p&gt;
-&lt;p&gt;这类技术就是Oracle Rac啊，mysql cluter啊这类玩具，他们希望能够不改变用户行为来实现扩展性。然而，做了好多年，发现玩不转。&lt;/p&gt;
-&lt;p&gt;为了支持更大的访问量和数据量，我们必然需要分布式数据库系统，而分布式系统有必然会面临对强一致性带来的延迟提高的问题，因为网络通信本身比单机内通信代价高很多，这种通信的代价就会直接增加系统单次提交的延迟。延迟提高会导致数据库锁持有时间变长，使得高冲突条件下分布式事务的性能不升反降（这个具体可以了解一下Amdahl定律），甚至性能距离单机数据库都还有明显的差距。&lt;/p&gt;
-&lt;p&gt;从上面的说明，我们可以发现，问题的关键并不是分布式事务做不出来，而是做出来了却没什么卵用。 数据库领域的高手们努力了40年，但至今还没有人能够很好解决这个问题，Goolge Spanner的开发负责人就经常在他的Blog上谈论延迟的问题，相信也是饱受这个问题的困扰。&lt;/p&gt;
-&lt;p&gt;这就是主要问题。&lt;/p&gt;
-&lt;p&gt;于是，有一群人认为，强一致性这就是看起不怎么靠谱，那彻底绕开这个问题是不是个更好的选择？他们发现确实有那么一些场景是不需要强一致性事务的，甚至连SQL都可以不要，最典型的就是日志流水的记录和分析这类的场景，而去掉了事务和SQQL，接口简单了，性能就更容易得到提升，扩展性也更容易实现，这就是NoSQL的起源。&lt;/p&gt;
-&lt;p&gt;他们喊出非常响亮的口号“No SQL！”，来标志着他们的时代到来。&lt;/p&gt;
-&lt;h2 id=&quot;2005：-Not-only-SQL。不仅仅是SQL&quot;&gt;&lt;a href=&quot;#2005：-Not-only-SQL。不仅仅是SQL&quot; class=&quot;headerlink&quot; title=&quot;2005： Not only SQL。不仅仅是SQL&quot;&gt;&lt;/a&gt;2005： Not only SQL。不仅仅是SQL&lt;/h2&gt;&lt;p&gt;好吧，经过5年的忽悠，有很多人愿意相信NoSQL似乎确有其事，于是有一批先行者就开始探索各种玩法。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.lampchina.net/mod-news_do-show_id-8272.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Digg采用Cassandra遭遇失败，工程副总裁离职&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/digg.jpg&quot; alt=&quot;Digg副总裁离职&quot;&gt;&lt;/p&gt;
-&lt;p&gt;点个蜡&lt;/p&gt;
-&lt;p&gt;玩着玩着，大家发现还是不靠谱，这样不行啊&lt;/p&gt;
-&lt;p&gt;这东西不就是让我们每个业务都把关系数据库重新实现一把么？让我们退回层次模型上去啊。&lt;/p&gt;
-&lt;p&gt;对于人类这种懒惰而笨拙的动物，开历史的倒车明显是不受待见的。&lt;/p&gt;
-&lt;p&gt;于是，有一批人站出来，说No什么SQL，还是得有数据库。&lt;/p&gt;
-&lt;p&gt;但是NoSQL开发者已经忽悠了那么多投资人的前，总得要有一个交代吧。所以，既然没有办法颠覆，咱们就共存吧。&lt;/p&gt;
-&lt;p&gt;什么NoSQL和SQL，大家一家人，各种发展就好了。这就是Not only SQL的来源。&lt;/p&gt;
-&lt;p&gt;NoSQL有哪些明确的场景呢？&lt;/p&gt;
-&lt;p&gt;比如HDFS比较火，于是就有人发现，哎，我们如果学google，也弄一个分布式的KV是不是也能火？我想，这就是某base最大的价值。&lt;/p&gt;
-&lt;p&gt;不过，在这个平缓期，还是能看到一些创新性的想法的。他们帮助数据库领域往前走了不大的一步。MongoDB是个不错的思路（我个人觉得）。&lt;/p&gt;
-&lt;p&gt;json代替了臃肿的xml成为一个小的标准。而且，这个上面做了很多索引，也是很聪明的做饭。借鉴了数据库的核心思路，这也算是共存了。其他的NoSQL也在往SQL上努力。比如Cassandra的cql，HBase的各类SQL引擎，其实都是对关系数据模型的一种妥协。&lt;/p&gt;
-&lt;p&gt;毕竟，NoSQL还没有好到能够颠覆整个生态。&lt;/p&gt;
-&lt;h2 id=&quot;2013-No-SQL&quot;&gt;&lt;a href=&quot;#2013-No-SQL&quot; class=&quot;headerlink&quot; title=&quot;2013 No, SQL!&quot;&gt;&lt;/a&gt;2013 No, SQL!&lt;/h2&gt;&lt;p&gt;不，我们还是要关系数据库。&lt;/p&gt;
-&lt;p&gt;这就是我们现在的感觉。&lt;/p&gt;
-&lt;p&gt;经过了10年的折腾，我们还是发现，关系模型目前来说是最方便表达数据存储的语言。比其他都要方便的多。所以，还是妥协吧，于是，所有的NoSQL都想办法尝试支持关系数据库。&lt;/p&gt;
-&lt;p&gt;然而，回到初始，我们不就是因为关系数据库不能满足要求，所以才要做NoSQL的么？难道NoSQL弄个关系代数引擎，就能够做出魔法末？&lt;/p&gt;
-&lt;p&gt;其实，也不行。&lt;/p&gt;
-&lt;p&gt;模型上能够规避和腾挪的空间并不是很大。&lt;/p&gt;
-&lt;p&gt;最终，大家殊途同归，还是回到如何能够让关系数据库更具有扩展性，性能更好，这条道路上来，条条大路通罗马嘛~和气生财。&lt;/p&gt;
-&lt;p&gt;这就是NewSQL的来源。&lt;/p&gt;
-&lt;p&gt;DRDS也是NewSQL的一员，其实说实话，我挺有感触的，作为这么多年一直坚守在分布式数据库这个领域的人来说，能够坚持下来真的不容易，太多诱惑都在外面，最火的时候，连DBA都去学了各种NoSQL的运维技术。&lt;/p&gt;
-&lt;p&gt;然而，我们能够坚守，其实是因为我们懂得历史，也看得到现在。我们深刻的知道，科学就是承认自己并非无所不能。然后不断的往那无所不能的地方努力的一种精神。&lt;/p&gt;
-&lt;p&gt;一直以来，我们都尽可能的协助用户保留关系数据库的方便性，然后想办法告知用户，哪些地方目前还缺少技术突破，应该使用哪些工具来替代。&lt;/p&gt;
-&lt;p&gt;所以也算是积累了非常多的经验和工具。同时，我们也努力追求数据库领域的那个圣杯。更快的存取数据，可以按需扩缩以承载更大的访问量和更大的数据量，开发容易，硬件成本低。这些是大家梦寐以求在追求的动向，也是我们在追求的。虽不能至，吾心向往之。&lt;/p&gt;
-&lt;p&gt;最后，来聊聊阿里的技术选择。&lt;/p&gt;
-&lt;p&gt;其实，所有大公司似乎都在释放各种信号，xxx在用了什么系统了，xxx在用了什么系统了……&lt;/p&gt;
-&lt;p&gt;阿里可能不大一样，从内部来说，它也是一个生态系统，用户选择什么实际上主要都是由用户自己决定的。所以，阿里能够出现任何一种选择，只要能够解决问题即可。&lt;/p&gt;
-&lt;p&gt;他们就是工作不饱和和啥都试一试。&lt;/p&gt;
-&lt;p&gt;TDDL DRDS这套体系，只能说是目前用的最广的一套。原因也很简单，改变行为习惯少。&lt;/p&gt;
-&lt;p&gt;双11对DRDS这套体系来说，其实没有什么压力。我前几年的双十一虽然都在核心作战室，不过我一般的做法都是到了那里：“您辛苦了，您也是，大家辛苦了”，然后吃吃吃……&lt;/p&gt;
-&lt;p&gt;因为确实没有什么好担心的啊，没有不平稳的理由。&lt;/p&gt;
-&lt;p&gt;DRDS的能力更多体系在双十一开始和双十一结束。我们需要在那之前机器扩容，以及在那之后的机器缩容。这些才是DRDS的的核心能力。&lt;/p&gt;
-&lt;p&gt;上上次我的确很是紧张……因为新接了一个消息系统。这种削峰填谷的系统才是亚历山大啊……&lt;/p&gt;
-&lt;p&gt;其余的生活基本上就没啥了……更多是跟大家一样，也都是普通的功能开发而已。&lt;/p&gt;
-&lt;p&gt;好了，我的故事将完了。&lt;/p&gt;
-&lt;h2 id=&quot;Q-amp-A&quot;&gt;&lt;a href=&quot;#Q-amp-A&quot; class=&quot;headerlink&quot; title=&quot;Q &amp;amp; A&quot;&gt;&lt;/a&gt;Q &amp;amp; A&lt;/h2&gt;&lt;p&gt;问题1. 能说说DRDS和RDS的关系吗？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;一个偏重分布式，一个偏重单机
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;问题2. 请问阿里的DRDS如何实现join sql语句来执行多表关联查询的？如何兼容单机存储的SQL？需要注意哪些坑？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;方案很多，其实如果大家对join有所了解，也就那么几种，hash/index nest loop/sort merge，没有什么魔法。http://coding-geek.com/how-databases-work/ 这个不错，我比较推荐。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;问题3. 请问schema less/free你怎么看？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;这俩似乎没见过拼一起哈，我分开。但是本质是同一个东西，我个人觉得有市场。不过能有多大，不知道。
-优势：业务模型更灵活。
-劣势：额外的空间占用。
-
-技术债也一定要还的......我清楚的记得当年我维护的一个cms系统，所有数据都是map。结果最后有一些诡异的数据不知道什么时候被塞到里面，然后最后也没有人知道是在哪里塞的，debug都很难找到。
-所以，一般来说，结合会更好一些。
-
-目前pg/mysql都开始支持json了，这东西其实只是工作量的问题，没有什么技术上的难度。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;问题4. 最近很多声音说不要在用户mongodb了，如何来看？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;这个就纯属于个人意见了啊...... 我个人不喜欢mongodb那帮人的嘴脸......
-
-[MongoDB核心贡献者：不是MongoDB不行，而是你不懂！](http://www.cnblogs.com/shanyou/archive/2012/11/17/2774344.html)
-
-然而，为什么会这样？还不是某些人为了骗分，默认配置特别激进...... 而开发者不会告诉你，如果改成安全配置，他们的性能没比MySQL强哪里去。
-
-一个存储引擎，至少10年才能稳定。前两天刚碰到一个游戏客户说某nosql数据文件损坏无法恢复，问我们有没有办法，我说，下次选择谨慎点......性能不是唯一的。这次请节哀。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;问题5. 海量，低延时（毫秒级），高并发（十万以上），目前关系型数据库是否有并存的方案？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;10w并发不算很高了，DRDS是你最好的选择。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;问题6. 非结构化数据，如文本，树图等，这些sql无法处理的，是否是用nosql更合理？&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;非结构化数据也是一个重要的门类，一直都存在，以后也会存在，但是nosql为了宣传，把所有的东西都拉到自己阵营，这其实与其初衷已经违背了。
-twtter的图数据库其实也是依托mysql做的......你给我钱给我人，给我时间，我能汇编写任何东西。
-&lt;/code&gt;&lt;/pre&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文所有内容来自Alphabet高可用架构微信群内部分享，分享是阿里巴巴的沈询老师。&lt;/p&gt;
-&lt;p&gt;今天想介绍的东西是NoSQL到SQL。我之所以选择这个题目，其实就是因为看到了一张图。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/blog/nosql_vs_sql/a_history_of_databases_in_no-tation.jpg&quot; alt=&quot;A history of databases in No-tation&quot;&gt;&lt;/p&gt;
-&lt;p&gt;看完以后我真的噗嗤就笑了，黑的漂亮。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据库" scheme="http://tonydeng.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="database" scheme="http://tonydeng.github.io/tags/database/"/>
-    
-      <category term="rdb" scheme="http://tonydeng.github.io/tags/rdb/"/>
-    
-      <category term="nosql" scheme="http://tonydeng.github.io/tags/nosql/"/>
-    
-      <category term="sql" scheme="http://tonydeng.github.io/tags/sql/"/>
     
   </entry>
   
