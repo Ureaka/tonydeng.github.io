@@ -41,7 +41,7 @@
 
 
 
-  <meta name="keywords" content="golang project directory structure" />
+  <meta name="keywords" content="Leiningen + Clojure Hello World!" />
 
 
 
@@ -59,18 +59,21 @@
 
 
 
-<meta name="description" content="项目结构如何来组织，一般的开发语言都没有在语言层面上做规定，基本上都是在项目生命周期管理工具上对项目结构来做规定。不过Go在这方面做了相应地规定，这样可以在Go的开发者中保持一致。">
+<meta name="description" content="我们之前已经写过Leiningen + Clojure之旅一篇Blog安装Leiningen。
+今天我们在看看如何结合Leiningen写一个Clojure的Hello World，毕竟开始一门语言，都是从Hello World开始。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Go项目的目录结构">
-<meta property="og:url" content="http://tonydeng.github.io/2015/02/10/golang-project-directory-structure/index.html">
+<meta property="og:title" content="Leiningen + Clojure Hello World!">
+<meta property="og:url" content="http://tonydeng.github.io/2016/07/19/leiningen-clojure-hello-world/index.html">
 <meta property="og:site_name" content="TonyDeng's Blog">
-<meta property="og:description" content="项目结构如何来组织，一般的开发语言都没有在语言层面上做规定，基本上都是在项目生命周期管理工具上对项目结构来做规定。不过Go在这方面做了相应地规定，这样可以在Go的开发者中保持一致。">
-<meta property="og:image" content="http://tonydeng.github.io/images/blog/GoLangKulani.jpg">
-<meta property="og:updated_time" content="2016-07-12T16:26:58.000Z">
+<meta property="og:description" content="我们之前已经写过Leiningen + Clojure之旅一篇Blog安装Leiningen。
+今天我们在看看如何结合Leiningen写一个Clojure的Hello World，毕竟开始一门语言，都是从Hello World开始。">
+<meta property="og:image" content="http://www.sandraconn.com/wp-content/uploads/2014/08/hello-world-v02.jpg">
+<meta property="og:updated_time" content="2016-07-19T03:39:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Go项目的目录结构">
-<meta name="twitter:description" content="项目结构如何来组织，一般的开发语言都没有在语言层面上做规定，基本上都是在项目生命周期管理工具上对项目结构来做规定。不过Go在这方面做了相应地规定，这样可以在Go的开发者中保持一致。">
-<meta name="twitter:image" content="http://tonydeng.github.io/images/blog/GoLangKulani.jpg">
+<meta name="twitter:title" content="Leiningen + Clojure Hello World!">
+<meta name="twitter:description" content="我们之前已经写过Leiningen + Clojure之旅一篇Blog安装Leiningen。
+今天我们在看看如何结合Leiningen写一个Clojure的Hello World，毕竟开始一门语言，都是从Hello World开始。">
+<meta name="twitter:image" content="http://www.sandraconn.com/wp-content/uploads/2014/08/hello-world-v02.jpg">
 
 
 
@@ -82,7 +85,7 @@
   };
 </script>
 
-  <title> Go项目的目录结构 | TonyDeng's Blog </title>
+  <title> Leiningen + Clojure Hello World! | TonyDeng's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +271,7 @@
             
             
               
-                Go项目的目录结构
+                Leiningen + Clojure Hello World!
               
             
           </h1>
@@ -277,8 +280,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-02-10T10:29:15+08:00" content="2015-02-10">
-              2015-02-10
+            <time itemprop="dateCreated" datetime="2016-07-19T09:01:58+08:00" content="2016-07-19">
+              2016-07-19
             </time>
           </span>
 
@@ -287,8 +290,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/程序设计/" itemprop="url" rel="index">
-                    <span itemprop="name">程序设计</span>
+                  <a href="/categories/Leiningen-Clojure之旅/" itemprop="url" rel="index">
+                    <span itemprop="name">Leiningen + Clojure之旅</span>
                   </a>
                 </span>
 
@@ -303,8 +306,8 @@
             
               <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/02/10/golang-project-directory-structure/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/02/10/golang-project-directory-structure/" itemprop="commentsCount"></span>
+              <a href="/2016/07/19/leiningen-clojure-hello-world/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/19/leiningen-clojure-hello-world/" itemprop="commentsCount"></span>
               </a>
             </span>
             
@@ -323,33 +326,41 @@
       
 
       
-        <span itemprop="articleBody"><p><img src="/images/blog/GoLangKulani.jpg" alt="Golang"></p>
-<p>项目结构如何来组织，一般的开发语言都没有在语言层面上做规定，基本上都是在项目生命周期管理工具上对项目结构来做规定。不过Go在这方面做了相应地规定，这样可以在Go的开发者中保持一致。</p>
+        <span itemprop="articleBody"><p><img src="http://www.sandraconn.com/wp-content/uploads/2014/08/hello-world-v02.jpg" alt="hello world"></p>
+<p>我们之前已经写过<a href="/categories/Leiningen-Clojure之旅/">Leiningen + Clojure之旅</a>一篇Blog<a href="/2015/11/19/install-leiningen/">安装Leiningen</a>。</p>
+<p>今天我们在看看如何结合Leiningen写一个Clojure的Hello World，毕竟开始一门语言，都是从Hello World开始。</p>
 <a id="more"></a>
-<h2 id="一、一个Go项目在GOPATH下，会有如下三个目录"><a href="#一、一个Go项目在GOPATH下，会有如下三个目录" class="headerlink" title="一、一个Go项目在GOPATH下，会有如下三个目录"></a>一、一个Go项目在GOPATH下，会有如下三个目录</h2><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line">./<span class="keyword">bin</span><br><span class="line"></span>./pkg</span><br><span class="line">./src</span><br></pre></td></tr></table></figure>
-<p>其中，bin存放编译后的可执行文件；pkg存放编译后的包文件；src存放项目源文件。</p>
-<p>一般，bin和pkg目录可以不创建，go命令会自动创建(如 <figure class="highlight go"><figcaption><span>install```)，只需要创建src目录即可。</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">对于pkg目录，曾有人问：“我把Go中的包放入pkg下面，怎么不行啊？“，他时直接将Go包得源文件放入pkg中，这显然是不对的。pkg中的文件是Go编译生成的，而不是手动放进去的。（一般文件后缀名为<span class="string">``</span><span class="string">`.a`</span><span class="string">``</span>）。</span><br><span class="line"></span><br><span class="line">对于src目录，存放源文件，Go中的源文件以包（<span class="keyword">package</span>）的形式组织。通常，新建一个包就在src目录中新建一个文件夹。</span><br><span class="line"></span><br><span class="line">## 二、举例说明</span><br><span class="line"></span><br><span class="line">比如：我新建一个项目<span class="string">``</span><span class="string">`test`</span><span class="string">``</span>，开始的目录结构如下：</span><br></pre></td></tr></table></figure></p>
-<p>test/<br>|– src/<br><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">为了编译方便，我在其中加入了一个<span class="keyword">install</span>文件，目录结构如下：</span><br></pre></td></tr></table></figure></p>
-<p>test/<br>|– install<br>`– src/<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">其中install的内容如下：</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line"><span class="meta">#!/usr/bin/env bash</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ ! <span class="_">-f</span> install ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'install must be run within its container folder'</span> 1&gt;&amp;2</span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">CURDIR=`<span class="built_in">pwd</span>`</span><br><span class="line">OLDGOPATH=<span class="string">"<span class="variable">$GOPATH</span>"</span></span><br><span class="line"><span class="built_in">export</span> GOPATH=<span class="string">"<span class="variable">$CURDIR</span>"</span></span><br><span class="line"></span><br><span class="line">gofmt -w src</span><br><span class="line"></span><br><span class="line">go install <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> GOPATH=<span class="string">"<span class="variable">$OLDGOPATH</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'finished'</span></span><br></pre></td></tr></table></figure></p>
-<p>之所以加上这个install，而不用配置GOPATH（避免新增一个GO项目就要往GOPATH中添加一个路径）</p>
-<p>接下来，增加一个包： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>test/<br>|– install<br><code>-- src/
-    |-- config
-    |</code>– config.go<br>    <code>-- test</code>– main.go<br><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">注意，<span class="keyword">config</span><span class="variable">.go</span>中的**<span class="keyword">package</span>**名称最好和目录**<span class="keyword">config</span>**一致，而文件名可以随意。main<span class="variable">.go</span>表示**main包**，文件名建议为**main<span class="variable">.go</span>**。（注：不一致时，生成的<span class="variable">.a</span>文件和目录名一致，这样，在<span class="keyword">import</span>时，应该是目录名，而引用包时，需要包名。例如：目录为myconfig，包名为<span class="keyword">config</span>，则生成的静态包文件是myconfig<span class="variable">.a</span>，引用该包:<span class="keyword">import</span> <span class="string">"myconfg"</span>,使用包中成员：<span class="keyword">config</span><span class="variable">.LoadConfig</span>()）</span><br><span class="line"></span><br><span class="line"><span class="keyword">config</span><span class="variable">.go</span>和main<span class="variable">.go</span>的代码如下：</span><br><span class="line"></span><br><span class="line"><span class="keyword">config</span><span class="variable">.go</span>代码：</span><br><span class="line"><span class="meta">```go</span></span><br><span class="line"><span class="keyword">package</span> <span class="keyword">config</span></span><br><span class="line">func LoadConfig()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>main.go代码：<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"config"</span></span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    config.LoadConfig()</span><br><span class="line">    fmt.Println(<span class="string">"Hello,GO!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>接下来，在项目根目录执行./install</p>
-<p>这时候的目录结构如下：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">test</span><br><span class="line">|<span class="comment">-- bin</span></span><br><span class="line">|   `<span class="comment">-- test</span></span><br><span class="line">|<span class="comment">-- install</span></span><br><span class="line">|<span class="comment">-- pkg</span></span><br><span class="line">|   `<span class="comment">-- linux_amd64</span></span><br><span class="line">|       `<span class="comment">-- config.a</span></span><br><span class="line">`<span class="comment">-- src</span></span><br><span class="line">    |<span class="comment">-- config</span></span><br><span class="line">    |   `<span class="comment">-- config.go</span></span><br><span class="line">    `<span class="comment">-- test</span></span><br><span class="line">        `<span class="comment">-- main.go</span></span><br></pre></td></tr></table></figure>
-<p>其中config.a是包config编译后生成的；bin/test是生成的可执行的二进制文件。</p>
-<p>这是可以执行：bin/test。 输出结果为”Hello,GO!”</p>
-<h2 id="三、补充说明"><a href="#三、补充说明" class="headerlink" title="三、补充说明"></a>三、补充说明</h2><p>1、 包可以有多层目录，比如net/http包，表示源文件再src/net/http目录下，不过源文件中的包名是最后一个目录的名字，比如http。 而在import包是，必须完整的路径，比如: immport “net/http”</p>
-<p>2、有时候会见到local import(不建议使用)，语法类似这样：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"./config"</span></span><br></pre></td></tr></table></figure>
-<p>当代码有这样的语句是，很多时候都会见到类似的错误：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">local <span class="keyword">import</span> <span class="string">"./config"</span> in non-local <span class="keyword">package</span></span><br></pre></td></tr></table></figure>
-<p>我所了解的这种导入方式的使用是：当写入一个简单地测试脚本，想要使用go run命令时，可以使用这种导入方式。</p>
-<p>比如上面的例子，把test/main.go移到src目录中，test目录删除，修改main.go中的import “config”为import “./config”，然后可以在src目录下执行： go run main.go</p>
-<p>可见，local import不依赖GOPATH</p>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>我们还是先用lein创建一个项目，使用标准项目模板。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜ lein new app clojure-demo --force</span><br><span class="line">Generating a project called clojure-demo based on the <span class="string">'app'</span> template.</span><br></pre></td></tr></table></figure>
+<p>这儿有关于new这个指令的详细使用介绍，包括项目模板的介绍。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜ lein <span class="built_in">help</span> new</span><br><span class="line">Generate scaffolding <span class="keyword">for</span> a new project based on a template.</span><br><span class="line"></span><br><span class="line">If only one argument is passed to the <span class="string">"new"</span> task, the default template</span><br><span class="line">is used and the argument is used as the name of the project.</span><br><span class="line"></span><br><span class="line">If two arguments are passed, the first should be the name of a template,</span><br><span class="line">and the second is used as the name of the project, <span class="keyword">for</span> example:</span><br><span class="line"></span><br><span class="line">    lein new <span class="variable">$TEMPLATE_NAME</span> <span class="variable">$PROJECT_NAME</span></span><br><span class="line"></span><br><span class="line">To generate to a directory different than your project<span class="string">'s name use --to-dir:</span><br><span class="line"></span><br><span class="line">    lein new $TEMPLATE_NAME $PROJECT_NAME --to-dir $DIR</span><br><span class="line"></span><br><span class="line">By default, the "new" task will not write to an existing directory.</span><br><span class="line">Supply the --force option to override this behavior:</span><br><span class="line"></span><br><span class="line">    lein new $TEMPLATE_NAME $PROJECT_NAME --force</span><br><span class="line">    lein new $TEMPLATE_NAME $PROJECT_NAME --to-dir $DIR --force</span><br><span class="line"></span><br><span class="line">Arguments can be passed to templates by adding them after "new"'</span>s options. Use</span><br><span class="line">`--` to separate arguments to lein new and the actual template you are using:</span><br><span class="line"></span><br><span class="line">    lein new <span class="variable">$TEMPLATE_NAME</span> <span class="variable">$PROJECT_NAME</span> --to-dir <span class="variable">$DIR</span> -- template-arg-1 template-arg-2</span><br><span class="line"></span><br><span class="line">If you<span class="string">'d like to use an unreleased (ie, SNAPSHOT) template, pass in --snapshot:</span><br><span class="line"></span><br><span class="line">    lein new $TEMPLATE_NAME $PROJECT_NAME --snapshot</span><br><span class="line"></span><br><span class="line">If you'</span>d rather like to use a specific version of template, specify the version</span><br><span class="line">with --template-version option:</span><br><span class="line"></span><br><span class="line">    lein new <span class="variable">$TEMPLATE_NAME</span> <span class="variable">$PROJECT_NAME</span> --template-version <span class="variable">$TEMPLATE_VERSION</span></span><br><span class="line"></span><br><span class="line">If you use the `--snapshot` or `--template-version` argument with template args</span><br><span class="line">you may need to use `--` to prevent template args from being interpreted as</span><br><span class="line">arguments to `lein new`:</span><br><span class="line"></span><br><span class="line">    lein new <span class="variable">$TEMPLATE_NAME</span> <span class="variable">$PROJECT_NAME</span> --snapshot -- template-arg-1 template-arg-2</span><br><span class="line"></span><br><span class="line">Third-party templates can be found at https://clojars.org/search?q=lein-template.</span><br><span class="line">When creating a new project from a third-party template, use its group-id</span><br><span class="line">as the template name. Note that there<span class="string">'s no need to "install" a given third-</span><br><span class="line">party template --- lein will automatically fetch it for you.</span><br><span class="line"></span><br><span class="line">Use `lein new :show $TEMPLATE` to see details about a given template.</span><br><span class="line"></span><br><span class="line">To create a new template of your own, see the documentation for the</span><br><span class="line">lein-new Leiningen plug-in.</span><br><span class="line"></span><br><span class="line">Subtasks available:</span><br><span class="line">default    A general project template for libraries.</span><br><span class="line">plugin     A leiningen plugin project template.</span><br><span class="line">app        An application project template.</span><br><span class="line">template   A meta-template for '</span>lein new<span class="string">' templates.</span><br><span class="line"></span><br><span class="line">Run `lein help new $SUBTASK` for subtask details.</span><br><span class="line"></span><br><span class="line">Arguments: ([project-name] [template project-name [-- &amp; args]])</span></span><br></pre></td></tr></table></figure>
+<h2 id="project-clj说明"><a href="#project-clj说明" class="headerlink" title="project.clj说明"></a>project.clj说明</h2><p><code>project.clj</code>是<code>Leigingen</code>为项目添加的配置文件，类似于<code>Maven</code>的<code>pom.xml</code>。我们来先看看都有些什么内容。</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">defproject</span> clojure-demo <span class="string">"0.1.0-SNAPSHOT"</span></span><br><span class="line">  <span class="symbol">:description</span> <span class="string">"FIXME: write description"</span></span><br><span class="line">  <span class="symbol">:url</span> <span class="string">"http://example.com/FIXME"</span></span><br><span class="line">  <span class="symbol">:license</span> &#123;<span class="symbol">:name</span> <span class="string">"Eclipse Public License"</span></span><br><span class="line">            <span class="symbol">:url</span> <span class="string">"http://www.eclipse.org/legal/epl-v10.html"</span>&#125;</span><br><span class="line">  <span class="symbol">:dependencies</span> [[org.clojure/clojure <span class="string">"1.8.0"</span>]]</span><br><span class="line">  <span class="symbol">:main</span> ^<span class="symbol">:skip-aot</span> clojure-demo.core</span><br><span class="line">  <span class="symbol">:target-path</span> <span class="string">"target/%s"</span></span><br><span class="line">  <span class="symbol">:profiles</span> &#123;<span class="symbol">:uberjar</span> &#123;<span class="symbol">:aot</span> <span class="symbol">:all</span>&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>第一行，描述了项目名称以及版本，当前的项目名称就是 <code>clojure-demo</code>,版本是<code>0.1.0-SNAPSHOT</code>。如果一个项目版本以<code>SNAPSHOT</code>结尾，通常表明该项目还处于开发阶段，还没有正式的release。</li>
+<li><code>description</code>是该项目的简要描述。</li>
+<li><code>url</code>是可选的网址，可以是你项目将来上线后的实际地址。</li>
+<li><code>license</code>是该项目使用License，默认给你设置为<code>Eclipse Public License</code>。</li>
+<li><code>dependencies</code>是我们初期最需要关注的内容，也就是我们项目中需要依赖的其他项目及其版本的配置。比如<code>clojure-demo</code>这个项目就依赖了clojore-1.8.0的版本。</li>
+<li><code>main</code>是配置了当前项目执行的文件，比如<code>clojure-demo.core</code>这个配置就表明了，执行文件就在<code>src/clojure-demo/core.clj</code>。</li>
+<li><code>profiles</code>是我们自己个性化定制的不同profile的指令，比如，我们现在可以通过<code>lein uberjar</code>将项目生成一个jar供其他项目使用。</li>
+</ol>
+<h2 id="结合IntelliJ"><a href="#结合IntelliJ" class="headerlink" title="结合IntelliJ"></a>结合IntelliJ</h2><p>当你用IntelliJ打开<code>clojure-demo</code>，发现你根本看不到项目的结构，只能看到最外层的文件，比如<code>project.clj</code>等。src,test等目录和实际的代码你根本就看不到。那该怎么办？</p>
+<p>可以先执行下面的命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜ lein pom</span><br></pre></td></tr></table></figure>
+<p>这样lein帮你生成了一个<code>pom.xml</code>，你就可以按照Maven的方式import到IntelliJ中了。</p>
+<h2 id="执行Hello-World"><a href="#执行Hello-World" class="headerlink" title="执行Hello World!"></a>执行Hello World!</h2><p>好，项目也生成了，IDE也可以使用了，我们就开始经典的<code>Hello World</code>吧。</p>
+<p>我们在<code>project.clj</code>中配置了直接运行的方式，那我们现在开始编辑一下<code>core.clj</code>。</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">ns</span></span> clojure-demo.core</span><br><span class="line">  (<span class="symbol">:gen-class</span>))</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">defn</span></span> -main</span><br><span class="line">  <span class="string">"I don't do a whole lot ... yet."</span></span><br><span class="line">  [&amp; args]</span><br><span class="line">  (<span class="name">println</span> <span class="string">"Hello, Clojure World!"</span>))</span><br></pre></td></tr></table></figure>
+<p>执行一下看看效果</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜ lein run</span><br><span class="line">Hello, Clojure World!</span><br></pre></td></tr></table></figure>
+<h2 id="执行测试"><a href="#执行测试" class="headerlink" title="执行测试"></a>执行测试</h2><p>我们先添加一个简单的方法，然后测试一下。</p>
+<p>在<code>core.clj</code>中添加<code>my-plus</code>方法，简单计算一下两个数的相加</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name"><span class="builtin-name">defn</span></span> my-plus</span><br><span class="line">  <span class="string">"I don't do a whole lot."</span></span><br><span class="line">  [a b]</span><br><span class="line">  (<span class="name"><span class="builtin-name">+</span></span> a b))</span><br></pre></td></tr></table></figure>
+<p>在<code>core_test.clj</code>中添加<code>my-plus-test</code>的测试方法，测试一下1+1是否等于2</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deftest</span> my-plus-test</span><br><span class="line">  (<span class="name">testing</span> <span class="string">"Test my plus."</span></span><br><span class="line">    (<span class="name">is</span> (<span class="name"><span class="builtin-name">=</span></span> (<span class="name">my-plus</span> <span class="number">1</span> <span class="number">1</span>) <span class="number">2</span>)))</span><br><span class="line">  )</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">➜ lein <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line">lein <span class="built_in">test</span> clojure-demo.core-test</span><br><span class="line"></span><br><span class="line">Ran 1 tests containing 1 assertions.</span><br><span class="line">0 failures, 0 errors.</span><br></pre></td></tr></table></figure>
+<p>如果，你做到这一步的话，欢迎你来到Leiningen + Clojure的世界，Java工程师也可以体验一把Clojure带给你的不同体验吧。</p>
 </span>
       
     </div>
@@ -358,7 +369,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/golang/" rel="tag">#golang</a>
+            <a href="/tags/leiningen/" rel="tag">#leiningen</a>
+          
+            <a href="/tags/clojure/" rel="tag">#clojure</a>
           
         </div>
       
@@ -367,17 +380,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/01/19/about-the-stability/" rel="next" title="关于稳定">
-                <i class="fa fa-chevron-left"></i> 关于稳定
+              <a href="/2016/07/14/product-seven-words/" rel="next" title="靠谱的产品经理之七字真言">
+                <i class="fa fa-chevron-left"></i> 靠谱的产品经理之七字真言
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/09/tengine-ssl-osx-make-error/" rel="prev" title="OSX下编译Tengine+SSL错误的解决办法">
-                OSX下编译Tengine+SSL错误的解决办法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -500,7 +509,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、一个Go项目在GOPATH下，会有如下三个目录"><span class="nav-number">1.</span> <span class="nav-text">一、一个Go项目在GOPATH下，会有如下三个目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、补充说明"><span class="nav-number">2.</span> <span class="nav-text">三、补充说明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目"><span class="nav-number">1.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#project-clj说明"><span class="nav-number">2.</span> <span class="nav-text">project.clj说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结合IntelliJ"><span class="nav-number">3.</span> <span class="nav-text">结合IntelliJ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行Hello-World"><span class="nav-number">4.</span> <span class="nav-text">执行Hello World!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行测试"><span class="nav-number">5.</span> <span class="nav-text">执行测试</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -558,9 +567,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'tonydengblog';
-      var disqus_identifier = '2015/02/10/golang-project-directory-structure/';
-      var disqus_title = 'Go项目的目录结构';
-      var disqus_url = 'http://tonydeng.github.io/2015/02/10/golang-project-directory-structure/';
+      var disqus_identifier = '2016/07/19/leiningen-clojure-hello-world/';
+      var disqus_title = 'Leiningen + Clojure Hello World!';
+      var disqus_url = 'http://tonydeng.github.io/2016/07/19/leiningen-clojure-hello-world/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
