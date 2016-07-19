@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://tonydeng.github.io/2016/07/19/See-how-the-program-ape-is-coming-to-download-and-process-video/</loc>
+    <lastmod>2016-07-19T15:38:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>看看程序猿是如何来下载和处理视频</title>
+        <pubTime>2016-07-19T08:14:58.000Z</pubTime>
+        
+        <tag>video</tag>
+         
+        <tag>ffmpeg</tag>
+         
+        <tag>youtube-dl</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tonydeng.github.io/2016/07/19/leiningen-clojure-hello-world/</loc>
     <lastmod>2016-07-19T03:39:08.000Z</lastmod>
     <data>
@@ -79,28 +103,6 @@
     
     
   <url>
-    <loc>http://tonydeng.github.io/2015/01/12/gradle-dependency-scope/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>Gradle依赖范围介绍</title>
-        <pubTime>2015-01-12T05:47:19.000Z</pubTime>
-        
-        <tag>engineered</tag>
-         
-        <tag>gradle</tag>
-         
-         
-           
-             
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://tonydeng.github.io/2015/02/10/golang-project-directory-structure/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
@@ -121,43 +123,23 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/01/19/about-the-stability/</loc>
+    <loc>http://tonydeng.github.io/2015/01/13/using-html5-application-cache/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>关于稳定</title>
-        <pubTime>2015-01-19T03:48:33.000Z</pubTime>
+        <title>使用HTML5的应用缓存</title>
+        <pubTime>2015-01-13T13:56:27.000Z</pubTime>
         
-        <tag>life</tag>
+        <tag>front-end</tag>
          
-        <tag>thinking</tag>
+        <tag>html5</tag>
+         
+        <tag>performance</tag>
          
          
            
              
-              <breadCrumb title="生活感悟" url="http://tonydeng.github.io/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2015/03/09/tengine-ssl-osx-make-error/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>OSX下编译Tengine+SSL错误的解决办法</title>
-        <pubTime>2015-03-09T07:59:08.000Z</pubTime>
-        
-        <tag>osx</tag>
-         
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac OSX" url="http://tonydeng.github.io/categories/Mac-OSX/"/>
+              <breadCrumb title="性能" url="http://tonydeng.github.io/categories/%E6%80%A7%E8%83%BD/"/>
           
         </display>
     </data>
@@ -185,21 +167,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/07/08/how-to-undo-almost-anything-with-git/</loc>
+    <loc>http://tonydeng.github.io/2015/01/19/about-the-stability/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>Git的各种Undo技巧</title>
-        <pubTime>2015-07-08T09:04:12.000Z</pubTime>
+        <title>关于稳定</title>
+        <pubTime>2015-01-19T03:48:33.000Z</pubTime>
         
-        <tag>git</tag>
+        <tag>life</tag>
          
-        <tag>undo</tag>
+        <tag>thinking</tag>
          
          
            
              
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+              <breadCrumb title="生活感悟" url="http://tonydeng.github.io/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/"/>
           
         </display>
     </data>
@@ -231,21 +213,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/05/25/linux-tcpip-tuning/</loc>
+    <loc>http://tonydeng.github.io/2015/03/09/tengine-ssl-osx-make-error/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>Linux TCP/IP调优</title>
-        <pubTime>2015-05-25T06:21:03.000Z</pubTime>
+        <title>OSX下编译Tengine+SSL错误的解决办法</title>
+        <pubTime>2015-03-09T07:59:08.000Z</pubTime>
         
-        <tag>linux</tag>
+        <tag>osx</tag>
          
-        <tag>tcp/ip</tag>
+        <tag>nginx</tag>
          
          
            
              
-              <breadCrumb title="性能" url="http://tonydeng.github.io/categories/%E6%80%A7%E8%83%BD/"/>
+              <breadCrumb title="Mac OSX" url="http://tonydeng.github.io/categories/Mac-OSX/"/>
           
         </display>
     </data>
@@ -268,6 +250,28 @@
            
              
               <breadCrumb title="Mac OSX" url="http://tonydeng.github.io/categories/Mac-OSX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2015/07/08/how-to-undo-almost-anything-with-git/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git的各种Undo技巧</title>
+        <pubTime>2015-07-08T09:04:12.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>undo</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
           
         </display>
     </data>
@@ -323,25 +327,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
+    <loc>http://tonydeng.github.io/2015/05/25/linux-tcpip-tuning/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>NoSQL vs SQL By Alphabet高可用架构微信群</title>
-        <pubTime>2015-08-20T14:06:33.000Z</pubTime>
+        <title>Linux TCP/IP调优</title>
+        <pubTime>2015-05-25T06:21:03.000Z</pubTime>
         
-        <tag>database</tag>
+        <tag>linux</tag>
          
-        <tag>rdb</tag>
-         
-        <tag>nosql</tag>
-         
-        <tag>sql</tag>
+        <tag>tcp/ip</tag>
          
          
            
              
-              <breadCrumb title="数据库" url="http://tonydeng.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+              <breadCrumb title="性能" url="http://tonydeng.github.io/categories/%E6%80%A7%E8%83%BD/"/>
           
         </display>
     </data>
@@ -369,28 +369,6 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/09/20/netty5-user-guide/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>Netty 5用户指南</title>
-        <pubTime>2015-09-20T13:03:35.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-        <tag>netty</tag>
-         
-         
-           
-             
-              <breadCrumb title="工具" url="http://tonydeng.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://tonydeng.github.io/2015/10/19/etcd-application-scenarios/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
@@ -411,83 +389,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/10/21/maven-Javadoc-plugin-in-java8-exception-resolution/</loc>
+    <loc>http://tonydeng.github.io/2015/09/20/netty5-user-guide/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>Java8环境下的Maven javadoc插件的配置</title>
-        <pubTime>2015-10-21T12:45:09.000Z</pubTime>
+        <title>Netty 5用户指南</title>
+        <pubTime>2015-09-20T13:03:35.000Z</pubTime>
         
         <tag>java</tag>
          
-        <tag>maven</tag>
-         
-        <tag>java8</tag>
-         
-        <tag>DocLint</tag>
-         
-        <tag>javadoc</tag>
-         
-        <tag>javadoc-plugin</tag>
-         
-        <tag>maven-plugin</tag>
-         
-        <tag>plugin</tag>
+        <tag>netty</tag>
          
          
            
              
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2009/10/27/the-design-philosophy-to-UNIX/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>UNIX设计哲学</title>
-        <pubTime>2009-10-27T13:59:06.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>unix</tag>
-         
-        <tag>design</tag>
-         
-        <tag>engineered</tag>
-         
-         
-           
-             
-              <breadCrumb title="程序设计" url="http://tonydeng.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2015/01/13/using-html5-application-cache/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用HTML5的应用缓存</title>
-        <pubTime>2015-01-13T13:56:27.000Z</pubTime>
-        
-        <tag>front-end</tag>
-         
-        <tag>html5</tag>
-         
-        <tag>performance</tag>
-         
-         
-           
-             
-              <breadCrumb title="性能" url="http://tonydeng.github.io/categories/%E6%80%A7%E8%83%BD/"/>
+              <breadCrumb title="工具" url="http://tonydeng.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -521,6 +437,110 @@
 
     
   <url>
+    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>NoSQL vs SQL By Alphabet高可用架构微信群</title>
+        <pubTime>2015-08-20T14:06:33.000Z</pubTime>
+        
+        <tag>database</tag>
+         
+        <tag>rdb</tag>
+         
+        <tag>nosql</tag>
+         
+        <tag>sql</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据库" url="http://tonydeng.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2009/10/27/the-design-philosophy-to-UNIX/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>UNIX设计哲学</title>
+        <pubTime>2009-10-27T13:59:06.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>unix</tag>
+         
+        <tag>design</tag>
+         
+        <tag>engineered</tag>
+         
+         
+           
+             
+              <breadCrumb title="程序设计" url="http://tonydeng.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2015/10/21/discussion-on-user-experience/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于用户体验的讨论和思考</title>
+        <pubTime>2015-10-21T13:52:15.000Z</pubTime>
+        
+        <tag>product</tag>
+         
+        <tag>thinking</tag>
+         
+        <tag>user experience</tag>
+         
+        <tag>UE</tag>
+         
+         
+           
+             
+              <breadCrumb title="产品设计" url="http://tonydeng.github.io/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2015/11/17/using-maven-version/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>在Java中使用Maven配置的版本信息</title>
+        <pubTime>2015-11-17T10:56:48.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>maven</tag>
+         
+        <tag>properties</tag>
+         
+        <tag>version</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tonydeng.github.io/2015/10/30/java-mail-no-object-dch-for-mime-type-multipart-mixed/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
@@ -547,68 +567,16 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/11/19/engineering-fonts/</loc>
+    <loc>http://tonydeng.github.io/2015/11/27/batch-conversion-file-encoding/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>工程师字体</title>
-        <pubTime>2015-11-19T02:33:27.000Z</pubTime>
+        <title>批量转换文件编码</title>
+        <pubTime>2015-11-27T04:11:11.000Z</pubTime>
         
-        <tag>engineering</tag>
+        <tag>shell</tag>
          
-        <tag>fonts</tag>
-         
-        <tag>Bitstream Vera Mono</tag>
-         
-        <tag>DejaVu Sans Mono</tag>
-         
-         
-           
-             
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2015/11/19/install-leiningen/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>安装Leiningen</title>
-        <pubTime>2015-11-19T09:56:48.000Z</pubTime>
-        
-        <tag>leiningen</tag>
-         
-        <tag>clojure</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leiningen + Clojure之旅" url="http://tonydeng.github.io/categories/Leiningen-Clojure%E4%B9%8B%E6%97%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2015/11/17/using-maven-version/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>在Java中使用Maven配置的版本信息</title>
-        <pubTime>2015-11-17T10:56:48.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-        <tag>maven</tag>
-         
-        <tag>properties</tag>
-         
-        <tag>version</tag>
+        <tag>iconv</tag>
          
          
            
@@ -645,93 +613,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/11/27/batch-conversion-file-encoding/</loc>
+    <loc>http://tonydeng.github.io/2015/11/19/install-leiningen/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>批量转换文件编码</title>
-        <pubTime>2015-11-27T04:11:11.000Z</pubTime>
+        <title>安装Leiningen</title>
+        <pubTime>2015-11-19T09:56:48.000Z</pubTime>
         
-        <tag>shell</tag>
+        <tag>leiningen</tag>
          
-        <tag>iconv</tag>
+        <tag>clojure</tag>
          
          
            
              
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2016/04/01/gitignore/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>gitignore最佳实践</title>
-        <pubTime>2016-04-01T08:00:17.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>gitignore</tag>
-         
-         
-           
-             
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2016/07/07/use-lsof-to-replace-netstat/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用 lsof 代替 Mac OS X 中的 netstat 查看占用端口的程序</title>
-        <pubTime>2016-07-07T05:06:48.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-        <tag>lsof</tag>
-         
-        <tag>netstat</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac OSX" url="http://tonydeng.github.io/categories/Mac-OSX/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2016/06/13/simple-protection-measures-to-download-any-file/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>任意文件下载漏洞的简单防护措施</title>
-        <pubTime>2016-06-13T05:17:07.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-        <tag>security</tag>
-         
-        <tag>download</tag>
-         
-        <tag>vulnerability</tag>
-         
-         
-           
-             
-              <breadCrumb title="安全" url="http://tonydeng.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+              <breadCrumb title="Leiningen + Clojure之旅" url="http://tonydeng.github.io/categories/Leiningen-Clojure%E4%B9%8B%E6%97%85/"/>
           
         </display>
     </data>
@@ -761,19 +657,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2006/03/28/A-Linux-command-a-human-civilization/</loc>
+    <loc>http://tonydeng.github.io/2016/04/01/gitignore/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>一条Linux命令，一段人类文明</title>
-        <pubTime>2006-03-28T14:40:40.000Z</pubTime>
+        <title>gitignore最佳实践</title>
+        <pubTime>2016-04-01T08:00:17.000Z</pubTime>
         
-        <tag>linux</tag>
+        <tag>git</tag>
+         
+        <tag>gitignore</tag>
          
          
            
              
-              <breadCrumb title="工程师文化" url="http://tonydeng.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%96%87%E5%8C%96/"/>
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
           
         </display>
     </data>
@@ -807,16 +705,40 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
+    <loc>http://tonydeng.github.io/2016/06/13/simple-protection-measures-to-download-any-file/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>你是一个够职业的软件工程师吗？</title>
-        <pubTime>2009-10-19T13:41:32.000Z</pubTime>
+        <title>任意文件下载漏洞的简单防护措施</title>
+        <pubTime>2016-06-13T05:17:07.000Z</pubTime>
         
-        <tag>engineered</tag>
+        <tag>java</tag>
          
-        <tag>professional</tag>
+        <tag>security</tag>
+         
+        <tag>download</tag>
+         
+        <tag>vulnerability</tag>
+         
+         
+           
+             
+              <breadCrumb title="安全" url="http://tonydeng.github.io/categories/%E5%AE%89%E5%85%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2006/03/28/A-Linux-command-a-human-civilization/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>一条Linux命令，一段人类文明</title>
+        <pubTime>2006-03-28T14:40:40.000Z</pubTime>
+        
+        <tag>linux</tag>
          
          
            
@@ -827,33 +749,6 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>http://tonydeng.github.io/2014/12/07/octopress-can-not-create-new-post-on-zsh/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>Octopress Can Not Create new Post on Zsh</title>
-        <pubTime>2014-12-07T06:44:12.000Z</pubTime>
-        
-        <tag>zsh</tag>
-         
-        <tag>shell</tag>
-         
-        <tag>octopress</tag>
-         
-         
-           
-             
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
     
   <url>
     <loc>http://tonydeng.github.io/2014/12/08/auto-delete-feature-branchs/</loc>
@@ -902,6 +797,82 @@
 
     
   <url>
+    <loc>http://tonydeng.github.io/2016/07/07/use-lsof-to-replace-netstat/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用 lsof 代替 Mac OS X 中的 netstat 查看占用端口的程序</title>
+        <pubTime>2016-07-07T05:06:48.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+        <tag>lsof</tag>
+         
+        <tag>netstat</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac OSX" url="http://tonydeng.github.io/categories/Mac-OSX/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2014/12/07/octopress-can-not-create-new-post-on-zsh/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>Octopress Can Not Create new Post on Zsh</title>
+        <pubTime>2014-12-07T06:44:12.000Z</pubTime>
+        
+        <tag>shell</tag>
+         
+        <tag>zsh</tag>
+         
+        <tag>octopress</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2015/11/19/engineering-fonts/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>工程师字体</title>
+        <pubTime>2015-11-19T02:33:27.000Z</pubTime>
+        
+        <tag>engineering</tag>
+         
+        <tag>fonts</tag>
+         
+        <tag>Bitstream Vera Mono</tag>
+         
+        <tag>DejaVu Sans Mono</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
     <loc>http://tonydeng.github.io/2014/12/09/zsh-scp-wildcard/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
@@ -918,6 +889,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://tonydeng.github.io/2014/12/09/linux-performance-tools/</loc>
@@ -938,23 +910,43 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2014/12/22/use-sublime-develop-golang/</loc>
+    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>使用Sublime开发Golang</title>
-        <pubTime>2014-12-22T03:07:49.000Z</pubTime>
+        <title>你是一个够职业的软件工程师吗？</title>
+        <pubTime>2009-10-19T13:41:32.000Z</pubTime>
         
-        <tag>golang</tag>
+        <tag>engineered</tag>
          
-        <tag>sublime</tag>
-         
-        <tag>program</tag>
+        <tag>professional</tag>
          
          
            
              
-              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+              <breadCrumb title="工程师文化" url="http://tonydeng.github.io/categories/%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%96%87%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2014/12/31/brew-update-error/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>brew update失败处理方法</title>
+        <pubTime>2014-12-30T16:21:39.000Z</pubTime>
+        
+        <tag>brew</tag>
+         
+        <tag>mac osx</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac OSX" url="http://tonydeng.github.io/categories/Mac-OSX/"/>
           
         </display>
     </data>
@@ -988,21 +980,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2014/12/31/brew-update-error/</loc>
+    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>brew update失败处理方法</title>
-        <pubTime>2014-12-30T16:21:39.000Z</pubTime>
+        <title>前端解耦原则</title>
+        <pubTime>2015-01-05T10:29:52.000Z</pubTime>
         
-        <tag>brew</tag>
+        <tag>engineered</tag>
          
-        <tag>mac osx</tag>
+        <tag>front-end</tag>
          
          
            
              
-              <breadCrumb title="Mac OSX" url="http://tonydeng.github.io/categories/Mac-OSX/"/>
+              <breadCrumb title="程序设计" url="http://tonydeng.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
           
         </display>
     </data>
@@ -1034,21 +1026,21 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
+    <loc>http://tonydeng.github.io/2015/01/12/gradle-dependency-scope/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>前端解耦原则</title>
-        <pubTime>2015-01-05T10:29:52.000Z</pubTime>
+        <title>Gradle依赖范围介绍</title>
+        <pubTime>2015-01-12T05:47:19.000Z</pubTime>
         
         <tag>engineered</tag>
          
-        <tag>front-end</tag>
+        <tag>gradle</tag>
          
          
            
              
-              <breadCrumb title="程序设计" url="http://tonydeng.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
           
         </display>
     </data>
@@ -1078,25 +1070,57 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2015/10/21/discussion-on-user-experience/</loc>
+    <loc>http://tonydeng.github.io/2014/12/22/use-sublime-develop-golang/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
         <display>
-        <title>关于用户体验的讨论和思考</title>
-        <pubTime>2015-10-21T13:52:15.000Z</pubTime>
+        <title>使用Sublime开发Golang</title>
+        <pubTime>2014-12-22T03:07:49.000Z</pubTime>
         
-        <tag>product</tag>
+        <tag>golang</tag>
          
-        <tag>thinking</tag>
+        <tag>sublime</tag>
          
-        <tag>user experience</tag>
-         
-        <tag>UE</tag>
+        <tag>program</tag>
          
          
            
              
-              <breadCrumb title="产品设计" url="http://tonydeng.github.io/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tonydeng.github.io/2015/10/21/maven-Javadoc-plugin-in-java8-exception-resolution/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>Java8环境下的Maven javadoc插件的配置</title>
+        <pubTime>2015-10-21T12:45:09.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>maven</tag>
+         
+        <tag>java8</tag>
+         
+        <tag>DocLint</tag>
+         
+        <tag>javadoc</tag>
+         
+        <tag>javadoc-plugin</tag>
+         
+        <tag>maven-plugin</tag>
+         
+        <tag>plugin</tag>
+         
+         
+           
+             
+              <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
           
         </display>
     </data>
