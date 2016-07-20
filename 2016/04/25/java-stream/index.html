@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -21,24 +27,45 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
-
-
-
-
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="java stream" />
@@ -52,7 +79,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
 
@@ -82,27 +109,29 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
+
+
+
+
+  <link rel="canonical" href="http://tonydeng.github.io/2016/04/25/java-stream/"/>
 
   <title> Java Stream详解 | TonyDeng's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -129,7 +158,16 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -158,13 +196,13 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
   
 
   
-    <ul id="menu" class="menu menu-left">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -174,7 +212,7 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -184,7 +222,7 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -194,7 +232,7 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -204,7 +242,7 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
         <li class="menu-item menu-item-gitbook">
           <a href="/gitbook-zh" rel="section">
             
-              <i class="menu-item-icon fa fa-question-circle fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             GitBook
           </a>
@@ -214,7 +252,7 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -222,6 +260,16 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -229,11 +277,9 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
   
     <div class="site-search">
       
-  
   <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -255,12 +301,17 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
 
+  
+  
+
+  
   
   
 
@@ -283,7 +334,10 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-04-25T16:59:03+08:00" content="2016-04-25">
               2016-04-25
             </time>
@@ -291,7 +345,11 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/程序设计/" itemprop="url" rel="index">
@@ -309,28 +367,32 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
           
             
               <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2016/04/25/java-stream/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/java-stream/" itemprop="commentsCount"></span>
-              </a>
-            </span>
+                &nbsp; | &nbsp;
+                <a href="/2016/04/25/java-stream/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/25/java-stream/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><p><img src="/images/stream-api-java8.png" alt="java8 stream api"></p>
+        <p><img src="/images/stream-api-java8.png" alt="java8 stream api"></p>
 <p>Stream是 Java 8新增加的类，用来补充集合类。</p>
 <p>Stream代表数据流，流中的数据元素的数量可能是有限的，也可能是无限的。</p>
 <p>Stream和其它集合类的区别在于：其它集合类主要关注与有限数量的数据的访问和有效管理(增删改)，而Stream并没有提供访问和管理元素的方式，而是通过声明数据源的方式，利用可计算的操作在数据源上执行，当然<code>BaseStream.iterator()</code> 和 <code>BaseStream.spliterator()</code>操作提供了遍历元素的方法。</p>
@@ -451,7 +513,21 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 </ul>
 <p><a href="https://github.com/NitorCreations/java8-utils" target="_blank" rel="external">java8-utils</a> 也提供了一些有益的辅助方法。</p>
 <h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html" target="_blank" rel="external">https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html</a><br><a href="http://www.leveluplunch.com/java/examples/" target="_blank" rel="external">http://www.leveluplunch.com/java/examples/</a><br><a href="https://github.com/poetix/protonpack" target="_blank" rel="external">https://github.com/poetix/protonpack</a><br><a href="https://github.com/NitorCreations/java8-utils" target="_blank" rel="external">https://github.com/NitorCreations/java8-utils</a></p>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -499,25 +575,26 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
       <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -545,10 +622,12 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/629519?v=3&s=460" alt="Tony Deng" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/629519?v=3&s=460"
+               alt="Tony Deng" />
           <p class="site-author-name" itemprop="name">Tony Deng</p>
+          <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -557,19 +636,23 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">19</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">89</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">89</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -584,20 +667,47 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
 
         <div class="links-of-author motion-element">
           
-        </div>
-
-        
-        
-
-        <div class="links-of-author motion-element">
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tonydeng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/wolfdeng" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/tonydeng" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
           
         </div>
+
+        
+        
+
+        
+        
 
       </section>
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
               
@@ -606,7 +716,6 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#并行-Parallelism"><span class="nav-number">1.1.</span> <span class="nav-text">并行 Parallelism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-interference"><span class="nav-number">1.2.</span> <span class="nav-text">Non-interference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无状态-Stateless-behaviors"><span class="nav-number">1.3.</span> <span class="nav-text">无状态 Stateless behaviors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序-Ordering"><span class="nav-number">1.4.</span> <span class="nav-text">排序 Ordering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结合性-Associativity"><span class="nav-number">1.5.</span> <span class="nav-text">结合性 Associativity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Stream"><span class="nav-number">2.</span> <span class="nav-text">创建Stream</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间操作-intermediate-operations"><span class="nav-number">3.</span> <span class="nav-text">中间操作 intermediate operations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#distinct"><span class="nav-number">3.1.</span> <span class="nav-text">distinct</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">3.2.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">3.3.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flatmap"><span class="nav-number">3.4.</span> <span class="nav-text">flatmap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#limit"><span class="nav-number">3.5.</span> <span class="nav-text">limit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peek"><span class="nav-number">3.6.</span> <span class="nav-text">peek</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sorted"><span class="nav-number">3.7.</span> <span class="nav-text">sorted</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#skip"><span class="nav-number">3.8.</span> <span class="nav-text">skip</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终点操作-terminal-operations"><span class="nav-number">4.</span> <span class="nav-text">终点操作 terminal operations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Match"><span class="nav-number">4.1.</span> <span class="nav-text">Match</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#count"><span class="nav-number">4.2.</span> <span class="nav-text">count</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collect"><span class="nav-number">4.3.</span> <span class="nav-text">collect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">4.4.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach、forEachOrdered"><span class="nav-number">4.5.</span> <span class="nav-text">forEach、forEachOrdered</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#max、min"><span class="nav-number">4.6.</span> <span class="nav-text">max、min</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">4.7.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#toArray"><span class="nav-number">4.8.</span> <span class="nav-text">toArray()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合"><span class="nav-number">5.</span> <span class="nav-text">组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换"><span class="nav-number">6.</span> <span class="nav-text">转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更进一步"><span class="nav-number">7.</span> <span class="nav-text">更进一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">8.</span> <span class="nav-text">参考文档</span></a></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
         </section>
       
 
@@ -614,7 +723,8 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -624,7 +734,7 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
   &copy;  2005 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Tony Deng</span>
 </div>
@@ -640,29 +750,91 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
   </a>
 </div>
 
+        
 
-
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
   
 
   
-    
-    
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
 
   
 
     <script type="text/javascript">
       var disqus_shortname = 'tonydengblog';
       var disqus_identifier = '2016/04/25/java-stream/';
-      var disqus_title = 'Java Stream详解';
+      var disqus_title = "Java Stream详解";
       var disqus_url = 'http://tonydeng.github.io/2016/04/25/java-stream/';
 
       function run_disqus_script(disqus_script){
@@ -681,192 +853,15 @@ Stream和其它集合类的区别在于：其它集合类主要关注与有限�
   
 
 
-  
 
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
-    };
-  });
-</script>
-
-
-
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
 
   
   
 
   
+
+  
+
   
 
 </body>
