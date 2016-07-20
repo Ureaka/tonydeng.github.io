@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonydeng.github.io/"/>
-  <updated>2016-07-19T15:38:15.000Z</updated>
+  <updated>2016-07-20T00:53:06.000Z</updated>
   <id>http://tonydeng.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>看看程序猿是如何来下载和处理视频</title>
-    <link href="http://tonydeng.github.io/2016/07/19/See-how-the-program-ape-is-coming-to-download-and-process-video/"/>
-    <id>http://tonydeng.github.io/2016/07/19/See-how-the-program-ape-is-coming-to-download-and-process-video/</id>
+    <link href="http://tonydeng.github.io/2016/07/19/see-how-the-program-ape-is-coming-to-download-and-process-video/"/>
+    <id>http://tonydeng.github.io/2016/07/19/see-how-the-program-ape-is-coming-to-download-and-process-video/</id>
     <published>2016-07-19T08:14:58.000Z</published>
-    <updated>2016-07-19T15:38:15.000Z</updated>
+    <updated>2016-07-20T00:53:06.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/images/blog/ffmpeg-youtube-dl.png&quot; alt=&quot;FFMpeg and Youtube-dl&quot;&gt;&lt;/p&gt;
 &lt;p&gt;我们经常在各大视频网站上看到一些很不错的视频，希望能够下载收藏起来，但是无法在网站上找到下载的按钮或者入口，很是郁闷。&lt;/p&gt;
@@ -46,7 +46,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/kashu/merge.videos&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;自动批量合并视频文件&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;附上这个视频吧,有兴趣的人可以看看。&lt;/p&gt;
-&lt;embed src=&quot;http://player.youku.com/player.php/sid/XNzE1NTk3Mzky/v.swf&quot; allowfullscreen=&quot;true&quot; quality=&quot;high&quot; width=&quot;480&quot; height=&quot;400&quot; align=&quot;middle&quot; allowscriptaccess=&quot;always&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
+&lt;iframe height=&quot;498&quot; width=&quot;510&quot; src=&quot;http://player.youku.com/embed/XNzE1NTk3Mzky&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 </content>
     
     <summary type="html">
