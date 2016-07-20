@@ -4,7 +4,7 @@
 
     
   <url>
-    <loc>http://tonydeng.github.io/2016/07/19/see-how-the-program-ape-is-coming-to-download-and-process-video/</loc>
+    <loc>http://tonydeng.github.io/2016/07/19/how-the-program-ape-is-coming-to-download-and-process-video/</loc>
     <lastmod>2016-07-20T00:53:06.000Z</lastmod>
     <data>
         <display>
@@ -825,6 +825,28 @@
 
     
   <url>
+    <loc>http://tonydeng.github.io/2016/04/25/java-stream/</loc>
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>Java Stream详解</title>
+        <pubTime>2016-04-25T08:59:03.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+        <tag>stream</tag>
+         
+         
+           
+             
+              <breadCrumb title="程序设计" url="http://tonydeng.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tonydeng.github.io/2014/12/08/auto-delete-feature-branchs/</loc>
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     <data>
@@ -842,28 +864,6 @@
            
              
               <breadCrumb title="效率" url="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tonydeng.github.io/2016/04/25/java-stream/</loc>
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>Java Stream详解</title>
-        <pubTime>2016-04-25T08:59:03.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-        <tag>stream</tag>
-         
-         
-           
-             
-              <breadCrumb title="程序设计" url="http://tonydeng.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
           
         </display>
     </data>
