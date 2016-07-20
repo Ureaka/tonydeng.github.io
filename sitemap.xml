@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/ppts/revison_contorl_branch_pattern/index.html</loc>
+    <loc>http://tonydeng.github.io/ppts/high-performance_server_three_elements/index.html</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/ppts/high-performance_server_three_elements/index.html</loc>
+    <loc>http://tonydeng.github.io/ppts/revison_contorl_branch_pattern/index.html</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/font-awesome.css</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/demo.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/phone.css</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/font-awesome.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -93,7 +93,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/demo.css</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/phone.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -107,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/02/10/golang-project-directory-structure/</loc>
+    <loc>http://tonydeng.github.io/2015/01/19/about-the-stability/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -121,21 +121,14 @@
   </url>
   
   <url>
+    <loc>http://tonydeng.github.io/2015/02/10/golang-project-directory-structure/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2015/05/14/cp-usage/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2015/01/19/about-the-stability/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2015/07/10/httpie-howto/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -150,6 +143,20 @@
   
   <url>
     <loc>http://tonydeng.github.io/2015/07/11/brew-reinstall/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/07/10/httpie-howto/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/05/25/linux-tcpip-tuning/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -177,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/05/25/linux-tcpip-tuning/</loc>
+    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -205,27 +212,6 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/24/the-six-thinking-hats/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2009/10/27/the-design-philosophy-to-UNIX/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2015/10/21/discussion-on-user-experience/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -233,7 +219,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/11/17/using-maven-version/</loc>
+    <loc>http://tonydeng.github.io/2006/03/28/A-Linux-command-a-human-civilization/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/10/24/the-six-thinking-hats/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -247,14 +240,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/11/27/batch-conversion-file-encoding/</loc>
+    <loc>http://tonydeng.github.io/2015/11/17/using-maven-version/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/11/24/etcd-the-first-using/</loc>
+    <loc>http://tonydeng.github.io/2015/11/19/engineering-fonts/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -268,7 +261,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2016/04/25/java-stream/</loc>
+    <loc>http://tonydeng.github.io/2015/11/24/etcd-the-first-using/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -276,6 +269,20 @@
   
   <url>
     <loc>http://tonydeng.github.io/2016/04/01/gitignore/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/11/27/batch-conversion-file-encoding/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2016/07/07/use-lsof-to-replace-netstat/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -296,35 +303,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2006/03/28/A-Linux-command-a-human-civilization/</loc>
+    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/08/auto-delete-feature-branchs/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2016/07/07/use-lsof-to-replace-netstat/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2014/12/08/pssh/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2015/11/19/engineering-fonts/</loc>
+    <loc>http://tonydeng.github.io/2009/10/27/the-design-philosophy-to-UNIX/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -338,7 +324,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/categories/index.html</loc>
+    <loc>http://tonydeng.github.io/2014/12/08/auto-delete-feature-branchs/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2016/04/25/java-stream/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -352,7 +345,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/09/zsh-scp-wildcard/</loc>
+    <loc>http://tonydeng.github.io/categories/index.html</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -366,6 +359,20 @@
   </url>
   
   <url>
+    <loc>http://tonydeng.github.io/2014/12/08/pssh/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2014/12/09/zsh-scp-wildcard/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2014/12/09/linux-performance-tools/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -373,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
+    <loc>http://tonydeng.github.io/2014/12/22/use-sublime-develop-golang/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -394,14 +401,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
+    <loc>http://tonydeng.github.io/2014/12/31/project-life-cycle/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/31/project-life-cycle/</loc>
+    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -416,13 +423,6 @@
   
   <url>
     <loc>http://tonydeng.github.io/2015/01/13/are-you-a-salted-fish/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2014/12/22/use-sublime-develop-golang/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
