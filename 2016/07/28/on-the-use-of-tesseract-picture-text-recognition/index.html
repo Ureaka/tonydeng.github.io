@@ -96,7 +96,7 @@
 所谓 OCR(Optical Character Recognition)是指对文本资料进行扫描，然后对图像文件进行分析处理，获取文字和版面信息的过程。OCR是图像识别领域中的一个子领域，该">
 <meta property="og:image" content="http://tonydeng.github.io/images/blog/tesseract-to-pages.png">
 <meta property="og:image" content="http://linusp.github.io/assets/img/tesseract.gif">
-<meta property="og:updated_time" content="2016-07-29T00:58:27.000Z">
+<meta property="og:updated_time" content="2016-07-29T01:16:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Tesseract图片文字识别初探">
 <meta name="twitter:description" content="一直以来都想尝试一下图片的中文识别，直到最近才有点空闲时间，主要目的是证实一下到底可不可行，正确率能否达到 95% 以上。自己从头写起十分费时间，因为图片处理很麻烦，所以我选用了Tesseract OCR。
@@ -406,7 +406,6 @@
 <p>使用<code>brew</code>安装所有语言包：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install tesseract --all-languages</span><br></pre></td></tr></table></figure>
 <h3 id="其他平台安装"><a href="#其他平台安装" class="headerlink" title="其他平台安装"></a>其他平台安装</h3><p>更多Tesseract的安装可以查看这儿<a href="https://github.com/tesseract-ocr/tesseract/wiki" target="_blank" rel="external">Install Tesseract via pre-built binary package</a>或 <a href="https://github.com/tesseract-ocr/tesseract/wiki/Compiling" target="_blank" rel="external">build it from source</a></p>
-<p><a href="http://tesseract-ocr.github.io/index.html" target="_blank" rel="external">http://tesseract-ocr.github.io/index.html</a></p>
 <h2 id="命令行使用"><a href="#命令行使用" class="headerlink" title="命令行使用"></a>命令行使用</h2><p>这里只见到讲一下Tesseract识别图像的基本用法，关于训练和开发将来在另开新篇来专门讲述。</p>
 <p>由于Tesseract只提供命令行工具，这里讲的用法对于Linux和Windows平台都适用。</p>
 <p>首先可以通过<code>&quot;--list-langs&quot;</code>来查看哪些可用的“语言”，如果之前的<code>TESSDATA_PREFIX</code>环境变量没有设置错误，将看到这样的输出：</p>
@@ -439,6 +438,7 @@
 <p>而这样则是错误的:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tesseract paper.png paper tess_1.conf <span class="_">-l</span> chi_sim tess_2.conf</span><br></pre></td></tr></table></figure>
 <p>至于 <code>Tesseract</code> 那些参数各有什么含义，官方没有提供任何文档来进行解释，这里有一个<a href="http://www.sk-spell.sk.cx/tesseract-ocr-parameters-in-302-version" target="_blank" rel="external">链接</a>提供了部分参数的用处说明，应该是阅读了 <code>Tesseract</code> 源代码后得到的结论。</p>
+<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>关于<code>Tesseract</code>的文档，可以查看<a href="http://tesseract-ocr.github.io/index.html" target="_blank" rel="external">Tetesseract官方Blog</a></p>
 
       
     </div>
@@ -633,7 +633,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tesseract介绍"><span class="nav-number">1.</span> <span class="nav-text">Tesseract介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac-OSX"><span class="nav-number">2.1.</span> <span class="nav-text">Mac OSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他平台安装"><span class="nav-number">2.2.</span> <span class="nav-text">其他平台安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行使用"><span class="nav-number">3.</span> <span class="nav-text">命令行使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tesseract介绍"><span class="nav-number">1.</span> <span class="nav-text">Tesseract介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac-OSX"><span class="nav-number">2.1.</span> <span class="nav-text">Mac OSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他平台安装"><span class="nav-number">2.2.</span> <span class="nav-text">其他平台安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行使用"><span class="nav-number">3.</span> <span class="nav-text">命令行使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另外"><span class="nav-number">4.</span> <span class="nav-text">另外</span></a></li></ol></div>
             
           </div>
         </section>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonydeng.github.io/"/>
-  <updated>2016-07-29T00:58:27.000Z</updated>
+  <updated>2016-07-29T01:16:04.000Z</updated>
   <id>http://tonydeng.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://tonydeng.github.io/2016/07/28/on-the-use-of-tesseract-picture-text-recognition/"/>
     <id>http://tonydeng.github.io/2016/07/28/on-the-use-of-tesseract-picture-text-recognition/</id>
     <published>2016-07-28T00:58:19.000Z</published>
-    <updated>2016-07-29T00:58:27.000Z</updated>
+    <updated>2016-07-29T01:16:04.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/images/blog/tesseract-to-pages.png&quot; alt=&quot;tesseract-to-pages&quot;&gt;&lt;/p&gt;
 &lt;p&gt;一直以来都想尝试一下图片的中文识别，直到最近才有点空闲时间，主要目的是证实一下到底可不可行，正确率能否达到 95% 以上。自己从头写起十分费时间，因为图片处理很麻烦，所以我选用了&lt;code&gt;Tesseract OCR&lt;/code&gt;。&lt;/p&gt;
@@ -39,7 +39,6 @@
 &lt;p&gt;使用&lt;code&gt;brew&lt;/code&gt;安装所有语言包：&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;brew install tesseract --all-languages&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;其他平台安装&quot;&gt;&lt;a href=&quot;#其他平台安装&quot; class=&quot;headerlink&quot; title=&quot;其他平台安装&quot;&gt;&lt;/a&gt;其他平台安装&lt;/h3&gt;&lt;p&gt;更多Tesseract的安装可以查看这儿&lt;a href=&quot;https://github.com/tesseract-ocr/tesseract/wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Install Tesseract via pre-built binary package&lt;/a&gt;或 &lt;a href=&quot;https://github.com/tesseract-ocr/tesseract/wiki/Compiling&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;build it from source&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://tesseract-ocr.github.io/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tesseract-ocr.github.io/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;命令行使用&quot;&gt;&lt;a href=&quot;#命令行使用&quot; class=&quot;headerlink&quot; title=&quot;命令行使用&quot;&gt;&lt;/a&gt;命令行使用&lt;/h2&gt;&lt;p&gt;这里只见到讲一下Tesseract识别图像的基本用法，关于训练和开发将来在另开新篇来专门讲述。&lt;/p&gt;
 &lt;p&gt;由于Tesseract只提供命令行工具，这里讲的用法对于Linux和Windows平台都适用。&lt;/p&gt;
 &lt;p&gt;首先可以通过&lt;code&gt;&amp;quot;--list-langs&amp;quot;&lt;/code&gt;来查看哪些可用的“语言”，如果之前的&lt;code&gt;TESSDATA_PREFIX&lt;/code&gt;环境变量没有设置错误，将看到这样的输出：&lt;/p&gt;
@@ -72,6 +71,7 @@
 &lt;p&gt;而这样则是错误的:&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tesseract paper.png paper tess_1.conf &lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt; chi_sim tess_2.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;至于 &lt;code&gt;Tesseract&lt;/code&gt; 那些参数各有什么含义，官方没有提供任何文档来进行解释，这里有一个&lt;a href=&quot;http://www.sk-spell.sk.cx/tesseract-ocr-parameters-in-302-version&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;提供了部分参数的用处说明，应该是阅读了 &lt;code&gt;Tesseract&lt;/code&gt; 源代码后得到的结论。&lt;/p&gt;
+&lt;h2 id=&quot;另外&quot;&gt;&lt;a href=&quot;#另外&quot; class=&quot;headerlink&quot; title=&quot;另外&quot;&gt;&lt;/a&gt;另外&lt;/h2&gt;&lt;p&gt;关于&lt;code&gt;Tesseract&lt;/code&gt;的文档，可以查看&lt;a href=&quot;http://tesseract-ocr.github.io/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tetesseract官方Blog&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
