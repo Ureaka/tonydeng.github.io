@@ -319,6 +319,131 @@
             
               
                 
+                <a class="post-title-link" href="/2015/11/27/batch-conversion-file-encoding/" itemprop="url">
+                  批量转换文件编码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-27T12:11:11+08:00" content="2015-11-27">
+              2015-11-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/效率/" itemprop="url" rel="index">
+                    <span itemprop="name">效率</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/27/batch-conversion-file-encoding/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/11/27/batch-conversion-file-encoding/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/images/blog/encoding.png" alt="encoding"></p>
+<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>之前同事有一个项目给过来，由于他之前的开发环境是Windows的，文件编码都是GBK的，看起挺不爽的，不符合我们现在的规范。需要将里面的文件全部转换成UTF8的文件编码。</p>
+<p>那我们应该怎么来做呢？</p>
+<p>很简单，写一个shell，利用 <code>iconv</code>转换一下就好了，于是花了5分钟左右写了一个脚本来搞定这个事情。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/11/27/batch-conversion-file-encoding/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/11/24/etcd-the-first-using/" itemprop="url">
                   初试ETCD
                 </a>
@@ -1416,139 +1541,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/10/19/etcd-application-scenarios/" itemprop="url">
-                  ETCD应用场景
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-19T15:49:41+08:00" content="2015-10-19">
-              2015-10-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/架构/" itemprop="url" rel="index">
-                    <span itemprop="name">架构</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/19/etcd-application-scenarios/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/10/19/etcd-application-scenarios/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/images/blog/etcd/etcd2-0.png" alt="etcd logo"></p>
-<h1 id="etcd是什么？"><a href="#etcd是什么？" class="headerlink" title="etcd是什么？"></a>etcd是什么？</h1><p>很多人对这个问题的第一反应可能是，它是一个键值存储仓库，却没有重视官方定义的后半句，用于<strong>配置共享</strong>和<strong>服务发现</strong>。</p>
-<blockquote>
-<p>A highly-available key value store for shared configuration and service discovery.</p>
-</blockquote>
-<p>实际上，etcd作为一个受到Zookeeper和doozer启发而催生的项目，除了拥有与之类似的功能外，更具有以下4个特点。（<a href="https://github.com/coreos/etcd">引自etcd官方文档</a>）</p>
-<ul>
-<li>简单： 基于HTTP+JSON的API让你可以用CURL命令就可以轻松使用。</li>
-<li>安全： 可以选择SSL客户认证机制。</li>
-<li>快速： 每个实例每秒支持一千次写操作。</li>
-<li>可信： 使用<a href="http://raftconsensus.github.io/">Ralf</a>算法充分实现了分布式。</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/19/etcd-application-scenarios/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1594,7 +1586,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">49</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1611,7 +1603,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">89</span>
+                <span class="site-state-item-count">90</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
