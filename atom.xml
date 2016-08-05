@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonydeng.github.io/"/>
-  <updated>2016-07-29T01:16:04.000Z</updated>
+  <updated>2016-08-05T06:59:21.000Z</updated>
   <id>http://tonydeng.github.io/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为ZSH实现Fish Shell的效果</title>
+    <link href="http://tonydeng.github.io/2016/08/05/zsh-plugins-like-fish-shell/"/>
+    <id>http://tonydeng.github.io/2016/08/05/zsh-plugins-like-fish-shell/</id>
+    <published>2016-08-05T06:26:00.000Z</published>
+    <updated>2016-08-05T06:59:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://cdn.makeuseof.com/wp-content/uploads/2016/02/fish-shell-644x250.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;很久之前就见过同事用过&lt;a href=&quot;https://fishshell.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;Fish Shell&lt;/code&gt;&lt;/a&gt;，看到几个非常棒的特性和效果，比如下面两个特性就非常吸引我。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Fish-Shell的炫酷&quot;&gt;&lt;a href=&quot;#Fish-Shell的炫酷&quot; class=&quot;headerlink&quot; title=&quot;Fish Shell的炫酷&quot;&gt;&lt;/a&gt;Fish Shell的炫酷&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://fishshell.com/assets/img/screenshots/autosuggestion.png&quot; alt=&quot;智能提示&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://fishshell.com/assets/img/screenshots/colors.png&quot; alt=&quot;语法高亮&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Fish Shell&lt;/code&gt;的&lt;strong&gt;智能提示&lt;/strong&gt;和&lt;strong&gt;语法高亮&lt;/strong&gt;，是我觉得非常酷炫的功能，让我眼馋，为此我也试用过多次&lt;code&gt;Fish Shell&lt;/code&gt;，但是每次都坚持不了多久，因为还是有很多地方不习惯：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无插件系统，功能上还是比&lt;a href=&quot;http://ohmyz.sh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;Oh My ZSH&lt;/code&gt;&lt;/a&gt;少了很多&lt;/li&gt;
+&lt;li&gt;不兼容&lt;code&gt;bash&lt;/code&gt;语法，导致我之前的很多脚本无法运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://ohmyz.sh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;Oh My ZSH&lt;/code&gt;&lt;/a&gt;才是我的真爱！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Oh-My-ZSH&quot;&gt;&lt;a href=&quot;#Oh-My-ZSH&quot; class=&quot;headerlink&quot; title=&quot;Oh My ZSH&quot;&gt;&lt;/a&gt;Oh My ZSH&lt;/h2&gt;&lt;p&gt;那么问题来了，&lt;code&gt;oh-my-zsh&lt;/code&gt;中有没有插件可以实现类似的功能？&lt;/p&gt;
+&lt;p&gt;我先是在oh-my-zsh官方插件库里找了一下，但是没找到，后来发现了这样一个项目：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;zsh-users&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;上面的介绍说是：&lt;code&gt;Zsh community projects&lt;/code&gt;，感觉是非官方的项目。&lt;/p&gt;
+&lt;p&gt;里面有两个插件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zsh-users/zsh-autosuggestions&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zsh-autosuggestions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/zsh-users/zsh-syntax-highlighting&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zsh-syntax-highlighting&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;安装插件&quot;&gt;&lt;a href=&quot;#安装插件&quot; class=&quot;headerlink&quot; title=&quot;安装插件&quot;&gt;&lt;/a&gt;安装插件&lt;/h3&gt;&lt;p&gt;这两个插件安装起来非常简单。&lt;/p&gt;
+&lt;p&gt;创建一个目录。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir -p ~/.zsh/plugins&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;clone这两个项目到刚刚创建的目录下。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; git://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/plugins/zsh-autosuggestions&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; git@github.com:zsh-users/zsh-syntax-highlighting.git ~/.zsh/plugins/zsh-syntax-highlighting&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;设置&lt;code&gt;.zshrc&lt;/code&gt;中的&lt;code&gt;$ZSH_CUTOM&lt;/code&gt;变量&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Would you like to use another custom folder than $ZSH/custom?&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# ZSH_CUSTOM=/path/to/new-custom-folder&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ZSH_CUSTOM=~/.zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;添加插件配置&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;plugins=(zsh-autosuggestions zsh-syntax-highlighting)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;最终效果图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/zsh-like-fish-shell/autosuggestions.png&quot; alt=&quot;autosuggestions&quot;&gt;&lt;/p&gt;
+&lt;p&gt;途中可以看到git是绿色的，代表存在这个命令，如果打错了，它就是红色的：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/blog/zsh-like-fish-shell/color.png&quot; alt=&quot;color&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一目了然，不用等出错了再去修正错误了。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://cdn.makeuseof.com/wp-content/uploads/2016/02/fish-shell-644x250.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;很久之前就见过同事用过&lt;a href=&quot;https://fishshell.com&quot;&gt;&lt;code&gt;Fish Shell&lt;/code&gt;&lt;/a&gt;，看到几个非常棒的特性和效果，比如下面两个特性就非常吸引我。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://tonydeng.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="zsh" scheme="http://tonydeng.github.io/tags/zsh/"/>
+    
+      <category term="autosuggestions" scheme="http://tonydeng.github.io/tags/autosuggestions/"/>
+    
+      <category term="color" scheme="http://tonydeng.github.io/tags/color/"/>
+    
+  </entry>
   
   <entry>
     <title>利用Tesseract图片文字识别初探</title>
@@ -1950,37 +2015,6 @@
       <category term="maven-plugin" scheme="http://tonydeng.github.io/tags/maven-plugin/"/>
     
       <category term="plugin" scheme="http://tonydeng.github.io/tags/plugin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git中文件名大小写引起的错误处理</title>
-    <link href="http://tonydeng.github.io/2015/10/21/capitalization-error-handing-in-git/"/>
-    <id>http://tonydeng.github.io/2015/10/21/capitalization-error-handing-in-git/</id>
-    <published>2015-10-21T09:02:00.000Z</published>
-    <updated>2016-07-12T16:26:58.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;/images/blog/git-branching.png&quot; alt=&quot;git branching&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在团队使用Git的时候，尤其是多人合作的项目，经常会出现一个问题，就是由于同一个文件名大小写不一致导致无法合并的问题。&lt;/p&gt;
-&lt;p&gt;那我们应该怎么来解决呢?&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;可以使用git rm –cached将冲突的文件从Git仓库的缓存中删除，然后改名后再加入到git中&lt;/p&gt;
-&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git rm --cached &lt;span class=&quot;symbol&quot;&gt;&amp;lt;filename&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mv &lt;span class=&quot;symbol&quot;&gt;&amp;lt;old_filename&amp;gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;&amp;lt;new_filename&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;&amp;lt;new_filename&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -&lt;span class=&quot;keyword&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;rename &amp;lt;new_filename&amp;gt;&#39;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;&amp;lt;new_filename&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;当然，为了一劳永逸，我们可以让团队成员都更改配置git的大小写敏感，避免某些windows用户继续制造这样的问题。&lt;/p&gt;
-&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;git&lt;/span&gt; config core.ignorecase &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/blog/git-branching.png&quot; alt=&quot;git branching&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在团队使用Git的时候，尤其是多人合作的项目，经常会出现一个问题，就是由于同一个文件名大小写不一致导致无法合并的问题。&lt;/p&gt;
-&lt;p&gt;那我们应该怎么来解决呢?&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="效率" scheme="http://tonydeng.github.io/categories/%E6%95%88%E7%8E%87/"/>
-    
-    
-      <category term="git" scheme="http://tonydeng.github.io/tags/git/"/>
     
   </entry>
   

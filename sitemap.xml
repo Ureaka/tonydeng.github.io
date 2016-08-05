@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tonydeng.github.io/2016/08/05/zsh-plugins-like-fish-shell/</loc>
+    
+    <lastmod>2016-08-05T06:59:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2016/07/28/on-the-use-of-tesseract-picture-text-recognition/</loc>
     
     <lastmod>2016-07-29T01:16:04.000Z</lastmod>
@@ -37,7 +44,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/ppts/high-performance_server_three_elements/index.html</loc>
+    <loc>http://tonydeng.github.io/tags/index.html</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -51,14 +58,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/tags/index.html</loc>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/nodeppt.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/nodeppt.css</loc>
+    <loc>http://tonydeng.github.io/ppts/high-performance_server_three_elements/index.html</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -72,21 +79,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/demo.css</loc>
-    
-    <lastmod>2016-07-12T16:26:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/stylesheets/ppts/font-awesome.css</loc>
-    
-    <lastmod>2016-07-12T16:26:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/stylesheets/ppts/monokai_sublime.css</loc>
+    
+    <lastmod>2016-07-12T16:26:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/demo.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
     
@@ -107,6 +107,13 @@
   </url>
   
   <url>
+    <loc>http://tonydeng.github.io/stylesheets/ppts/font-awesome.css</loc>
+    
+    <lastmod>2016-07-12T16:26:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/stylesheets/ppts/nodeppt2.css</loc>
     
     <lastmod>2016-07-12T16:26:59.000Z</lastmod>
@@ -121,6 +128,13 @@
   </url>
   
   <url>
+    <loc>http://tonydeng.github.io/2015/05/14/cp-usage/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2015/01/13/using-html5-application-cache/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -128,14 +142,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/03/09/tengine-ssl-osx-make-error/</loc>
+    <loc>http://tonydeng.github.io/2015/07/11/brew-reinstall/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/05/14/cp-usage/</loc>
+    <loc>http://tonydeng.github.io/2015/05/25/linux-tcpip-tuning/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -156,21 +170,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/07/11/brew-reinstall/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2015/07/16/linkedhashmap-based-lrucache-implementation/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2015/05/25/linux-tcpip-tuning/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
+    <loc>http://tonydeng.github.io/2015/10/21/capitalization-error-handing-in-git/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/21/maven-Javadoc-plugin-in-java8-exception-resolution/</loc>
+    <loc>http://tonydeng.github.io/2015/08/20/nosql-vs-sql/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -205,21 +205,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/21/capitalization-error-handing-in-git/</loc>
+    <loc>http://tonydeng.github.io/2015/10/21/maven-Javadoc-plugin-in-java8-exception-resolution/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/21/discussion-on-user-experience/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2006/03/28/A-Linux-command-a-human-civilization/</loc>
+    <loc>http://tonydeng.github.io/2015/10/19/etcd-application-scenarios/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -233,7 +226,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/24/the-six-thinking-hats/</loc>
+    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/10/21/discussion-on-user-experience/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -247,7 +247,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/11/24/etcd-the-first-using/</loc>
+    <loc>http://tonydeng.github.io/2015/10/30/java-mail-no-object-dch-for-mime-type-multipart-mixed/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2016/04/01/gitignore/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -275,28 +282,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/19/etcd-application-scenarios/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2016/06/13/simple-protection-measures-to-download-any-file/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2016/04/01/gitignore/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2016/04/25/java-stream/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -310,7 +296,14 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2009/10/19/are-you-a-professional-engineer/</loc>
+    <loc>http://tonydeng.github.io/2006/03/28/A-Linux-command-a-human-civilization/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2016/04/25/java-stream/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -324,13 +317,6 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/08/auto-delete-feature-branchs/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2014/12/07/octopress-can-not-create-new-post-on-zsh/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -338,7 +324,35 @@
   </url>
   
   <url>
+    <loc>http://tonydeng.github.io/2014/12/08/auto-delete-feature-branchs/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2014/12/09/linux-performance-tools/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2014/12/08/pssh/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/2015/11/24/etcd-the-first-using/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://tonydeng.github.io/categories/index.html</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -359,20 +373,6 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/categories/index.html</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tonydeng.github.io/2014/12/09/linux-performance-tools/</loc>
-    
-    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://tonydeng.github.io/2014/12/09/zsh-scp-wildcard/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/22/use-sublime-develop-golang/</loc>
+    <loc>http://tonydeng.github.io/2014/12/31/brew-update-error/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -394,7 +394,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
+    <loc>http://tonydeng.github.io/2014/12/22/use-sublime-develop-golang/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -408,7 +408,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2014/12/31/brew-update-error/</loc>
+    <loc>http://tonydeng.github.io/2015/01/05/frontend-decoupling-principle/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
@@ -429,6 +429,13 @@
   </url>
   
   <url>
+    <loc>http://tonydeng.github.io/2015/03/09/tengine-ssl-osx-make-error/</loc>
+    
+    <lastmod>2016-07-12T16:26:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tonydeng.github.io/2015/01/19/about-the-stability/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
@@ -436,7 +443,7 @@
   </url>
   
   <url>
-    <loc>http://tonydeng.github.io/2015/10/30/java-mail-no-object-dch-for-mime-type-multipart-mixed/</loc>
+    <loc>http://tonydeng.github.io/2015/10/24/the-six-thinking-hats/</loc>
     
     <lastmod>2016-07-12T16:26:58.000Z</lastmod>
     
