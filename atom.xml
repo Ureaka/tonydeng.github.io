@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tonydeng.github.io/"/>
-  <updated>2016-11-03T07:08:33.000Z</updated>
+  <updated>2016-11-03T13:50:06.000Z</updated>
   <id>http://tonydeng.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://tonydeng.github.io/2016/11/03/etcd4j-blocking-investigation-and-lifting-process/"/>
     <id>http://tonydeng.github.io/2016/11/03/etcd4j-blocking-investigation-and-lifting-process/</id>
     <published>2016-11-03T05:19:42.000Z</published>
-    <updated>2016-11-03T07:08:33.000Z</updated>
+    <updated>2016-11-03T13:50:06.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/images/blog/etcd4j/debug.jpg&quot; alt=&quot;debug&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;先说一下背景&quot;&gt;&lt;a href=&quot;#先说一下背景&quot; class=&quot;headerlink&quot; title=&quot;先说一下背景&quot;&gt;&lt;/a&gt;先说一下背景&lt;/h2&gt;&lt;p&gt;最近将整个微服务的体系从原来的通过使用&lt;a href=&quot;https://github.com/tonydeng/tcp4j&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TCP4J&lt;/a&gt;加上固定的&lt;code&gt;HOST+PORT&lt;/code&gt;的方式转成使用&lt;a href=&quot;https://github.com/coreos/etcd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ETCD&lt;/a&gt;的服务发现体系（大家想了解ETCD可以关注我之前的两篇博文&lt;a href=&quot;/2015/11/24/etcd-the-first-using/&quot;&gt;初试ETCD&lt;/a&gt;,&lt;a href=&quot;/2015/10/19/etcd-application-scenarios/&quot;&gt;ETCD应用场景 &lt;/a&gt;）。&lt;/p&gt;
